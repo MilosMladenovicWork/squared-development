@@ -9,7 +9,7 @@ import React from 'react'
 
 import {ThemeProvider, createGlobalStyle} from 'styled-components'
 
-const theme = {
+export const theme = {
   colors:{
     accent:'#F64E3E',
     primary: '#121212',
@@ -22,7 +22,7 @@ const theme = {
   }
 }
 
-const GlobalStyle = createGlobalStyle`
+export const GlobalStyle = createGlobalStyle`
   *{
     box-sizing:border-box;
     font-family: ${props => props.theme.font.regular};

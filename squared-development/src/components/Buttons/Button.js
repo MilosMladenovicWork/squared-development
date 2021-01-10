@@ -10,6 +10,7 @@ const StyledButton = styled.button`
   text-transform:uppercase;
   text-decoration:none;
   font-size:1rem;
+  display:inline-block;
   ${props => props.secondary && css`
     background:transparent;
     border-color:${props => props.theme.colors.primary};
