@@ -27,8 +27,18 @@ const Layout = ({ children }) => {
     }
   `)
 
+  const StyledLayout = styled.div`
+    position:relative;
+    overflow:hidden;
+  `
+
+  const StyledMain = styled.main`
+    position:relative;
+    margin-top:170px;
+  `
+
   return (
-    <>
+    <StyledLayout>
       <Header>
         <RowSpaceBetween>
           <Link to='/'>
@@ -43,7 +53,7 @@ const Layout = ({ children }) => {
         </RowSpaceBetween>
       </Header>
       <div>
-        <main>{children}</main>
+        <StyledMain>{children}</StyledMain>
         <footer style={{
           marginTop: `2rem`
         }}>
@@ -52,7 +62,7 @@ const Layout = ({ children }) => {
           <a href="https://www.squareddevelopment.com">Squared Development</a>
         </footer>
       </div>
-    </>
+    </StyledLayout>
   )
 }
 

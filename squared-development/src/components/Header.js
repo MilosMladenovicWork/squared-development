@@ -5,8 +5,11 @@ import styled from 'styled-components'
 const HeaderStyled = styled.header`
   width:100%;
   height:170px;
-  position:relative;
+  position:fixed;
+  top:0;
+  z-index:10;
   padding:20px 100px;
+  overflow:hidden;
 `
 
 const HeaderBackground = styled.div`

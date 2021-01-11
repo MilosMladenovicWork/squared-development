@@ -3,8 +3,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 const ConstraintContainerStyled = styled.div`
-  max-width:80%;
-  margin:auto;
+  padding:0 10%;
 `
 
 const ConstraintContainer = ({children, ...rest}) => {

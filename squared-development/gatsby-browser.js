@@ -31,22 +31,22 @@ export const GlobalStyle = createGlobalStyle`
     margin:0;
   }
   h1{
-    font-size:5rem;
-  }
-  h2{
     font-size:4rem;
   }
+  h2{
+    font-size:3.5rem;
+  }
   h3{
-    font-size:2.5rem;
+    font-size:3rem;
   }
   h4{
-    font-size:2rem;
+    font-size:2.5rem;
   }
   h5{
-    font-size:1.75rem;
+    font-size:2rem;
   }
   h6{
-    font-size:1.5rem;
+    font-size:1.75rem;
   }
 `
 
