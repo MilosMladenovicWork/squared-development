@@ -15,6 +15,7 @@ import FullHeightContainer from '../components/LayoutComponents/FullHeightContai
 import DeveloperMakingSite from '../components/Illustrations/DeveloperMakingSite'
 import Fluid from '../components/Illustrations/Fluid'
 import PercentageWidthContainer from '../components/LayoutComponents/PercentageWidthContainer'
+import CurvedBackground from "../components/Illustrations/CurvedBackground.js"
 
 
 const HeroBannerContainer = styled.div`
@@ -30,6 +31,12 @@ const FluidBackgroundContainer = styled.div`
   width:125vw;
   transform:translate(40%, -50%);
   z-index:-1;
+`
+
+const AboutContentContainer = styled.div`
+  position:relative;
+  width:100%;
+  min-height:270vh;
 `
 
 const IndexPage = () => (
@@ -61,6 +68,12 @@ const IndexPage = () => (
         </section>
       </FullHeightContainer>
     </ConstraintContainer>
+      <AboutContentContainer>
+        <CurvedBackground />
+      </AboutContentContainer>
+      <AboutContentContainer>
+
+      </AboutContentContainer>
   </Layout>
 )
 
