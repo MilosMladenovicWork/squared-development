@@ -9,11 +9,12 @@ const StyledHeading = styled.h1`
   position:relative;
   text-align:${props => props.alignment ? props.alignment : 'left'};
   text-transform:uppercase;
+  color:${props => props.textColor ? (props.theme.colors[props.textColor] ? props.theme.colors[props.textColor] : props.theme.colors.textDark) : props.theme.colors.textDark};
 `
 
-const Heading = ({children, accent, alignment, ...rest}) => {
+const Heading = ({children, accent, alignment, textColor, ...rest}) => {
   return (
-    <StyledHeading {...rest} alignment={alignment}>
+    <StyledHeading {...rest} alignment={alignment} textColor={textColor}>
       {accent &&
         <SquaredSquare alignment={alignment}/>
       }

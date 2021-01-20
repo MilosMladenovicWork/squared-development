@@ -16,6 +16,7 @@ import DeveloperMakingSite from '../components/Illustrations/DeveloperMakingSite
 import Fluid from '../components/Illustrations/Fluid'
 import PercentageWidthContainer from '../components/LayoutComponents/PercentageWidthContainer'
 import CurvedBackground from "../components/Illustrations/CurvedBackground.js"
+import PeopleOutside from '../components/Illustrations/PeopleOutside'
 
 
 const HeroBannerContainer = styled.div`
@@ -36,7 +37,14 @@ const FluidBackgroundContainer = styled.div`
 const AboutContentContainer = styled.div`
   position:relative;
   width:100%;
-  min-height:270vh;
+  padding:75px 0 75px;
+`
+
+const AboutContentRow = styled.div`
+  display:flex;
+  flex-direction:row;
+  justify-content:space-between;
+  align-items:center;
 `
 
 const IndexPage = () => (
@@ -68,12 +76,27 @@ const IndexPage = () => (
         </section>
       </FullHeightContainer>
     </ConstraintContainer>
-      <AboutContentContainer>
-        <CurvedBackground />
-      </AboutContentContainer>
-      <AboutContentContainer>
-
-      </AboutContentContainer>
+    <AboutContentContainer>
+      <CurvedBackground />
+      <ConstraintContainer>
+        <AboutContentContainer>
+          <AboutContentRow>
+            <PercentageWidthContainer widthPercentage={50}>
+              <PeopleOutside fillColor="accent"/>
+            </PercentageWidthContainer>
+            <PercentageWidthContainer widthPercentage={40}>
+              <Heading alignment={'right'} accent textColor="textLight">About us</Heading>
+              <Paragraph alignment={'right'} textColor="textLight">
+                Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum.
+              </Paragraph>
+              <Paragraph alignment={'right'} textColor="textLight">
+                Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. 
+              </Paragraph>
+            </PercentageWidthContainer>
+          </AboutContentRow>
+        </AboutContentContainer>
+      </ConstraintContainer>
+    </AboutContentContainer>
   </Layout>
 )
 

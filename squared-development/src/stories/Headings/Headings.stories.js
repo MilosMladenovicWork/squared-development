@@ -6,7 +6,8 @@ export default {
   title: 'Components/Headings',
   component:Heading,
   argTypes: {
-    as:{control:{
+    as:{
+      control:{
         type: 'select',
         options: [
           'h1',
@@ -16,7 +17,18 @@ export default {
           'h5',
           'h6'
         ],
-    }},
+    }
+  },
+    textColor:{
+      control:{
+        type: 'select',
+        options: [
+          'textDark',
+          'textLight',
+          'accent'
+        ]
+      }
+    },
     children:{control:'text'}
   }
 }
