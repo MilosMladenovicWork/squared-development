@@ -7,7 +7,16 @@ export default {
   component: Paragraph,
   argTypes:{
     children:{control:'text'},
-    display:{control:'boolean'}
+    display:{control:'boolean'},
+    alignment: {control: {
+      type:'select',
+      options:[
+        'left',
+        'center',
+        'right'
+      ]
+    }},
+    halfWidth:{control:'boolean'}
   }
 }
 

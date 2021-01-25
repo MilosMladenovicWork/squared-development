@@ -17,6 +17,7 @@ import Fluid from '../components/Illustrations/Fluid'
 import PercentageWidthContainer from '../components/LayoutComponents/PercentageWidthContainer'
 import CurvedBackground from "../components/Illustrations/CurvedBackground.js"
 import PeopleOutside from '../components/Illustrations/PeopleOutside'
+import Detail from "../components/Illustrations/Detail"
 
 
 const HeroBannerContainer = styled.div`
@@ -38,13 +39,15 @@ const AboutContentContainer = styled.div`
   position:relative;
   width:100%;
   padding:75px 0 75px;
-`
-
-const AboutContentRow = styled.div`
   display:flex;
   flex-direction:row;
   justify-content:space-between;
   align-items:center;
+`
+
+const ServicesContainer = styled.div`
+  position:relative;
+  width:100%;
 `
 
 const IndexPage = () => (
@@ -79,8 +82,8 @@ const IndexPage = () => (
     <AboutContentContainer>
       <CurvedBackground />
       <ConstraintContainer>
-        <AboutContentContainer>
-          <AboutContentRow>
+        <section>
+          <AboutContentContainer>
             <PercentageWidthContainer widthPercentage={50}>
               <PeopleOutside fillColor="accent"/>
             </PercentageWidthContainer>
@@ -93,10 +96,24 @@ const IndexPage = () => (
                 Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. 
               </Paragraph>
             </PercentageWidthContainer>
-          </AboutContentRow>
-        </AboutContentContainer>
+          </AboutContentContainer>
+        </section>
       </ConstraintContainer>
     </AboutContentContainer>
+    <ServicesContainer>
+      <Detail size={10} horizontalPosition={'left'} verticalPosition={'top'}/>
+      <Detail size={5} horizontalPosition={'right'} verticalPosition={'bottom'}/>
+      <ConstraintContainer>
+        <section>
+          <Heading alignment={'center'} accent>
+            OUR SERVICES
+          </Heading>
+          <Paragraph halfWidth display alignment={'center'}>
+            Lorem ipsum description. Lorem ipsum description. Lorem ipsum description. Lorem ipsum description. Lorem ipsum description. Lorem ipsum description. Lorem ipsum description. 
+          </Paragraph>
+        </section>
+      </ConstraintContainer>
+    </ServicesContainer>
   </Layout>
 )
 
