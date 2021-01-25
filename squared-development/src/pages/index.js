@@ -101,7 +101,7 @@ const IndexPage = () => (
       </ConstraintContainer>
     </AboutContentContainer>
     <ServicesContainer>
-      <Detail size={10} horizontalPosition={'left'} verticalPosition={'top'}/>
+      <Detail size={10} backwards horizontalPosition={'left'} verticalPosition={'top'}/>
       <Detail size={5} horizontalPosition={'right'} verticalPosition={'bottom'}/>
       <ConstraintContainer>
         <section>
