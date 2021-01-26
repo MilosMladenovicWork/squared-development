@@ -18,6 +18,7 @@ import PercentageWidthContainer from '../components/LayoutComponents/PercentageW
 import CurvedBackground from "../components/Illustrations/CurvedBackground.js"
 import PeopleOutside from '../components/Illustrations/PeopleOutside'
 import Detail from "../components/Illustrations/Detail"
+import IconTextCard from "../components/Cards/IconTextCard"
 
 
 const HeroBannerContainer = styled.div`
@@ -48,6 +49,14 @@ const AboutContentContainer = styled.div`
 const ServicesContainer = styled.div`
   position:relative;
   width:100%;
+`
+
+const ServicesCardsContainer = styled.div`
+  display:flex;
+  flex-direction:row;
+  flex-wrap:wrap;
+  justify-content:space-between;
+  margin-top:50px; 
 `
 
 const IndexPage = () => (
@@ -111,6 +120,20 @@ const IndexPage = () => (
           <Paragraph halfWidth display alignment={'center'}>
             Lorem ipsum description. Lorem ipsum description. Lorem ipsum description. Lorem ipsum description. Lorem ipsum description. Lorem ipsum description. Lorem ipsum description. 
           </Paragraph>
+          <ServicesCardsContainer>
+            <IconTextCard 
+              heading="Service Heading"
+              text="Service body text. Service body text. Service body text. Service body text. "
+            />
+            <IconTextCard 
+              heading="Service Heading"
+              text="Service body text. Service body text. Service body text. Service body text. "
+            />
+            <IconTextCard 
+              heading="Service Heading"
+              text="Service body text. Service body text. Service body text. Service body text. "
+            />
+          </ServicesCardsContainer>
         </section>
       </ConstraintContainer>
     </ServicesContainer>
