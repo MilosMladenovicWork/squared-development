@@ -17,6 +17,7 @@ const StyledParagraph = styled.p`
   text-align:${props => props.alignment ? props.alignment : 'left'};
   color:${props => props.textColor ? (props.theme.colors[props.textColor] ? props.theme.colors[props.textColor] : props.theme.colors.textDark) : props.theme.colors.textDark};
   width:${props => props.halfWidth ? '50%' : '100%'};
+  transition:.25s;
 `
 
 const Paragraph = ({children, alignment, textColor, halfWidth, display, ...rest}) => {

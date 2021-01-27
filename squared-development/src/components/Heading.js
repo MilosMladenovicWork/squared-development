@@ -10,6 +10,7 @@ const StyledHeading = styled.h1`
   text-align:${props => props.alignment ? props.alignment : 'left'};
   text-transform:uppercase;
   color:${props => props.textColor ? (props.theme.colors[props.textColor] ? props.theme.colors[props.textColor] : props.theme.colors.textDark) : props.theme.colors.textDark};
+  transition:.25s;
 `
 
 const Heading = ({children, accent, alignment, textColor, ...rest}) => {

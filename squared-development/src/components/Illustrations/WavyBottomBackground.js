@@ -41,21 +41,23 @@ const CurvedBackground = ({fillColor}, ...rest) => {
           fillColor={fillColor}
           d="M2196,2708.383c-2.547,3.961,145.728,64.582,201.673,17.962s199.212,12.556,200.061,14.9,0-32.861,0-32.861Z" 
           transform="translate(-2195.473 -2707.821)"
-        />
+        >
+          <animate
+            fill="freeze"
+            attributeName="d"
+            attributeType="XML"
+            dur={`${Math.random() * 10 || 5}s`}
+            repeatCount="indefinite"
+            values="
+            M2196,2708.383c-2.547,3.961,145.728,64.582,201.673,17.962s199.212,12.556,200.061,14.9,0-32.861,0-32.861Z;
+            M2196,2708.383c-2.547,60.961,0.728,0.582,201.673,17.962s199.212,0.556,300.061,14.9,0-32.861,0-32.861Z;
+            M2196,2708.383c-2.547,3.961,145.728,64.582,201.673,17.962s199.212,12.556,200.061,14.9,0-32.861,0-32.861Z;
+            "
+            from=""
+            to=""
+          ></animate>
+        </StyledPath>
       </svg>
-      {/* <svg
-        xmlns="http://www.w3.org/2000/svg"
-        height="100%"
-        viewBox="0 0 1914.2 82"
-      >
-        <StyledPath
-          {...rest}
-          fillColor={fillColor}
-          d="M4321 2158v-82h1914.2v82s-651.556-56.4-985.6-56.4S4321 2158 4321 2158z"
-          data-name="Path 383"
-          transform="translate(-4321 -2076)"
-        ></StyledPath>
-      </svg> */}
     </IllustrationContainer>
   )
 }
