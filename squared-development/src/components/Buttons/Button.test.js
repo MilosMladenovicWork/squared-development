@@ -6,7 +6,7 @@ import {theme} from '../../../gatsby-browser'
 import {ThemeProvider} from 'styled-components'
 
 describe('Button', () => {
-
+  
   const ButtonWithTheme = ({...props}) => <ThemeProvider theme={theme}>
       <Button {...props}/>
     </ThemeProvider>
@@ -35,6 +35,23 @@ describe('Button', () => {
     expect(getByTestId('button'))
       .toHaveStyle(`
         border-color:${theme.colors.primary}
+      `)
+  })
+
+  it('renders clipped styles', () => {
+    const {getByTestId} = render(<ButtonWithTheme clipped/>)
+    expect(getByTestId('button'))
+      .toHaveStyle(`
+        clip-path: polygon(1.5em 0%,100% 0%,calc(100% - 1.5em) 100%,0% 100%);
+      `)
+  })
+
+  it('renders link styles', () => {
+    const {getByTestId} = render(<ButtonWithTheme link />)
+    expect(getByTestId('button'))
+      .toHaveStyle(`
+        background:transparent;
+        border-color:transparent;
       `)
   })
 })

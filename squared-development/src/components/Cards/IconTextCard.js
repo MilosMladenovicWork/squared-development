@@ -45,12 +45,13 @@ const IllustrationContainer = styled.div`
 const IconTextCard = ({heading, text, icon}) => {
   const [cardHovered, setCardHovered] = useState(false)
   return(
-    <StyledCard 
+    <StyledCard
+      data-testid='card'
       onMouseOver={() => setCardHovered(true)}
       onMouseOut={() => setCardHovered(false)}
     >
       <PresentationalContent>
-        {icon(cardHovered)}
+        {icon && icon(cardHovered)}
         <IllustrationContainer cardHovered={cardHovered}>
           <WavyBottomBackground/>
         </IllustrationContainer>
