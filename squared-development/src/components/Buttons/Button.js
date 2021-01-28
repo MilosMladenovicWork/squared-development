@@ -3,18 +3,18 @@ import React from 'react'
 import styled, {css} from 'styled-components'
 
 const StyledButton = styled.button`
-  background-color:${props => props.theme.colors.accent};
+  background-color:${props => props.theme.colors && props.theme.colors.accent};
   padding:0.5em 2em;
-  color:${props => props.theme.colors.textLight};
-  border:3px solid ${props => props.theme.colors.accent};
+  color:${props => props.theme.colors && props.theme.colors.textLight};
+  border:3px solid ${props => props.theme.colors && props.theme.colors.accent};
   text-transform:uppercase;
   text-decoration:none;
   font-size:1rem;
   display:inline-block;
   ${props => props.secondary && css`
     background:transparent;
-    border-color:${props => props.theme.colors.primary};
-    color:${props => props.theme.colors.textDark};
+    border-color:${props => props.theme.colors && props.theme.colors.primary};
+    color:${props => props.theme.colors && props.theme.colors.textDark};
   `}
   ${props => props.clipped && css`
     clip-path: polygon(1.5em 0%, 100% 0%, calc(100% - 1.5em) 100%, 0% 100%);
@@ -28,7 +28,7 @@ const StyledButton = styled.button`
 
 const Button = ({children, ...rest}) => {
   return (
-    <StyledButton {...rest}>{children}</StyledButton>
+    <StyledButton data-testid="button" {...rest}>{children}</StyledButton>
   )
 }
 
