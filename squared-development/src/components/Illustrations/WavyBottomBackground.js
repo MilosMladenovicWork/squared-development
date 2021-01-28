@@ -46,7 +46,7 @@ const CurvedBackground = ({fillColor}, ...rest) => {
             fill="freeze"
             attributeName="d"
             attributeType="XML"
-            dur={`${Math.random() * 10 || 5}s`}
+            dur={`${(Math.random() * 10) + 2}s`}
             repeatCount="indefinite"
             values="
             M2196,2708.383c-2.547,3.961,145.728,64.582,201.673,17.962s199.212,12.556,200.061,14.9,0-32.861,0-32.861Z;
