@@ -32,13 +32,16 @@ const IllustrationBody = styled.div`
 
 const CurvedBackground = ({fillColor}, ...rest) => {
   return (
-    <IllustrationContainer>
+    <IllustrationContainer
+      data-testid="illustration-container"
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         height="100%"
         viewBox="0 0 1914.2 105.822"
         >
         <StyledPath
+          data-testid="styled-path"
           {...rest}
           fillColor={fillColor}
           d="M4321 2158h1914.2v-104.4s-832 128-940.8 38.4-973.4 0-973.4 0z"
@@ -46,13 +49,17 @@ const CurvedBackground = ({fillColor}, ...rest) => {
           transform="translate(-4321 -2052.178)"
         ></StyledPath>
       </svg>
-      <IllustrationBody fillColor={fillColor}/>
+      <IllustrationBody 
+        fillColor={fillColor}
+        data-testid="illustration-body"
+      />
       <svg
         xmlns="http://www.w3.org/2000/svg"
         height="100%"
         viewBox="0 0 1914.2 82"
       >
         <StyledPath
+          data-testid="styled-path"
           {...rest}
           fillColor={fillColor}
           d="M4321 2158v-82h1914.2v82s-651.556-56.4-985.6-56.4S4321 2158 4321 2158z"
