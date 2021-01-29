@@ -14,17 +14,28 @@ const SquaredContainer = styled.div`
   left:${props => {
     if(props.alignment === 'center'){
       return '50%'
-    }else if(props.alignment === 'right'){
-      return '100%'
-    }else{
+    }else if(props.alignment === 'left'){
       return '0%'
+    }else{
+      return 'unset'
     }
   }};
+  right:${props => {
+    if(props.alignment === 'right'){
+      return '0%'
+    }else{
+      return 'unset'
+    }
+  }}
 `
 
 const SquaredSquare = ({alignment, ...rest}) => {
   return(
-    <SquaredContainer alignment={alignment} {...rest}/>
+    <SquaredContainer 
+      alignment={alignment} 
+      {...rest}
+      data-testid="squared-square"
+    />
   )
 }
 
