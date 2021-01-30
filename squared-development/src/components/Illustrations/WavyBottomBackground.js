@@ -27,17 +27,23 @@ const IllustrationBody = styled.div`
   flex-grow:1;
 `
 
-const CurvedBackground = ({fillColor}, ...rest) => {
+const CurvedBackground = ({fillColor, ...rest}) => {
   return (
-    <IllustrationContainer>
-      <IllustrationBody fillColor={fillColor}/>
+    <IllustrationContainer
+      {...rest}
+      data-testid="wavy-bottom-background"
+    >
+      <IllustrationBody
+        fillColor={fillColor}
+        data-testid="illustration-body"
+      />
       <svg 
         xmlns="http://www.w3.org/2000/svg"
         height="100%" 
         viewBox="0 0 403.138 36.564"
       >
-        <StyledPath 
-          {...rest}
+        <StyledPath
+          data-testid="path" 
           fillColor={fillColor}
           d="M2196,2708.383c-2.547,3.961,145.728,64.582,201.673,17.962s199.212,12.556,200.061,14.9,0-32.861,0-32.861Z" 
           transform="translate(-2195.473 -2707.821)"
