@@ -14,6 +14,7 @@ const PeopleOutside = ({fillColor, ...rest}) => {
       xmlnsXlink="http://www.w3.org/1999/xlink"
       width="100%"
       viewBox="0 0 730.241 551.813"
+      data-testid="people-outside"
     >
       <defs>
         <linearGradient
@@ -62,6 +63,7 @@ const PeopleOutside = ({fillColor, ...rest}) => {
         data-name="Path 131"
         opacity="0.1"
         transform="translate(-46.681 -275.055)"
+        data-testid="path"
       ></StyledPath>
       <StyledPath
         fillColor={fillColor}
