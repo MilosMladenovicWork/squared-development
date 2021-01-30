@@ -17,6 +17,7 @@ const DeveloperMakingSite = () => {
       xmlnsXlink="http://www.w3.org/1999/xlink"
       width="100%"
       viewBox="0 0 791.689 469.24"
+      data-testid="developer-making-site"
     >
       <defs>
         <linearGradient
@@ -55,6 +56,7 @@ const DeveloperMakingSite = () => {
         ></path>
         <AccentColorPathStroke
           fill="none"
+          data-testid="path-stroke"
           stroke="#f64e3e"
           strokeMiterlimit="10"
           strokeWidth="1"
@@ -191,6 +193,7 @@ const DeveloperMakingSite = () => {
           transform="translate(1163.624 293.22)"
         ></circle>
         <AccentColorPathFill
+          data-testid="path-fill"
           fill="#f64e3e"
           d="M0 0H219.587V9.149H0z"
           data-name="Rectangle 48"
