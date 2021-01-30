@@ -8,6 +8,7 @@ const Fluid = ({...rest}) => {
       xmlns="http://www.w3.org/2000/svg"
       width="100%"
       viewBox="0 0 2087.778 2134.61"
+      data-testid="fluid"
     >
       <path
         fill="#f64e3e"
