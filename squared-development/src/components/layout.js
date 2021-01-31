@@ -16,6 +16,17 @@ import RowSpaceBetween from './LayoutComponents/RowSpaceBetween'
 import Header from "./Header.js"
 import Logo from './Logo.js'
 
+
+const StyledLayout = styled.div`
+  position:relative;
+  overflow:hidden;
+`
+
+const StyledMain = styled.main`
+  position:relative;
+  margin-top:170px;
+`
+
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -27,15 +38,6 @@ const Layout = ({ children }) => {
     }
   `)
 
-  const StyledLayout = styled.div`
-    position:relative;
-    overflow:hidden;
-  `
-
-  const StyledMain = styled.main`
-    position:relative;
-    margin-top:170px;
-  `
 
   return (
     <StyledLayout>

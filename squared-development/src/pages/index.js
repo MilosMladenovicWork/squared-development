@@ -1,6 +1,7 @@
-import React from "react"
+import React, {useState} from "react"
 import { Link } from "gatsby"
 import styled from 'styled-components'
+import 'swiper/swiper.scss';
 
 
 import Layout from "../components/layout"
@@ -20,9 +21,11 @@ import CurvedBackground from "../components/Illustrations/CurvedBackground.js"
 import PeopleOutside from '../components/Illustrations/PeopleOutside'
 import Detail from "../components/Illustrations/Detail"
 import IconTextCard from "../components/Cards/IconTextCard"
-import ProjectCard from "../components/Cards/ProjectCard"
+import ImageCoverCard from "../components/Cards/ImageCoverCard"
 import projectImg from '../images/Perun.png'
 import projectImgMobile from '../images/Minus1.png'
+import referenceImg from '../images/reference.png'
+import ReferencesSlider from "../components/ReferencesSlider";
 
 
 const HeroBannerContainer = styled.div`
@@ -70,6 +73,33 @@ const ProjectsContainer = styled.div`
   justify-content:space-between;
 `
 
+const ReferencesContainer = styled.div`
+  display:flex;
+  flex-direction:row;
+  flex-wrap:wrap;
+  justify-content:space-between;
+  & > *:nth-child(odd){
+    transform:scale(0.8);
+  }
+`
+
+const ReferencesBackgroundContainer = styled.div`
+  position:absolute;
+  top:0;
+  z-index:-1;
+  width:100%;
+  height:100%;
+  opacity:0.08;
+  img {
+    min-width:100%;
+    min-height:100%;
+    transform:translate(-50%, -50%);
+    position:relative;
+    top:50%;
+    left:50%;
+  }
+`
+
 const StyledPath = styled.path`
   fill:${props => props.fillColor ? (props.theme.colors[props.fillColor] ? props.theme.colors[props.fillColor] : props.theme.colors.primary) : props.theme.colors.primary};
 `
@@ -78,7 +108,11 @@ const StyledSvg = styled.svg`
   transform: ${props => props.cardHovered ? 'translateY(20px)' : 'translateY(-20px)'}; 
 `
 
-const IndexPage = () => (
+const IndexPage = () => {
+
+  const [referenceSectionImage, setReferenceSectionImage] = useState('')
+
+  return(
   <Layout>
     <SEO title="Home" />
     <ConstraintContainer>
@@ -200,14 +234,53 @@ const IndexPage = () => (
         </Paragraph>
         <VerticalMarginSeparator marginSize={3}/>
         <ProjectsContainer>
-          <ProjectCard projectImg={projectImg} title="Project Title" description="Project Description"/>
-          <ProjectCard projectImg={projectImgMobile} mobile title="Project Title" description="Project Description"/>
-          <ProjectCard projectImg={projectImgMobile} mobile title="Project Title" description="Project Description"/>
-          <ProjectCard projectImg={projectImg} title="Project Title" description="Project Description"/>
+          <ImageCoverCard projectImg={projectImg} title="Project Title" description="Project Description"/>
+          <ImageCoverCard projectImg={projectImgMobile} mobile title="Project Title" description="Project Description"/>
+          <ImageCoverCard projectImg={projectImgMobile} mobile title="Project Title" description="Project Description"/>
+          <ImageCoverCard projectImg={projectImg} title="Project Title" description="Project Description"/>
         </ProjectsContainer>  
       </ConstraintContainer>
     </RelativeFullWidthContainer>
+    <RelativeFullWidthContainer>
+      <ReferencesBackgroundContainer>
+        <img src={referenceSectionImage} alt=''/>
+      </ReferencesBackgroundContainer>
+      <ConstraintContainer>
+        <Heading alignment="right" accent>
+          References
+        </Heading>
+      </ConstraintContainer>
+      <ReferencesContainer>
+        <ReferencesSlider
+          data={[
+            {
+              icon: projectImg,
+              title: 'Client Name',
+              text: 'Some short refrence description text here. Some short refrence description text here. Some short refrence description text here.',
+              button: 'Project name',
+              projectImg: projectImg
+            },
+            {
+              icon: projectImg,
+              title: 'Client Name',
+              text: 'Some short refrence description text here. Some short refrence description text here. Some short refrence description text here.',
+              button: 'Project name',
+              projectImg: projectImg
+            },
+            {
+              icon: projectImg,
+              title: 'Client Name',
+              text: 'Some short refrence description text here. Some short refrence description text here. Some short refrence description text here.',
+              button: 'Project name',
+              projectImg: referenceImg
+            },
+          ]}
+          setImageToParent={(image) => setReferenceSectionImage(image)}
+        />
+      </ReferencesContainer>
+    </RelativeFullWidthContainer>
   </Layout>
-)
+  )
+}
 
 export default IndexPage

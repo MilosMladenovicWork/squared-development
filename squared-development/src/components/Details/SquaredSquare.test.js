@@ -25,7 +25,7 @@ describe('SquaredSquare', () => {
   it('accepts alignment prop - right', () => {
     const {getByTestId} = render(<SquaredSquareWithTheme alignment='right'/>)
     expect(getByTestId('squared-square')).toHaveStyle(`
-    right:0%;
+    left:100%;
     `)
   })
   

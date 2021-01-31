@@ -12,7 +12,10 @@ const SquaredContainer = styled.div`
   background:transparent;
   z-index:-1;
   left:${props => {
-    if(props.alignment === 'center'){
+    if(props.alignment === 'right'){
+      return '100%'
+    }
+    else if(props.alignment === 'center'){
       return '50%'
     }else if(props.alignment === 'left'){
       return '0%'
@@ -20,13 +23,6 @@ const SquaredContainer = styled.div`
       return 'unset'
     }
   }};
-  right:${props => {
-    if(props.alignment === 'right'){
-      return '0%'
-    }else{
-      return 'unset'
-    }
-  }}
 `
 
 const SquaredSquare = ({alignment, ...rest}) => {
