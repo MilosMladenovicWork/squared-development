@@ -1,6 +1,6 @@
-import React, {useState} from "react"
+import React, {useEffect, useState} from "react"
 import { Link } from "gatsby"
-import styled from 'styled-components'
+import styled, {keyframes, css} from 'styled-components'
 import 'swiper/swiper.scss';
 
 
@@ -83,13 +83,37 @@ const ReferencesContainer = styled.div`
   }
 `
 
+const appear = keyframes`
+  from{
+    opacity:0;
+  }
+  to{
+    opacity:0.08;
+  }
+`
+const secondAppear = keyframes`
+  0%{
+    opacity:0;
+  }
+  100%{
+    opacity:0.08;
+  }
+`
+
 const ReferencesBackgroundContainer = styled.div`
   position:absolute;
   top:0;
   z-index:-1;
   width:100%;
   height:100%;
-  opacity:0.08;
+  animation: ${({ toggle }) =>
+    toggle
+      ? css`
+          ${appear} 0.7s linear forwards;
+        `
+      : css`
+          ${secondAppear} 0.7s linear forwards;
+        `};
   img {
     min-width:100%;
     min-height:100%;
@@ -111,6 +135,12 @@ const StyledSvg = styled.svg`
 const IndexPage = () => {
 
   const [referenceSectionImage, setReferenceSectionImage] = useState('')
+  const [toggleReferencesBackground, setToggleReferencesBackground] = useState(false)
+
+  useEffect(() => {
+    setToggleReferencesBackground(prevState => !prevState)
+  }, [referenceSectionImage])
+
 
   return(
   <Layout>
@@ -242,7 +272,7 @@ const IndexPage = () => {
       </ConstraintContainer>
     </RelativeFullWidthContainer>
     <RelativeFullWidthContainer>
-      <ReferencesBackgroundContainer>
+      <ReferencesBackgroundContainer toggle={toggleReferencesBackground}>
         <img src={referenceSectionImage} alt=''/>
       </ReferencesBackgroundContainer>
       <ConstraintContainer>
