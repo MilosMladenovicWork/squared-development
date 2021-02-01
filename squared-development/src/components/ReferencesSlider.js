@@ -3,9 +3,6 @@ import {Swiper, SwiperSlide} from 'swiper/react';
 import SwiperCore, { Autoplay } from 'swiper';
 import 'swiper/swiper.scss';
 import styled from 'styled-components'
-
-
-import projectImg from '../images/Perun.png'
 import IconCard from "./Cards/IconCard"
 
 const CardContainer = styled.div`
