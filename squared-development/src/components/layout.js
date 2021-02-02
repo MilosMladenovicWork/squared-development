@@ -15,7 +15,13 @@ import Button from './Buttons/Button.js'
 import RowSpaceBetween from './LayoutComponents/RowSpaceBetween'
 import Header from "./Header.js"
 import Logo from './Logo.js'
+import CurvedBackground from './Illustrations/CurvedBackground'
+import Footer from './Footer'
 
+const RelativeFullWidthContainer = styled.div`
+  position:relative;
+  width:100%;
+`
 
 const StyledLayout = styled.div`
   position:relative;
@@ -56,13 +62,11 @@ const Layout = ({ children }) => {
       </Header>
       <div>
         <StyledMain>{children}</StyledMain>
-        <footer style={{
-          marginTop: `2rem`
-        }}>
-          © {new Date().getFullYear()},
-          {` `}
-          <a href="https://www.squareddevelopment.com">Squared Development</a>
-        </footer>
+        <RelativeFullWidthContainer>
+          <CurvedBackground hideBottom topVariant={1}/>
+          <Footer>
+          </Footer>
+        </RelativeFullWidthContainer>
       </div>
     </StyledLayout>
   )

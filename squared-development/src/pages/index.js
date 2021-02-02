@@ -26,6 +26,7 @@ import projectImg from '../images/Perun.png'
 import projectImgMobile from '../images/Minus1.png'
 import referenceImg from '../images/reference.png'
 import ReferencesSlider from "../components/ReferencesSlider";
+import Footer from "../components/Footer";
 
 
 const HeroBannerContainer = styled.div`

@@ -48,6 +48,9 @@ export const GlobalStyle = createGlobalStyle`
   h6{
     font-size:1.75rem;
   }
+  a{
+    color: #F64E3E;
+  }
 `
 
 export const wrapRootElement = ({ element }) => (
