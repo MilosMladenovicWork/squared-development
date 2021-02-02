@@ -12,21 +12,6 @@ const Footer = ({children}) => {
       <Heading alignment="center" accent textColor="textLight">
         Contact Us
       </Heading>
-      <Heading>
-        Hey
-      </Heading>
-      <Heading>
-        Hey
-      </Heading>
-      <Heading>
-        Hey
-      </Heading>
-      <Heading>
-        Hey
-      </Heading>
-      <Heading>
-        Hey
-      </Heading>
       {children}
       <Paragraph textColor="textLight" alignment="center">
       © {new Date().getFullYear()},
