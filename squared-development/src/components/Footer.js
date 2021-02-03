@@ -3,6 +3,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Heading from '../components/Heading'
 import VerticalMarginSeparator from '../components/LayoutComponents/VerticalMarginSeparator'
+import ContactForm from './ContactForm'
 import Paragraph from './Paragraph'
 
 const Footer = ({children}) => {
@@ -12,6 +13,9 @@ const Footer = ({children}) => {
       <Heading alignment="center" accent textColor="textLight">
         Contact Us
       </Heading>
+      <VerticalMarginSeparator marginSize={2}/>
+      <ContactForm/>
+      <VerticalMarginSeparator marginSize={2}/>
       {children}
       <Paragraph textColor="textLight" alignment="center">
       © {new Date().getFullYear()},

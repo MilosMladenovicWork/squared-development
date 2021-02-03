@@ -13,6 +13,7 @@ export const theme = {
   colors:{
     accent:'#F64E3E',
     primary: '#121212',
+    light: "#fefefe",
     textLight: '#ffffff',
     textDark: '#121212',
   },
