@@ -26,7 +26,6 @@ import projectImg from '../images/Perun.png'
 import projectImgMobile from '../images/Minus1.png'
 import referenceImg from '../images/reference.png'
 import ReferencesSlider from "../components/ReferencesSlider";
-import Footer from "../components/Footer";
 
 
 const HeroBannerContainer = styled.div`
@@ -107,6 +106,10 @@ const ReferencesBackgroundContainer = styled.div`
   z-index:-1;
   width:100%;
   height:100%;
+  overflow:visible;
+  > img {
+    height:140%;
+  }
   animation: ${({ toggle }) =>
     toggle
       ? css`

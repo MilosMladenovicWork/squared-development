@@ -31,7 +31,11 @@ const ContactForm = () => {
 
   return(
     <StyledContactForm>
-      <TextInput placeholder='Name' value={name} onChange={setName}/>
+      <TextInput 
+        placeholder='Name' 
+        value={name} 
+        onChange={setName}
+      />
       <EmailInput placeholder='Email' value={email} onChange={setEmail}/>
       <VerticalMarginSeparator marginSize={1.5}/>
       <TextareaInput placeholder='Message' value={message} onChange={setMessage}/>
