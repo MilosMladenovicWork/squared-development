@@ -1,7 +1,7 @@
 import React from 'react'
 import {render} from '@testing-library/react'
 import CurvedBackground from './CurvedBackground'
-import {theme} from '../../../gatsby-browser'
+import {theme} from '../../styles/styles'
 
 import {ThemeProvider} from 'styled-components'
 

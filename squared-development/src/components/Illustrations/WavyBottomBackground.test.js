@@ -1,7 +1,7 @@
 import React from 'react'
 import {render, fireEvent} from '@testing-library/react'
 import WavyBottomBackground from './WavyBottomBackground'
-import {theme} from '../../../gatsby-browser' 
+import {theme} from '../../styles/styles' 
 
 import {ThemeProvider} from 'styled-components'
 

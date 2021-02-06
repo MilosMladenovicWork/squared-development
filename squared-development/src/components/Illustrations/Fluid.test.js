@@ -1,7 +1,7 @@
 import React from 'react'
 import {render, fireEvent} from '@testing-library/react'
 import Fluid from './Fluid'
-import {theme} from '../../../gatsby-browser' 
+import {theme} from '../../styles/styles' 
 
 import {ThemeProvider} from 'styled-components'
 

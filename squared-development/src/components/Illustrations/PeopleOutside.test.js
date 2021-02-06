@@ -1,7 +1,7 @@
 import React from 'react'
 import {render, fireEvent} from '@testing-library/react'
 import PeopleOutside from './PeopleOutside'
-import {theme} from '../../../gatsby-browser' 
+import {theme} from '../../styles/styles' 
 
 import {ThemeProvider} from 'styled-components'
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import {render} from '@testing-library/react'
 import SquaredSquare from './SquaredSquare'
-import {theme} from '../../../gatsby-browser'
+import {theme} from '../../styles/styles'
 
 import {ThemeProvider} from 'styled-components'
 
