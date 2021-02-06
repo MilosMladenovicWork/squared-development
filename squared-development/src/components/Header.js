@@ -25,7 +25,7 @@ const HeaderBackground = styled.div`
 `
 
 const PathStyled = styled.path`
-  fill:${props => props.theme.colors.primary};
+  fill:${props => props.theme.colors && props.theme.colors.primary};
   min-height:100%;
   min-width:100%;
 `
