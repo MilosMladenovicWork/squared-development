@@ -9,7 +9,9 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql, Link } from "gatsby"
 
-import styled from 'styled-components'
+import styled, {ThemeProvider} from 'styled-components'
+
+import {theme, GlobalStyle} from '../styles/styles'
 
 import Button from './Buttons/Button.js'
 import RowSpaceBetween from './LayoutComponents/RowSpaceBetween'
@@ -46,29 +48,32 @@ const Layout = ({ children }) => {
 
 
   return (
-    <StyledLayout>
-      <Header>
-        <RowSpaceBetween>
-          <Link to='/'>
-            <Logo/>
-          </Link>
-          <nav>
-            <Button as={Link} to='#' link>About Us</Button>
-            <Button as={Link} to='#' link>Projects</Button>
-            <Button as={Link} to='#' link>References</Button>
-            <Button as={Link} to='#' clipped>Contact</Button>
-          </nav>
-        </RowSpaceBetween>
-      </Header>
-      <div>
-        <StyledMain>{children}</StyledMain>
-        <RelativeFullWidthContainer>
-          <CurvedBackground hideBottom topVariant={1}/>
-          <Footer>
-          </Footer>
-        </RelativeFullWidthContainer>
-      </div>
-    </StyledLayout>
+    <ThemeProvider theme={theme}>
+      <GlobalStyle/>
+      <StyledLayout>
+        <Header>
+          <RowSpaceBetween>
+            <Link to='/'>
+              <Logo/>
+            </Link>
+            <nav>
+              <Button as={Link} to='#' link>About Us</Button>
+              <Button as={Link} to='#' link>Projects</Button>
+              <Button as={Link} to='#' link>References</Button>
+              <Button as={Link} to='#' clipped>Contact</Button>
+            </nav>
+          </RowSpaceBetween>
+        </Header>
+        <div>
+          <StyledMain>{children}</StyledMain>
+          <RelativeFullWidthContainer>
+            <CurvedBackground hideBottom topVariant={1}/>
+            <Footer>
+            </Footer>
+          </RelativeFullWidthContainer>
+        </div>
+      </StyledLayout>
+    </ThemeProvider>
   )
 }
 
