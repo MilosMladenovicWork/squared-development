@@ -4,25 +4,30 @@ import styled from 'styled-components'
 
 const HeaderStyled = styled.header`
   width:100%;
-  height:170px;
+  min-height:120px;
   position:fixed;
   top:0;
   z-index:10;
   padding:20px 100px;
-  overflow:hidden;
 `
 
 const HeaderBackground = styled.div`
   width:100%;
-  height:170px;
+  height:100%;
   position:absolute;
   top:0;
   left:0;
   z-index:-1;
+  svg {
+    min-height:100%;
+    min-width:100%;
+  }
 `
 
 const PathStyled = styled.path`
   fill:${props => props.theme.colors.primary};
+  min-height:100%;
+  min-width:100%;
 `
 
 const Header = ({children, ...rest}) => {
@@ -31,9 +36,8 @@ const Header = ({children, ...rest}) => {
       <HeaderBackground>
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="1920.933"
-          height="149.24"
           viewBox="0 0 1920.933 149.24"
+          preserveAspectRatio="none"
         >
           <PathStyled
             fill="#121212"

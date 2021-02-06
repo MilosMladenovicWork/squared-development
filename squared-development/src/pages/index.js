@@ -63,7 +63,9 @@ const ServicesCardsContainer = styled.div`
   flex-direction:row;
   flex-wrap:wrap;
   justify-content:space-between;
+  margin:auto;
   margin-top:50px; 
+  max-width:1200px;
 `
 
 const ProjectsContainer = styled.div`
