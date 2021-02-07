@@ -14,6 +14,15 @@ const StyledContactForm = styled.form`
   background:${props => props.theme.colors.light};
   padding:40px;
   border-radius:5px;
+  & > *{
+    margin-top:20px;
+  }
+  @media (max-width:768px){
+    min-width:90%;
+    & > *{
+      margin-top:20px;
+    }
+  }
 `
 
 const ButtonContainer = styled.div`
@@ -37,9 +46,7 @@ const ContactForm = () => {
         onChange={setName}
       />
       <EmailInput placeholder='Email' value={email} onChange={setEmail}/>
-      <VerticalMarginSeparator marginSize={1.5}/>
       <TextareaInput placeholder='Message' value={message} onChange={setMessage}/>
-      <VerticalMarginSeparator marginSize={5}/>
       <ButtonContainer>
         <Button primary>Send</Button>
       </ButtonContainer>

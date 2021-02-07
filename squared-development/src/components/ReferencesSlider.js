@@ -29,9 +29,17 @@ const ReferencesSlider = ({data, setImageToParent}) => {
     <Swiper
       style={{padding:'100px 0'}}
       spaceBetween={0}
-      slidesPerView={3}
+      slidesPerView={1}
       centeredSlides
       initialSlide={1}
+      breakpoints= {
+        {
+          768: {
+            slidesPerView: 3,
+            spaceBetween: 20
+          },
+        }
+      }
       autoplay={{delay:6000}}
       loop
       onSlideChange={swiper => {

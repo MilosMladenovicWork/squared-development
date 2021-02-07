@@ -42,13 +42,19 @@ const imageHideAndShowReverse = keyframes`
 
 const ImageCover = styled.img`
   width:100%;
-  object-fit:cover;
-  object-position:top center;
   transform:translate(30px, -30px);
   position:absolute;
   top:0;
   left:0;
   box-shadow: 0 0px 4px rgba(0, 0, 0, 0.12);
+  border:none;
+  @media (max-width:768px){
+    width:unset;
+    max-width:100%;
+    position:relative;
+    top:unset;
+    left:unset;
+  }
 `
 
 const ProjectDescription = styled.div`
@@ -57,6 +63,10 @@ const ProjectDescription = styled.div`
   display:flex;
   align-items:center;
   justify-content:center;
+  @media (max-width:768px){ 
+    background-color: unset;
+    padding:15px 15px 70px;
+  }
 `
 
 const ProjectTitle = styled.div`
@@ -71,19 +81,54 @@ const StyledProjectCard = styled.div`
   position: relative;
   width: 57.5vw;
   height: 28.5vw;
+  @media (max-width:768px){
+    background-color: ${props => props.theme.colors.primary};
+    width:90%;
+    height:auto;
+  }
   ${ProjectTitle}{
     width:18.5vw;
+    @media (max-width:768px){
+      width:80%;
+    }
   }
   margin-bottom:10rem;
   ${props => props.mobile && css`
     width: 13vw; 
     ${ProjectTitle}{
       width:10vw;
+      @media (max-width:768px){
+        width:80%;
+      }
+    }
+    @media (max-width:768px){
+      width:90%;
+      height:auto;
     }
   `}
   z-index:5;
   ${ImageCover}{
     animation: ${props => props.hovered ? imageHideAndShowNormal : imageHideAndShowReverse} 1s forwards;
+    @media (max-width:768px){
+      animation:unset;
+    }
+  }
+`
+
+const MobileCoverContainer = styled.div`
+  display:none;
+  @media (max-width:768px){
+    position:relative;
+    width:90%;
+    display:block;
+    background-color: ${props => props.theme.colors.primary};
+  }
+`
+
+const DesktopCoverContainer = styled.div`
+  display:block;
+  @media (max-width:768px){
+    display:none;
   }
 `
 
@@ -93,27 +138,34 @@ const ProjectCard = ({projectImg, mobile, description, title, ...rest}) => {
   const [hovered, setHovered] = useState(false)
 
   return(
-    <StyledProjectCard 
+    <>
+      <MobileCoverContainer>
+        <ImageCover src={projectImg} alt=''/>
+      </MobileCoverContainer>
+      <StyledProjectCard 
       {...rest} 
       mobile={mobile} 
       hovered={hovered}
       onMouseOver={() => setHovered(true)}
       onMouseOut={() => setHovered(false)}
-    >
-      <ProjectDescription>
-        <Detail size={2} horizontalPosition={'left'} verticalPosition={'top'}/>
-        <Detail size={1} backwards horizontalPosition={'right'} verticalPosition={'bottom'}/>
-        <Paragraph display halfWidth alignment="center" textColor="textLight">
-          {description}
-        </Paragraph>
-      </ProjectDescription>
-      <ImageCover src={projectImg} alt=''/>
-      <ProjectTitle>
-        <Paragraph display alignment="center" textColor="textLight">
-          {title}
-        </Paragraph>
-      </ProjectTitle>
-    </StyledProjectCard>
+      >
+        <ProjectDescription>
+          <Detail size={2} horizontalPosition={'left'} verticalPosition={'top'}/>
+          <Detail size={1} backwards horizontalPosition={'right'} verticalPosition={'bottom'}/>
+          <Paragraph display halfWidth alignment="center" textColor="textLight">
+            {description}
+          </Paragraph>
+        </ProjectDescription>
+        <DesktopCoverContainer>
+          <ImageCover src={projectImg} alt=''/>
+        </DesktopCoverContainer>
+        <ProjectTitle>
+          <Paragraph display alignment="center" textColor="textLight">
+            {title}
+          </Paragraph>
+        </ProjectTitle>
+      </StyledProjectCard>
+    </>
   )
 }
 

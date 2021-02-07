@@ -23,6 +23,10 @@ const SquaredContainer = styled.div`
       return 'unset'
     }
   }};
+  @media (max-width: 768px){
+    width:110px;
+    height:110px;
+  }
 `
 
 const SquaredSquare = ({alignment, ...rest}) => {

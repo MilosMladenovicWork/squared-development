@@ -26,36 +26,48 @@ export const GlobalStyle = createGlobalStyle`
     font-size:4rem;
     @media (max-width:768px){
       font-size:2.5rem;
+      margin-top:4rem;
+      margin-bottom:4rem;
     }
   }
   h2{
     font-size:3.5rem;
     @media (max-width:768px){
       font-size:2.25rem;
+      margin-top:3.5rem;
+      margin-bottom:3.5rem;
     }
   }
   h3{
     font-size:3rem;
     @media (max-width:768px){
       font-size:2rem;
+      margin-top:3rem;
+      margin-bottom:3rem;
     }
   }
   h4{
     font-size:2.5rem;
     @media (max-width:768px){
       font-size:1.75rem;
+      margin-top:2.5rem;
+      margin-bottom:2.5rem;
     }
   }
   h5{
     font-size:2rem;
     @media (max-width:768px){
       font-size:1.5rem;
+      margin-top:2rem;
+      margin-bottom:2rem;
     }
   }
   h6{
     font-size:1.75rem;
     @media (max-width:768px){
       font-size:1.25rem;
+      margin-top:1.5rem;
+      margin-bottom:1.5rem;
     }
   }
   a{

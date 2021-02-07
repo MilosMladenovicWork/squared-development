@@ -24,6 +24,7 @@ import IconTextCard from "../components/Cards/IconTextCard"
 import ImageCoverCard from "../components/Cards/ImageCoverCard"
 import projectImg from '../images/Perun.png'
 import projectImgMobile from '../images/Minus1.png'
+import projectImgMobile2 from '../images/mobile-project.png'
 import referenceImg from '../images/reference.png'
 import ReferencesSlider from "../components/ReferencesSlider";
 
@@ -74,6 +75,9 @@ const AboutContentContainer = styled.div`
   flex-direction:row;
   justify-content:space-between;
   align-items:center;
+  @media (max-width: 768px){
+    flex-direction:column;
+  }
 `
 
 const RelativeFullWidthContainer = styled.div`
@@ -89,6 +93,12 @@ const ServicesCardsContainer = styled.div`
   margin:auto;
   margin-top:50px; 
   max-width:1200px;
+  @media (max-width: 768px){
+    flex-direction: column;
+    > *{
+      margin-bottom:30px;
+    }
+  }
 `
 
 const ProjectsContainer = styled.div`
@@ -96,6 +106,10 @@ const ProjectsContainer = styled.div`
   flex-direction:row;
   flex-wrap:wrap;
   justify-content:space-between;
+  @media (max-width:768px){
+    margin-top:30px;
+    flex-direction:column;
+  }
 `
 
 const ReferencesContainer = styled.div`
@@ -294,8 +308,8 @@ const IndexPage = () => {
         <VerticalMarginSeparator marginSize={3}/>
         <ProjectsContainer>
           <ImageCoverCard projectImg={projectImg} title="Project Title" description="Project Description"/>
-          <ImageCoverCard projectImg={projectImgMobile} mobile title="Project Title" description="Project Description"/>
-          <ImageCoverCard projectImg={projectImgMobile} mobile title="Project Title" description="Project Description"/>
+          <ImageCoverCard projectImg={projectImgMobile2} mobile title="Project Title" description="Project Description"/>
+          <ImageCoverCard projectImg={projectImgMobile2} mobile title="Project Title" description="Project Description"/>
           <ImageCoverCard projectImg={projectImg} title="Project Title" description="Project Description"/>
         </ProjectsContainer>  
       </ConstraintContainer>

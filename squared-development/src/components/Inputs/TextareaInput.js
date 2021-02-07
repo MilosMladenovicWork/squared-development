@@ -8,6 +8,7 @@ const StyledTextarea = styled.textarea`
   width:100%;
   outline:none;
   min-height:120px;
+  resize:none;
   font-family:${props => props.theme.font.display};
   color:${props => props.textColor ? (props.theme.colors[props.textColor] ? props.theme.colors[props.textColor] : props.theme.colors.textDark) : props.theme.colors.textDark};
   &&:focus{

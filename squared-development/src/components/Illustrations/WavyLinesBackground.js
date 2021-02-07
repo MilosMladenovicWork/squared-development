@@ -10,13 +10,13 @@ const StyledPath = styled.path`
 
 const translateFullyHorizontally = keyframes`
   0%{
-    transform: translateX(-50vw);
+    transform: translateX(-30%);
   }
   50%{
-    transform: translateX(-65vw);
+    transform: translateX(-45%);
   }
   100%{
-    transform: translateX(-50vw);
+    transform: translateX(-30%);
   }
 `
 
