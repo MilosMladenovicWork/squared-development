@@ -95,6 +95,7 @@ const ServicesCardsContainer = styled.div`
   max-width:1200px;
   @media (max-width: 768px){
     flex-direction: column;
+    align-items:center;
     > *{
       margin-bottom:30px;
     }

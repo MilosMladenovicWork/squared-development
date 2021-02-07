@@ -21,6 +21,9 @@ const DetailContainer = styled.div`
   animation:${rotate} linear infinite;
   animation-duration: ${props => props.size / 0.5}s;
   animation-direction: ${props => props.backwards ? 'reverse' : 'normal'};
+  @media (max-width:768px){
+    width:${props => (props.size ? props.size : 1) * 4 + 'vw'};
+  }
 `
 
 const StyledRect = styled.rect`
