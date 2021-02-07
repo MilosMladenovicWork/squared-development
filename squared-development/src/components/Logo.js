@@ -10,12 +10,17 @@ const StyledPath = styled.path`
   fill: ${props => props.theme.colors.accent};
 `
 
+const StyledSvg = styled.svg`
+  width:100px;
+  @media (max-width:768px){
+    width:65px;
+  }
+`
+
 const Logo = ({children, ...rest}) => {
   return (
-    <svg
+    <StyledSvg
       xmlns="http://www.w3.org/2000/svg"
-      width="102"
-      height="87"
       viewBox="0 0 102 87"
     >
       <g data-name="Group 1" transform="translate(-15 -20)">
@@ -45,7 +50,7 @@ const Logo = ({children, ...rest}) => {
           </tspan>
         </StyledText>
       </g>
-    </svg>
+    </StyledSvg>
   )
 }
 

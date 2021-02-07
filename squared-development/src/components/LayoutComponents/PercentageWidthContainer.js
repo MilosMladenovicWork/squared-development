@@ -4,6 +4,9 @@ import styled from 'styled-components'
 
 const StyledPercentageWidthContainer = styled.div`
   width:${props => props.widthPercentage ? `${props.widthPercentage}%` : '100%'};
+  @media (max-width:768px){
+    width:100%;
+  }
 `
 
 const PercentageWidthContainer = ({children, widthPercentage, ...rest}) => {

@@ -24,21 +24,39 @@ export const GlobalStyle = createGlobalStyle`
   }
   h1{
     font-size:4rem;
+    @media (max-width:768px){
+      font-size:2.5rem;
+    }
   }
   h2{
     font-size:3.5rem;
+    @media (max-width:768px){
+      font-size:2.25rem;
+    }
   }
   h3{
     font-size:3rem;
+    @media (max-width:768px){
+      font-size:2rem;
+    }
   }
   h4{
     font-size:2.5rem;
+    @media (max-width:768px){
+      font-size:1.75rem;
+    }
   }
   h5{
     font-size:2rem;
+    @media (max-width:768px){
+      font-size:1.5rem;
+    }
   }
   h6{
     font-size:1.75rem;
+    @media (max-width:768px){
+      font-size:1.25rem;
+    }
   }
   a{
     color: #F64E3E;

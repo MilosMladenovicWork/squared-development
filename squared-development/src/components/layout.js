@@ -33,6 +33,15 @@ const StyledLayout = styled.div`
 const StyledMain = styled.main`
   position:relative;
   margin-top:170px;
+  @media (max-width: 768px){
+    margin-top:100px;
+  }
+`
+
+const StyledNav = styled.nav`
+  @media (max-width: 768px){
+    display:none;
+  }
 `
 
 const Layout = ({ children }) => {
@@ -56,12 +65,12 @@ const Layout = ({ children }) => {
             <Link to='/'>
               <Logo/>
             </Link>
-            <nav>
+            <StyledNav>
               <Button as={Link} to='#' link>About Us</Button>
               <Button as={Link} to='#' link>Projects</Button>
               <Button as={Link} to='#' link>References</Button>
               <Button as={Link} to='#' clipped>Contact</Button>
-            </nav>
+            </StyledNav>
           </RowSpaceBetween>
         </Header>
         <div>

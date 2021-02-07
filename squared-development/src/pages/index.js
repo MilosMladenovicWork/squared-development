@@ -32,6 +32,26 @@ const HeroBannerContainer = styled.div`
   display:flex;
   align-items:center;
   min-height:70vh;
+  @media (max-width:768px){
+    flex-direction:column;
+    align-items:unset;
+  }
+`
+
+const HeroButtons = styled.div`
+  display:flex;
+  align-items:flex-start; 
+  & > *:first-of-type{
+    margin-right:10px;
+    @media (max-width:768px){
+      margin-right:unset;
+      margin-bottom:10px;
+    }
+  }
+  @media (max-width: 768px){
+    flex-direction:column;
+    margin-bottom:40px; 
+  }
 `
 
 const FluidBackgroundContainer = styled.div`
@@ -41,6 +61,9 @@ const FluidBackgroundContainer = styled.div`
   width:125vw;
   transform:translate(40%, -50%);
   z-index:-1;
+  @media (max-width: 768px){
+    width:130vw;
+  }
 `
 
 const AboutContentContainer = styled.div`
@@ -161,10 +184,10 @@ const IndexPage = () => {
                 We develop professionally designed, fast and attention grabbing experiences.
               </Paragraph>
               <VerticalMarginSeparator marginSize={2}>
-                <Button as={Link} to='#'>Contact Us</Button>
-                <HorizontalMarginSeparator marginSize={2}>
+                <HeroButtons>
+                  <Button as={Link} to='#'>Contact Us</Button>
                   <Button as={Link} to='#' secondary>See our work</Button>
-                </HorizontalMarginSeparator>
+                </HeroButtons>
               </VerticalMarginSeparator>
             </PercentageWidthContainer>
             <PercentageWidthContainer widthPercentage={55}>

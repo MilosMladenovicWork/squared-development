@@ -9,6 +9,10 @@ const HeaderStyled = styled.header`
   top:0;
   z-index:10;
   padding:20px 100px;
+  @media (max-width: 768px){
+    min-height:50px;
+    padding:15px 20px;
+  }
 `
 
 const HeaderBackground = styled.div`
@@ -21,6 +25,9 @@ const HeaderBackground = styled.div`
   svg {
     min-height:100%;
     min-width:100%;
+    @media (max-width:768px){
+      min-width:unset;
+    }
   }
 `
 
