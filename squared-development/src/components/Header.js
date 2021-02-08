@@ -4,15 +4,19 @@ import styled from 'styled-components'
 
 const HeaderStyled = styled.header`
   width:100%;
-  min-height:120px;
   position:fixed;
   top:0;
   z-index:10;
-  padding:20px 100px;
+  padding:20px 100px 0px 100px;
   @media (max-width: 768px){
-    min-height:50px;
     padding:15px 20px;
   }
+`
+
+const BackgroundBody = styled.div`
+  background-color:${props => props.theme.colors.primary};
+  height:100%;
+  max-height:85px;
 `
 
 const HeaderBackground = styled.div`
@@ -23,10 +27,11 @@ const HeaderBackground = styled.div`
   left:0;
   z-index:-1;
   svg {
-    min-height:100%;
+    transform:translateY(-2px);
     min-width:100%;
     @media (max-width:768px){
       min-width:unset;
+      transform:translateY(-5px);
     }
   }
 `
@@ -41,16 +46,14 @@ const Header = ({children, ...rest}) => {
   return (
     <HeaderStyled {...rest}>
       <HeaderBackground>
+        <BackgroundBody/>
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 1920.933 149.24"
-          preserveAspectRatio="none"
+          viewBox="0 0 1928.271 55.831"
         >
           <PathStyled
-            fill="#121212"
-            d="M3948 77.5c-1929.467 29.767-1826.653 120.66-1912.533 20.567-9.6-23.2-6.627-23.187-7.747-52.467.533-23.467-.653-51-.653-51l1887.27 1.158H3948z"
-            data-name="Path 19"
-            transform="translate(-2027.067 5.4)"
+            d="M1990-307.273h1926.969S2244.242-253.94 2106.06-251.515 1990-307.273 1990-307.273z"
+            transform="translate(-1988.699 307.273)"
           ></PathStyled>
         </svg>
       </HeaderBackground>
