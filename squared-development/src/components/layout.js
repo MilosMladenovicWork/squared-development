@@ -5,7 +5,7 @@
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
 
-import React from "react"
+import React, { useState } from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql, Link } from "gatsby"
 
@@ -43,6 +43,37 @@ const StyledNav = styled.nav`
     display:none;
   }
 `
+const StyledMobileNav = styled.nav`
+  display:none;
+  @media (max-width: 768px){
+    display:${props => props.menuClicked ? 'flex' : 'none'};
+    align-items:center;
+    justify-content:space-evenly;
+    flex-direction:column;
+    height:80vh;
+  }
+`
+
+const HeaderMainContent = styled.div`
+  display:flex;
+  justify-content:space-between;
+`
+
+const HamburgerIconContainer = styled.div`
+  width:40px;
+  display:none;
+  svg{
+    width:100%;
+  }
+  @media (max-width:768px){
+    display:block;
+  }
+`
+
+const StyledPath = styled.path`
+  fill: ${props => props.theme.colors.light};
+  stroke: ${props => props.theme.colors.light};
+`
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -55,13 +86,15 @@ const Layout = ({ children }) => {
     }
   `)
 
+  const [menuClicked, setMenuClicked] = useState(false)
+
 
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle/>
       <StyledLayout>
-        <Header>
-          <RowSpaceBetween>
+        <Header menuClicked={menuClicked}>
+          <HeaderMainContent>
             <Link to='/'>
               <Logo/>
             </Link>
@@ -71,7 +104,30 @@ const Layout = ({ children }) => {
               <Button as={Link} to='#' link>References</Button>
               <Button as={Link} to='#' clipped>Contact</Button>
             </StyledNav>
-          </RowSpaceBetween>
+            <HamburgerIconContainer>
+              <svg
+                onClick={() => setMenuClicked(prevState => !prevState)}
+                xmlns="http://www.w3.org/2000/svg"
+                className="ionicon"
+                viewBox="0 0 512 512"
+              >
+                <StyledPath
+                  fill="none"
+                  stroke="red"
+                  strokeLinecap="round"
+                  strokeMiterlimit="10"
+                  strokeWidth="48"
+                  d="M88 152h336M88 256h336M88 360h336"
+                ></StyledPath>
+              </svg>
+            </HamburgerIconContainer>
+          </HeaderMainContent>
+          <StyledMobileNav menuClicked={menuClicked}>
+            <Button as={Link} to='#' link>About Us</Button>
+            <Button as={Link} to='#' link>Projects</Button>
+            <Button as={Link} to='#' link>References</Button>
+            <Button as={Link} to='#' clipped>Contact</Button>
+          </StyledMobileNav>
         </Header>
         <div>
           <StyledMain>{children}</StyledMain>

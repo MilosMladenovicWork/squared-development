@@ -15,8 +15,9 @@ const HeaderStyled = styled.header`
 
 const BackgroundBody = styled.div`
   background-color:${props => props.theme.colors.primary};
-  height:100%;
-  max-height:85px;
+  height:${props => props.menuClicked ? '100vh' : '100%'};
+  max-height:${props => props.menuClicked ? '100vh' : '85px'};
+  transition:0.3s;
 `
 
 const HeaderBackground = styled.div`
@@ -31,7 +32,7 @@ const HeaderBackground = styled.div`
     min-width:100%;
     @media (max-width:768px){
       min-width:unset;
-      transform:translateY(-5px);
+      transform:translateY(-7px);
     }
   }
 `
@@ -42,11 +43,11 @@ const PathStyled = styled.path`
   min-width:100%;
 `
 
-const Header = ({children, ...rest}) => {
+const Header = ({children, menuClicked, ...rest}) => {
   return (
     <HeaderStyled {...rest}>
       <HeaderBackground>
-        <BackgroundBody/>
+        <BackgroundBody menuClicked={menuClicked}/>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 1928.271 55.831"
