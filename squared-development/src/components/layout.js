@@ -123,10 +123,10 @@ const Layout = ({ children }) => {
             </HamburgerIconContainer>
           </HeaderMainContent>
           <StyledMobileNav menuClicked={menuClicked}>
-            <Button as={Link} to='#' link>About Us</Button>
-            <Button as={Link} to='#' link>Projects</Button>
-            <Button as={Link} to='#' link>References</Button>
-            <Button as={Link} to='#' clipped>Contact</Button>
+            <Button display as={Link} to='#' link>About Us</Button>
+            <Button display as={Link} to='#' link>Projects</Button>
+            <Button display as={Link} to='#' link>References</Button>
+            <Button display as={Link} to='#' clipped>Contact</Button>
           </StyledMobileNav>
         </Header>
         <div>
