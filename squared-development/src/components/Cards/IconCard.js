@@ -30,16 +30,19 @@ const IconContainer = styled.div`
 
 const IconCard = ({icon, text, title, button}) => {
   return (
-    <StyledIconCard>
-      <IconContainer>
-        <img src={icon} alt=''/>
-      </IconContainer>
+    <StyledIconCard data-testid="card">
+      {
+        icon &&
+        <IconContainer>
+          <img src={icon} alt=''/>
+        </IconContainer>
+      }
       <VerticalMarginSeparator marginSize={1}/>
-      <Paragraph display alignment="center">
+      <Paragraph display={true} alignment="center">
         "{text}"
       </Paragraph>
       <VerticalMarginSeparator marginSize={1}/>
-      <Paragraph as="h4" display alignment="center">
+      <Paragraph as="h4" display={true} alignment="center">
         {title}
       </Paragraph>
       <VerticalMarginSeparator marginSize={1}/>
