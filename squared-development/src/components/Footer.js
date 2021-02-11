@@ -1,6 +1,7 @@
 import React from 'react'
+import VisibilitySensor from 'react-visibility-sensor'
 
-import styled, {keyframes} from 'styled-components'
+import styled, {keyframes, css} from 'styled-components'
 import Heading from '../components/Heading'
 import VerticalMarginSeparator from '../components/LayoutComponents/VerticalMarginSeparator'
 import ContactForm from './ContactForm'
@@ -22,7 +23,9 @@ const borderCurving = keyframes`
 const CurvyBackgroundContainer = styled.div`
   background:${props => props.theme.colors.light};
   border-radius: 100% 100% 0 0;
-  animation: ${borderCurving} 15s ease-in forwards;
+  ${props => props.isVisible && css`
+    animation: ${borderCurving} 15s ease-in forwards;
+  `}
   animation-iteration-count: infinite;
 `
 
@@ -38,19 +41,23 @@ const Footer = ({children}) => {
       <VerticalMarginSeparator marginSize={2}/>
       {children}
       <WavyLinesBackground fillColor="light"/>
-      <CurvyBackgroundContainer>
-        <VerticalMarginSeparator marginSize={1}/>
-        <Paragraph textColor="textDark" alignment="center">
-        © {new Date().getFullYear()}
-            {` `}
-            <a href="https://www.squareddevelopment.com">
-              <b>
-                Squared Development
-              </b>
-            </a>
-        </Paragraph>
-        <VerticalMarginSeparator marginSize={1}/>
-      </CurvyBackgroundContainer>
+      <VisibilitySensor partialVisibility>
+      {({isVisible}) => {
+        return <CurvyBackgroundContainer isVisible={isVisible}>
+          <VerticalMarginSeparator marginSize={1}/>
+          <Paragraph textColor="textDark" alignment="center">
+          © {new Date().getFullYear()}
+              {` `}
+              <a href="https://www.squareddevelopment.com">
+                <b>
+                  Squared Development
+                </b>
+              </a>
+          </Paragraph>
+          <VerticalMarginSeparator marginSize={1}/>
+        </CurvyBackgroundContainer>
+      }}
+      </VisibilitySensor>
     </footer>
   )
 }

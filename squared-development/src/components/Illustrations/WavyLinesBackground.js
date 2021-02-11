@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
+import VisibilitySensor from 'react-visibility-sensor'
 
-import styled, {keyframes} from 'styled-components'
+import styled, {keyframes, css} from 'styled-components'
 
 const StyledPath = styled.path`
   stroke:${props => props.fillColor ? (props.theme.colors[props.fillColor] ? props.theme.colors[props.fillColor] : props.theme.colors.primary) : props.theme.colors.primary};
@@ -26,7 +27,9 @@ const StyledSvg = styled.svg`
 `
 
 const TranslateContainer = styled.div`
-  animation: ${translateFullyHorizontally} ${props => props.duration}s forwards;
+  ${props => props.isVisible && css`
+    animation: ${translateFullyHorizontally} ${props => props.duration}s forwards;
+  `}
   animation-iteration-count:infinite;
   position:relative;
   left:${props => props.startPosition}%;
@@ -53,11 +56,16 @@ const WavyLinesBackground = ({fillColor, ...props}) => {
   const [numOfLines, setNumOfLines] = useState(15)
   
   const createLine = (startPosition, duration) => {
-    return <TranslateContainer startPosition={startPosition} duration={duration}>
+    return <VisibilitySensor partialVisibility>
+    {({isVisible}) => {
+      return <TranslateContainer isVisible={isVisible} startPosition={startPosition} duration={duration}>
         <StyledSvg xmlns="http://www.w3.org/2000/svg" width="3249.589" height="213.976" viewBox="0 0 3249.589 213.976">
         <StyledPath fillColor={fillColor} id="WavyLine" d="M181.636,5167.748s288.332-224.217,597.24,0,691.327,0,691.327,0,198.254-158.629,576.787,0,711.78,0,711.78,0,282.258-234.565,666.782,0" transform="translate(-178.567 -5058.459)" fill="none" stroke-width="10" opacity="0.1"/>
       </StyledSvg>
       </TranslateContainer>
+    }}
+    </VisibilitySensor>
+    
   }
 
 

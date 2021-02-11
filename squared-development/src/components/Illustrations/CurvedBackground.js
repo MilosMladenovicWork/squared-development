@@ -1,4 +1,5 @@
-import React, {useState} from 'react'
+import React, {useState, useRef} from 'react'
+import VisibilitySensor from 'react-visibility-sensor'
 
 import styled from 'styled-components'
 
@@ -33,8 +34,20 @@ const IllustrationBody = styled.div`
 
 const CurvedBackground = ({fillColor, hideBottom, hideTop, topVariant}, ...rest) => {
   
+  const svgVariant0 = useRef(null)
+  const svgVariant1 = useRef(null)
+  const svgBottom = useRef(null)
+
   const [topVariants, setTopVariants] = useState([
-    <svg
+    <VisibilitySensor partialVisibility>
+      {({isVisible}) => {
+        if(isVisible){
+          svgVariant0.current && svgVariant0.current.unpauseAnimations()
+        }else{
+          svgVariant0.current && svgVariant0.current.pauseAnimations()
+        }
+          return <svg
+          ref={svgVariant0}
           xmlns="http://www.w3.org/2000/svg"
           height="100%"
           viewBox="0 0 1914.2 105.822"
@@ -65,39 +78,50 @@ const CurvedBackground = ({fillColor, hideBottom, hideTop, topVariant}, ...rest)
               to=""
             ></animate>
           </StyledPath>
-        </svg>,
-
-        <svg 
-          xmlns="http://www.w3.org/2000/svg" 
-          height="100%" 
-          viewBox="0 0 1920 161.997"
-        >
-          <StyledPath
-            id="three-waves" 
-            d="M0-9.683s121.31-120.435,344.727,0c57.195,30.831,162.448,126.171,230.191,83.147C707.017-3.979,863.039-102.165,1082.99-41.267,1299.981,21.171,1340.413,133.7,1455.576,73.464,1696.064-107.237,1920-9.683,1920-9.683V98.788H0Z" 
-            transform="translate(0 63.209)" 
-            {...rest}
-            fillColor={fillColor}
-          >
-            <animate
-              fill="freeze"
-              attributeName="d"
-              attributeType="XML"
-              dur={`10s`}
-              repeatCount="indefinite"
-              calcMode="spline"
-              keySplines="0.4 0 0.2 1; 0.4 0 0.2 1; 0.4 0 0.2 1"
-              values="
-              M0-9.683s121.31-120.435,344.727,0c57.195,30.831,162.448,126.171,230.191,83.147C707.017-3.979,863.039-102.165,1082.99-41.267,1299.981,21.171,1340.413,133.7,1455.576,73.464,1696.064-107.237,1920-9.683,1920-9.683V98.788H0Z;
-              M0,73.464S-3.939,84.242,0,28.485C82.424,52.107,214.378,100.6,282.121,57.576c132.1-77.443,344.242-189.091,620.606,0,143.03,36.364,210.909-118.788,453.333-101.818C1608.182-41.818,1920,73.464,1920,73.464V98.788H0Z;
-              M0,73.464s-3.939-35.283,0-91.04c88.182,60.606,316.2,43.024,383.939,0,132.1-77.443,438.788,38.788,819.394,75.152,164.848-33.94,162.424-87.273,407.272-96.97C1862.727-36.97,1920,73.464,1920,73.464V98.788H0Z;
-                M0-9.683s121.31-120.435,344.727,0c57.195,30.831,162.448,126.171,230.191,83.147C707.017-3.979,863.039-102.165,1082.99-41.267,1299.981,21.171,1340.413,133.7,1455.576,73.464,1696.064-107.237,1920-9.683,1920-9.683V98.788H0Z;  
-              "
-              from=""
-              to=""
-            ></animate>
-          </StyledPath>
         </svg>
+      }}
+    </VisibilitySensor>,
+        <VisibilitySensor partialVisibility>
+        {({isVisible}) => {
+          if(isVisible){
+            svgVariant1.current && svgVariant1.current.unpauseAnimations()
+          }else{
+            svgVariant1.current && svgVariant1.current.pauseAnimations()
+          }
+          return <svg 
+            ref={svgVariant1}
+            xmlns="http://www.w3.org/2000/svg" 
+            height="100%" 
+            viewBox="0 0 1920 161.997"
+          >
+            <StyledPath
+              id="three-waves" 
+              d="M0-9.683s121.31-120.435,344.727,0c57.195,30.831,162.448,126.171,230.191,83.147C707.017-3.979,863.039-102.165,1082.99-41.267,1299.981,21.171,1340.413,133.7,1455.576,73.464,1696.064-107.237,1920-9.683,1920-9.683V98.788H0Z" 
+              transform="translate(0 63.209)" 
+              {...rest}
+              fillColor={fillColor}
+            >
+              <animate
+                fill="freeze"
+                attributeName="d"
+                attributeType="XML"
+                dur={`10s`}
+                repeatCount="indefinite"
+                calcMode="spline"
+                keySplines="0.4 0 0.2 1; 0.4 0 0.2 1; 0.4 0 0.2 1"
+                values="
+                M0-9.683s121.31-120.435,344.727,0c57.195,30.831,162.448,126.171,230.191,83.147C707.017-3.979,863.039-102.165,1082.99-41.267,1299.981,21.171,1340.413,133.7,1455.576,73.464,1696.064-107.237,1920-9.683,1920-9.683V98.788H0Z;
+                M0,73.464S-3.939,84.242,0,28.485C82.424,52.107,214.378,100.6,282.121,57.576c132.1-77.443,344.242-189.091,620.606,0,143.03,36.364,210.909-118.788,453.333-101.818C1608.182-41.818,1920,73.464,1920,73.464V98.788H0Z;
+                M0,73.464s-3.939-35.283,0-91.04c88.182,60.606,316.2,43.024,383.939,0,132.1-77.443,438.788,38.788,819.394,75.152,164.848-33.94,162.424-87.273,407.272-96.97C1862.727-36.97,1920,73.464,1920,73.464V98.788H0Z;
+                  M0-9.683s121.31-120.435,344.727,0c57.195,30.831,162.448,126.171,230.191,83.147C707.017-3.979,863.039-102.165,1082.99-41.267,1299.981,21.171,1340.413,133.7,1455.576,73.464,1696.064-107.237,1920-9.683,1920-9.683V98.788H0Z;  
+                "
+                from=""
+                to=""
+              ></animate>
+            </StyledPath>
+          </svg>
+        }}
+        </VisibilitySensor>
   ])
   
   return (
@@ -119,38 +143,48 @@ const CurvedBackground = ({fillColor, hideBottom, hideTop, topVariant}, ...rest)
       />
       {
         !hideBottom &&
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          height="100%"
-          viewBox="0 0 1914.2 82"
-        >
-          <StyledPath
-            data-testid="styled-path"
-            {...rest}
-            fillColor={fillColor}
-            d="M4321 2158v-82h1914.2v82s-651.556-56.4-985.6-56.4S4321 2158 4321 2158z"
-            data-name="Path 383"
-            transform="translate(-4321 -2076)"
+        <VisibilitySensor partialVisibility>
+        {({isVisible}) => {
+          if(isVisible){
+            svgBottom.current && svgBottom.current.unpauseAnimations()
+          }else{
+            svgBottom.current && svgBottom.current.pauseAnimations()
+          }
+          return <svg
+            ref={svgBottom}
+            xmlns="http://www.w3.org/2000/svg"
+            height="100%"
+            viewBox="0 0 1914.2 82"
           >
-            <animate
-              fill="freeze"
-              attributeName="d"
-              attributeType="XML"
-              dur={`10s`}
-              repeatCount="indefinite"
-              calcMode="spline"
-              keySplines="0.4 0 0.2 1; 0.4 0 0.2 1; 0.4 0 0.2 1"
-              values="
-                M4321 2158v-82h1914.2v82s-651.556-56.4-985.6-56.4S4321 2158 4321 2158z;
-                M4321,2158v-82H6235.2v82s-149.6-130.8-985.6-56.4S4321,2158,4321,2158Z;
-                M4321,2158v-82H6235.2v82s-144.8,14.8-985.6-56.4S4321,2158,4321,2158Z;
-                M4321 2158v-82h1914.2v82s-651.556-56.4-985.6-56.4S4321 2158 4321 2158z;  
-              "
-              from=""
-              to=""
-            ></animate>
-          </StyledPath>
-        </svg>
+            <StyledPath
+              data-testid="styled-path"
+              {...rest}
+              fillColor={fillColor}
+              d="M4321 2158v-82h1914.2v82s-651.556-56.4-985.6-56.4S4321 2158 4321 2158z"
+              data-name="Path 383"
+              transform="translate(-4321 -2076)"
+            >
+              <animate
+                fill="freeze"
+                attributeName="d"
+                attributeType="XML"
+                dur={`10s`}
+                repeatCount="indefinite"
+                calcMode="spline"
+                keySplines="0.4 0 0.2 1; 0.4 0 0.2 1; 0.4 0 0.2 1"
+                values="
+                  M4321 2158v-82h1914.2v82s-651.556-56.4-985.6-56.4S4321 2158 4321 2158z;
+                  M4321,2158v-82H6235.2v82s-149.6-130.8-985.6-56.4S4321,2158,4321,2158Z;
+                  M4321,2158v-82H6235.2v82s-144.8,14.8-985.6-56.4S4321,2158,4321,2158Z;
+                  M4321 2158v-82h1914.2v82s-651.556-56.4-985.6-56.4S4321 2158 4321 2158z;  
+                "
+                from=""
+                to=""
+              ></animate>
+            </StyledPath>
+          </svg>
+        }}
+        </VisibilitySensor>
       }
     </IllustrationContainer>
   )

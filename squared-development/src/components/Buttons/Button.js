@@ -1,6 +1,7 @@
 import React from 'react'
 
 import styled, {css, keyframes} from 'styled-components'
+import VisibilitySensor from 'react-visibility-sensor'
 
 const clippingAnimation = keyframes`
   0%{
@@ -62,7 +63,10 @@ const StyledButton = styled.button`
   `}
   ${props => props.clipped && css`
     clip-path: polygon(1.5em 0%, 100% 0%, calc(100% - 1.5em) 100%, 0% 100%);
-    animation: ${clippingAnimation} 8s forwards;
+    ${props => props.isVisible && css`
+      animation: ${clippingAnimation} 8s forwards;
+    `
+    }
     animation-iteration-count:infinite;
     > ${Overlay}{
       top:unset;
@@ -104,19 +108,24 @@ const StyledButton = styled.button`
 
 const Button = ({children, secondary, clipped, link, ...rest}) => {
   return (
-    <StyledButton
-      data-testid="button" {...rest}
-      secondary={secondary}
-      clipped={clipped}
-      link={link}
-    >
-      <Overlay
-        secondary={secondary}
-        clipped={clipped}
-        link={link}
-      />
-      {children}
-    </StyledButton>
+    <VisibilitySensor>
+      {({isVisible}) => {
+        return <StyledButton
+          data-testid="button" {...rest}
+          secondary={secondary}
+          clipped={clipped}
+          link={link}
+          isVisible={isVisible}
+        >
+          <Overlay
+            secondary={secondary}
+            clipped={clipped}
+            link={link}
+          />
+          {children}
+        </StyledButton>
+      }}
+    </VisibilitySensor>
   )
 }
 
