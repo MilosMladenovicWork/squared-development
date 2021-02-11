@@ -218,7 +218,7 @@ const IndexPage = () => {
     <AboutContentContainer>
       <CurvedBackground />
       <ConstraintContainer>
-        <section>
+        <section id="about">
           <AboutContentContainer>
             <PercentageWidthContainer widthPercentage={50}>
               <PeopleOutside fillColor="accent"/>
@@ -299,59 +299,63 @@ const IndexPage = () => {
       <Detail size={3} backwards horizontalPosition={'left'} verticalPosition={'top'}/>
       <Detail size={4} horizontalPosition={'right'} verticalPosition={'bottom'}/>
       <ConstraintContainer>
-        <Heading alignment="left" accent>
-          Our Latest Work
-        </Heading>
-        <VerticalMarginSeparator marginSize={1}/>
-        <Paragraph alignment="left" display halfWidth>
-          Lorem ipsum description. Lorem ipsum description. Lorem ipsum description. Lorem ipsum description. Lorem ipsum description. Lorem ipsum description. Lorem ipsum description. 
-        </Paragraph>
-        <VerticalMarginSeparator marginSize={3}/>
-        <ProjectsContainer>
-          <ImageCoverCard projectImg={projectImg} title="Project Title" description="Project Description"/>
-          <ImageCoverCard projectImg={projectImgMobile2} mobile title="Project Title" description="Project Description"/>
-          <ImageCoverCard projectImg={projectImgMobile2} mobile title="Project Title" description="Project Description"/>
-          <ImageCoverCard projectImg={projectImg} title="Project Title" description="Project Description"/>
-        </ProjectsContainer>  
+        <section id="projects">
+          <Heading alignment="left" accent>
+            Our Latest Work
+          </Heading>
+          <VerticalMarginSeparator marginSize={1}/>
+          <Paragraph alignment="left" display halfWidth>
+            Lorem ipsum description. Lorem ipsum description. Lorem ipsum description. Lorem ipsum description. Lorem ipsum description. Lorem ipsum description. Lorem ipsum description. 
+          </Paragraph>
+          <VerticalMarginSeparator marginSize={3}/>
+          <ProjectsContainer>
+            <ImageCoverCard projectImg={projectImg} title="Project Title" description="Project Description"/>
+            <ImageCoverCard projectImg={projectImgMobile2} mobile title="Project Title" description="Project Description"/>
+            <ImageCoverCard projectImg={projectImgMobile2} mobile title="Project Title" description="Project Description"/>
+            <ImageCoverCard projectImg={projectImg} title="Project Title" description="Project Description"/>
+          </ProjectsContainer>  
+        </section>
       </ConstraintContainer>
     </RelativeFullWidthContainer>
     <RelativeFullWidthContainer>
-      <ReferencesBackgroundContainer toggle={toggleReferencesBackground}>
-        <img src={referenceSectionImage} alt=''/>
-      </ReferencesBackgroundContainer>
-      <ConstraintContainer>
-        <Heading alignment="right" accent>
-          References
-        </Heading>
-      </ConstraintContainer>
-      <ReferencesContainer>
-        <ReferencesSlider
-          data={[
-            {
-              icon: projectImg,
-              title: 'Client Name',
-              text: 'Some short refrence description text here. Some short refrence description text here. Some short refrence description text here.',
-              button: 'Project name',
-              projectImg: projectImg
-            },
-            {
-              icon: projectImg,
-              title: 'Client Name',
-              text: 'Some short refrence description text here. Some short refrence description text here. Some short refrence description text here.',
-              button: 'Project name',
-              projectImg: projectImg
-            },
-            {
-              icon: projectImg,
-              title: 'Client Name',
-              text: 'Some short refrence description text here. Some short refrence description text here. Some short refrence description text here.',
-              button: 'Project name',
-              projectImg: referenceImg
-            },
-          ]}
-          setImageToParent={(image) => setReferenceSectionImage(image)}
-        />
-      </ReferencesContainer>
+      <section id="references">
+        <ReferencesBackgroundContainer toggle={toggleReferencesBackground}>
+          <img src={referenceSectionImage} alt=''/>
+        </ReferencesBackgroundContainer>
+        <ConstraintContainer>
+          <Heading alignment="right" accent>
+            References
+          </Heading>
+        </ConstraintContainer>
+        <ReferencesContainer>
+          <ReferencesSlider
+            data={[
+              {
+                icon: projectImg,
+                title: 'Client Name',
+                text: 'Some short refrence description text here. Some short refrence description text here. Some short refrence description text here.',
+                button: 'Project name',
+                projectImg: projectImg
+              },
+              {
+                icon: projectImg,
+                title: 'Client Name',
+                text: 'Some short refrence description text here. Some short refrence description text here. Some short refrence description text here.',
+                button: 'Project name',
+                projectImg: projectImg
+              },
+              {
+                icon: projectImg,
+                title: 'Client Name',
+                text: 'Some short refrence description text here. Some short refrence description text here. Some short refrence description text here.',
+                button: 'Project name',
+                projectImg: referenceImg
+              },
+            ]}
+            setImageToParent={(image) => setReferenceSectionImage(image)}
+          />
+        </ReferencesContainer>
+      </section>
     </RelativeFullWidthContainer>
   </Layout>
   )

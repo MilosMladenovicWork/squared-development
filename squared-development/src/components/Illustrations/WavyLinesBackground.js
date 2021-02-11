@@ -43,6 +43,8 @@ const IllustrationContainer =  styled.div`
   display:flex;
   flex-direction:column;
   justify-content: flex-start;
+  height:100%;
+  overflow:hidden;
 `
 
 const WavyLinesBackground = ({fillColor, ...props}) => {

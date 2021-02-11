@@ -19,6 +19,9 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing:border-box;
     font-family: ${props => props.theme.font.regular};
   }
+  html{
+    scroll-behavior:smooth;
+  }
   body{
     margin:0;
   }

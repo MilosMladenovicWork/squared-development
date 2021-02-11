@@ -43,9 +43,30 @@ const StyledButton = styled.button`
   `}
 `
 
-const Button = ({children, ...rest}) => {
+const Overlay = styled.div`
+  background:${props => props.theme.colors.primary}
+  width:100%;
+  height:100%;
+  position:absolute;
+  top:0;
+  left:0;
+`
+
+const Button = ({children, secondary, clipped, link, ...rest}) => {
   return (
-    <StyledButton data-testid="button" {...rest}>{children}</StyledButton>
+    <StyledButton
+      data-testid="button" {...rest}
+      secondary={secondary}
+      clipped={clipped}
+      link={link}
+    >
+      <Overlay
+        secondary={secondary}
+        clipped={clipped}
+        link={link}
+      />
+      {children}
+    </StyledButton>
   )
 }
 

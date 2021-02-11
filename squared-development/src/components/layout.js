@@ -99,10 +99,10 @@ const Layout = ({ children }) => {
               <Logo/>
             </Link>
             <StyledNav>
-              <Button as={Link} to='#' link>About Us</Button>
-              <Button as={Link} to='#' link>Projects</Button>
-              <Button as={Link} to='#' link>References</Button>
-              <Button as={Link} to='#' clipped>Contact</Button>
+              <Button as={Link} to='/#about' link>About Us</Button>
+              <Button as={Link} to='/#projects' link>Projects</Button>
+              <Button as={Link} to='/#references' link>References</Button>
+              <Button as={Link} to='/#contact' clipped>Contact</Button>
             </StyledNav>
             <HamburgerIconContainer>
               <svg
@@ -123,10 +123,10 @@ const Layout = ({ children }) => {
             </HamburgerIconContainer>
           </HeaderMainContent>
           <StyledMobileNav menuClicked={menuClicked}>
-            <Button display as={Link} to='#' link>About Us</Button>
-            <Button display as={Link} to='#' link>Projects</Button>
-            <Button display as={Link} to='#' link>References</Button>
-            <Button display as={Link} to='#' clipped>Contact</Button>
+            <Button display as={Link} to='/#about' link>About Us</Button>
+            <Button display as={Link} to='/#projects' link>Projects</Button>
+            <Button display as={Link} to='/#references' link>References</Button>
+            <Button display as={Link} to='/#contact' clipped>Contact</Button>
           </StyledMobileNav>
         </Header>
         <div>

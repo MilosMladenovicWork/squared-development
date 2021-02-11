@@ -28,7 +28,7 @@ const CurvyBackgroundContainer = styled.div`
 
 const Footer = ({children}) => {
   return(
-    <footer>
+    <footer id="contact">
       <VerticalMarginSeparator marginSize={5}/>
       <Heading alignment="center" accent textColor="textLight">
         Contact Us
