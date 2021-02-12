@@ -54,6 +54,17 @@ const StyledMobileNav = styled.nav`
   }
 `
 
+const CloseIcon = styled.div`
+  width:40px;
+  height:40px;
+  display:unset;
+  position:absolute;
+  right:20px;
+  transition:0.3s;
+  transform: ${props => props.menuOpened ? 'translateY(0px)' : 'translateY(-100px)'};
+  opacity: ${props => props.menuOpened ? 1 : 0};
+`
+
 const HeaderMainContent = styled.div`
   display:flex;
   justify-content:space-between;
@@ -61,11 +72,14 @@ const HeaderMainContent = styled.div`
 
 const HamburgerIconContainer = styled.div`
   width:40px;
+  transition:0.3s;
   display:none;
   svg{
     width:100%;
   }
   @media (max-width:768px){
+    transform: ${props => props.menuOpened ? 'translateY(-100px)' : 'translateY(0px)'};
+    opacity: ${props => props.menuOpened ? 0 : 1};
     display:block;
   }
 `
@@ -104,7 +118,7 @@ const Layout = ({ children }) => {
               <Button as={Link} to='/#references' link>References</Button>
               <Button as={Link} to='/#contact' clipped>Contact</Button>
             </StyledNav>
-            <HamburgerIconContainer>
+            <HamburgerIconContainer menuOpened={menuClicked}>
               <svg
                 onClick={() => setMenuClicked(prevState => !prevState)}
                 xmlns="http://www.w3.org/2000/svg"
@@ -117,10 +131,15 @@ const Layout = ({ children }) => {
                   strokeLinecap="round"
                   strokeMiterlimit="10"
                   strokeWidth="48"
-                  d="M88 152h336M88 256h336M88 360h336"
+                  d="M88 152h336M168 256h252M256 360h168"
                 ></StyledPath>
               </svg>
             </HamburgerIconContainer>
+            <CloseIcon menuOpened={menuClicked} onClick={() => setMenuClicked(prevState => !prevState)}>
+              <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
+                <StyledPath d="M289.94 256l95-95A24 24 0 00351 127l-95 95-95-95a24 24 0 00-34 34l95 95-95 95a24 24 0 1034 34l95-95 95 95a24 24 0 0034-34z"/>
+              </svg>
+            </CloseIcon>
           </HeaderMainContent>
           <StyledMobileNav menuClicked={menuClicked}>
             <Button display as={Link} to='/#about' link>About Us</Button>

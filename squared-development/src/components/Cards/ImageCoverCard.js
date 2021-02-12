@@ -81,6 +81,7 @@ const StyledProjectCard = styled.div`
   position: relative;
   width: 57.5vw;
   height: 28.5vw;
+  transform:translateY(-2px);
   @media (max-width:768px){
     background-color: ${props => props.theme.colors.primary};
     width:90%;

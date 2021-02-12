@@ -75,5 +75,9 @@ export const GlobalStyle = createGlobalStyle`
   }
   a{
     color: #F64E3E;
+    transition:0.3s;
+  }
+  a:hover{
+    opacity:0.6;
   }
 `
