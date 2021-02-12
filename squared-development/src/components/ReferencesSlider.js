@@ -2,9 +2,11 @@ import React, {useEffect, useState} from 'react'
 import VisibilitySensor from 'react-visibility-sensor'
 import {Swiper, SwiperSlide} from 'swiper/react';
 import SwiperCore, { Autoplay } from 'swiper';
-import 'swiper/swiper.scss';
+import swiperStyles from 'swiper/swiper.scss';
 import styled from 'styled-components'
 import IconCard from "./Cards/IconCard"
+
+console.log(swiperStyles)
 
 const CardContainer = styled.div`
   display:flex;
