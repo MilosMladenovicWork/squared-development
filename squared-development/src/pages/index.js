@@ -28,6 +28,7 @@ import projectImgMobile2 from '../images/mobile-project.png'
 import referenceImg from '../images/reference.png'
 import ReferencesSlider from "../components/ReferencesSlider";
 import TickMarksCard from '../components/Cards/TickMarksCard'
+import ScalingSquares from "../components/Illustrations/ScalingSquares";
 
 
 const HeroBannerContainer = styled.div`
@@ -329,8 +330,8 @@ const IndexPage = () => {
       </ConstraintContainer>
     </AboutContentContainer>
     <RelativeFullWidthContainer>
-      <Detail size={10} backwards horizontalPosition={'left'} verticalPosition={'top'}/>
-      <Detail size={5} horizontalPosition={'right'} verticalPosition={'bottom'}/>
+      <ScalingSquares size={7} backwards horizontalPosition={'left'} verticalPosition={'top'}/>
+      <ScalingSquares size={5} horizontalPosition={'right'} verticalPosition={'bottom'}/>
       <ConstraintContainer>
         <section>
           <Heading alignment={'center'} accent>
