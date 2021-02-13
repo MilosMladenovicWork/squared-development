@@ -39,9 +39,20 @@ const HeroBannerContainer = styled.div`
   }
 `
 
+const heroAppear = keyframes`
+  0%{
+    opacity:0
+  }
+  100%{
+    opacity:1
+  }
+`
+
 const HeroButtons = styled.div`
   display:flex;
-  align-items:flex-start; 
+  align-items:flex-start;
+  opacity:0;
+  animation: ${heroAppear} 0.5s 2.25s forwards; 
   & > *:first-of-type{
     margin-right:10px;
     @media (max-width:768px){
@@ -176,6 +187,21 @@ const StyledSvg = styled.svg`
   transform: ${props => props.cardHovered ? 'translateY(20px)' : 'translateY(-20px)'}; 
 `
 
+const HeroHeadingContainer = styled.div`
+  opacity:0;
+  animation: ${heroAppear} 0.5s forwards;
+`
+
+const HeroDescriptionContainer = styled.div`
+  opacity:0;
+  animation: ${heroAppear} 0.5s 0.75s forwards;
+`
+
+const HeroIllustrationContainer = styled.div`
+  opacity:0;
+  animation: ${heroAppear} 0.5s 1.5s forwards;
+`
+
 const IndexPage = () => {
 
   const [referenceSectionImage, setReferenceSectionImage] = useState('')
@@ -194,10 +220,14 @@ const IndexPage = () => {
         <section>
           <HeroBannerContainer>
             <PercentageWidthContainer widthPercentage={45}>
-              <Heading alignment={'left'}>Squared Development Agency</Heading>
-              <Paragraph display>
-                We develop professionally designed, fast and attention grabbing experiences.
-              </Paragraph>
+              <HeroHeadingContainer>
+                <Heading alignment={'left'}>Squared Development Agency</Heading>
+              </HeroHeadingContainer>
+              <HeroDescriptionContainer>
+                <Paragraph display>
+                  We develop professionally designed, fast and attention grabbing experiences.
+                </Paragraph>
+              </HeroDescriptionContainer>
               <VerticalMarginSeparator marginSize={2}>
                 <HeroButtons>
                   <Button as={Link} to='#'>Contact Us</Button>
@@ -206,7 +236,9 @@ const IndexPage = () => {
               </VerticalMarginSeparator>
             </PercentageWidthContainer>
             <PercentageWidthContainer widthPercentage={55}>
-              <DeveloperMakingSite/>
+              <HeroIllustrationContainer>
+                <DeveloperMakingSite/>
+              </HeroIllustrationContainer>
             </PercentageWidthContainer>
             <FluidBackgroundContainer>
               <Fluid/>
