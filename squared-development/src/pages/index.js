@@ -247,27 +247,6 @@ const IndexPage = () => {
         </section>
       </FullHeightContainer>
     </ConstraintContainer>
-    <AboutContentContainer>
-      <CurvedBackground />
-      <ConstraintContainer>
-        <section id="about">
-          <AboutContentContainer>
-            <PercentageWidthContainer widthPercentage={50}>
-              <PeopleOutside fillColor="accent"/>
-            </PercentageWidthContainer>
-            <PercentageWidthContainer widthPercentage={40}>
-              <Heading alignment={'right'} accent textColor="textLight">About us</Heading>
-              <Paragraph alignment={'right'} textColor="textLight">
-                Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum.
-              </Paragraph>
-              <Paragraph alignment={'right'} textColor="textLight">
-                Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. 
-              </Paragraph>
-            </PercentageWidthContainer>
-          </AboutContentContainer>
-        </section>
-      </ConstraintContainer>
-    </AboutContentContainer>
     <RelativeFullWidthContainer>
       <Detail size={10} backwards horizontalPosition={'left'} verticalPosition={'top'}/>
       <Detail size={5} horizontalPosition={'right'} verticalPosition={'bottom'}/>
@@ -326,6 +305,27 @@ const IndexPage = () => {
         </section>
       </ConstraintContainer>
     </RelativeFullWidthContainer>
+    <AboutContentContainer>
+      <CurvedBackground />
+      <ConstraintContainer>
+        <section id="about">
+          <AboutContentContainer>
+            <PercentageWidthContainer widthPercentage={50}>
+              <PeopleOutside fillColor="accent"/>
+            </PercentageWidthContainer>
+            <PercentageWidthContainer widthPercentage={40}>
+              <Heading alignment={'right'} accent textColor="textLight">About us</Heading>
+              <Paragraph alignment={'right'} textColor="textLight">
+                Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum.
+              </Paragraph>
+              <Paragraph alignment={'right'} textColor="textLight">
+                Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. 
+              </Paragraph>
+            </PercentageWidthContainer>
+          </AboutContentContainer>
+        </section>
+      </ConstraintContainer>
+    </AboutContentContainer>
     <VerticalMarginSeparator marginSize={4}/>
     <RelativeFullWidthContainer>
       <Detail size={3} backwards horizontalPosition={'left'} verticalPosition={'top'}/>

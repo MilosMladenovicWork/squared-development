@@ -84,20 +84,6 @@ const HamburgerIconContainer = styled.div`
   }
 `
 
-const dropDown = keyframes`
-  0%{
-    transform:translateY(-150px);
-  }
-  100%{
-    transform:translateY(0%);
-  }
-`
-
-const AnimatedHeaderContainer = styled.div`
-  transform:translateY(-150px);
-  animation: ${dropDown} 0.5s 2s forwards;
-`
-
 const StyledPath = styled.path`
   fill: ${props => props.theme.colors.light};
   stroke: ${props => props.theme.colors.light};
@@ -121,49 +107,47 @@ const Layout = ({ children }) => {
     <ThemeProvider theme={theme}>
       <GlobalStyle/>
       <StyledLayout>
-        <AnimatedHeaderContainer>
-          <Header menuClicked={menuClicked}>
-            <HeaderMainContent>
-              <Link to='/'>
-                <Logo/>
-              </Link>
-              <StyledNav>
-                <Button as={Link} to='/#about' link>About Us</Button>
-                <Button as={Link} to='/#projects' link>Projects</Button>
-                <Button as={Link} to='/#references' link>References</Button>
-                <Button as={Link} to='/#contact' clipped>Contact</Button>
-              </StyledNav>
-              <HamburgerIconContainer menuOpened={menuClicked}>
-                <svg
-                  onClick={() => setMenuClicked(prevState => !prevState)}
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="ionicon"
-                  viewBox="0 0 512 512"
-                >
-                  <StyledPath
-                    fill="none"
-                    stroke="red"
-                    strokeLinecap="round"
-                    strokeMiterlimit="10"
-                    strokeWidth="48"
-                    d="M88 152h336M168 256h252M256 360h168"
-                  ></StyledPath>
-                </svg>
-              </HamburgerIconContainer>
-              <CloseIcon menuOpened={menuClicked} onClick={() => setMenuClicked(prevState => !prevState)}>
-                <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
-                  <StyledPath d="M289.94 256l95-95A24 24 0 00351 127l-95 95-95-95a24 24 0 00-34 34l95 95-95 95a24 24 0 1034 34l95-95 95 95a24 24 0 0034-34z"/>
-                </svg>
-              </CloseIcon>
-            </HeaderMainContent>
-            <StyledMobileNav menuClicked={menuClicked}>
-              <Button display as={Link} to='/#about' link>About Us</Button>
-              <Button display as={Link} to='/#projects' link>Projects</Button>
-              <Button display as={Link} to='/#references' link>References</Button>
-              <Button display as={Link} to='/#contact' clipped>Contact</Button>
-            </StyledMobileNav>
-          </Header>
-        </AnimatedHeaderContainer>
+        <Header menuClicked={menuClicked}>
+          <HeaderMainContent>
+            <Link to='/'>
+              <Logo/>
+            </Link>
+            <StyledNav>
+              <Button as={Link} to='/#about' link>About Us</Button>
+              <Button as={Link} to='/#projects' link>Projects</Button>
+              <Button as={Link} to='/#references' link>References</Button>
+              <Button as={Link} to='/#contact' clipped>Contact</Button>
+            </StyledNav>
+            <HamburgerIconContainer menuOpened={menuClicked}>
+              <svg
+                onClick={() => setMenuClicked(prevState => !prevState)}
+                xmlns="http://www.w3.org/2000/svg"
+                className="ionicon"
+                viewBox="0 0 512 512"
+              >
+                <StyledPath
+                  fill="none"
+                  stroke="red"
+                  strokeLinecap="round"
+                  strokeMiterlimit="10"
+                  strokeWidth="48"
+                  d="M88 152h336M168 256h252M256 360h168"
+                ></StyledPath>
+              </svg>
+            </HamburgerIconContainer>
+            <CloseIcon menuOpened={menuClicked} onClick={() => setMenuClicked(prevState => !prevState)}>
+              <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
+                <StyledPath d="M289.94 256l95-95A24 24 0 00351 127l-95 95-95-95a24 24 0 00-34 34l95 95-95 95a24 24 0 1034 34l95-95 95 95a24 24 0 0034-34z"/>
+              </svg>
+            </CloseIcon>
+          </HeaderMainContent>
+          <StyledMobileNav menuClicked={menuClicked}>
+            <Button display as={Link} to='/#about' link>About Us</Button>
+            <Button display as={Link} to='/#projects' link>Projects</Button>
+            <Button display as={Link} to='/#references' link>References</Button>
+            <Button display as={Link} to='/#contact' clipped>Contact</Button>
+          </StyledMobileNav>
+        </Header>
         <div>
           <StyledMain>{children}</StyledMain>
           <RelativeFullWidthContainer>

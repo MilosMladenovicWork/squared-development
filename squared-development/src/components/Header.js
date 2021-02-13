@@ -1,6 +1,15 @@
 import React from 'react'
 
-import styled from 'styled-components'
+import styled, {keyframes} from 'styled-components'
+
+const dropDown = keyframes`
+  0%{
+    transform:translateY(-150px);
+  }
+  100%{
+    transform:translateY(0%);
+  }
+`
 
 const HeaderStyled = styled.header`
   width:100%;
@@ -8,6 +17,8 @@ const HeaderStyled = styled.header`
   top:0;
   z-index:10;
   padding:20px 100px 0px 100px;
+  transform:translateY(-150px);
+  animation: ${dropDown} 0.5s 2s forwards;
   @media (max-width: 768px){
     padding:15px 20px;
   }
