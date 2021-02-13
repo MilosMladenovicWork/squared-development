@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
@@ -14,6 +18,13 @@ module.exports = {
           families: ['Fredoka One']
         }
       }
+    },
+    {
+      resolve: `gatsby-plugin-tawk.to`,
+      options: {
+        tawkId: process.env.TAWK_ID,
+        // get this from the tawk script widget
+      },
     },
     `gatsby-plugin-react-helmet`,
     {
