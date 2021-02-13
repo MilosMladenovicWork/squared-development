@@ -27,6 +27,7 @@ import projectImgMobile from '../images/Minus1.png'
 import projectImgMobile2 from '../images/mobile-project.png'
 import referenceImg from '../images/reference.png'
 import ReferencesSlider from "../components/ReferencesSlider";
+import TickMarksCard from '../components/Cards/TickMarksCard'
 
 
 const HeroBannerContainer = styled.div`
@@ -302,6 +303,7 @@ const IndexPage = () => {
               }
             />
           </ServicesCardsContainer>
+          <VerticalMarginSeparator marginSize={2}/>
         </section>
       </ConstraintContainer>
     </RelativeFullWidthContainer>
@@ -326,6 +328,136 @@ const IndexPage = () => {
         </section>
       </ConstraintContainer>
     </AboutContentContainer>
+    <RelativeFullWidthContainer>
+      <Detail size={10} backwards horizontalPosition={'left'} verticalPosition={'top'}/>
+      <Detail size={5} horizontalPosition={'right'} verticalPosition={'bottom'}/>
+      <ConstraintContainer>
+        <section>
+          <Heading alignment={'center'} accent>
+            Pricing
+          </Heading>
+          <Paragraph halfWidth display alignment={'center'}>
+            Lorem ipsum description. Lorem ipsum description. Lorem ipsum description. Lorem ipsum description. Lorem ipsum description. Lorem ipsum description. Lorem ipsum description. 
+          </Paragraph>
+          <ServicesCardsContainer>
+            <TickMarksCard 
+              heading="Service Heading"
+              subheading="From 200$"
+              text="Service body text. Service body text. Service body text. Service body text. "
+              listItems={[
+                {
+                  available: true,
+                  text: 'Lorem ipsum description. Lorem ipsum description.'
+                },
+                {
+                  available: true,
+                  text: 'Lorem ipsum description. Lorem ipsum description.'
+                },
+                {
+                  available: true,
+                  text: 'Lorem ipsum description. Lorem ipsum description.'
+                },
+                {
+                  available: false,
+                  text: 'Lorem ipsum description. Lorem ipsum description.'
+                },
+                {
+                  available: false,
+                  text: 'Lorem ipsum description. Lorem ipsum description.'
+                },
+                {
+                  available: false,
+                  text: 'Lorem ipsum description. Lorem ipsum description.'
+                },
+              ]}
+              icon={ (cardHovered) =>
+                <StyledSvg cardHovered={cardHovered} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 416 288">
+                  <StyledPath fillColor={cardHovered ? 'accent' : 'textDark'} id="albums" d="M419.13,448H92.87A44.92,44.92,0,0,1,48,403.13V204.87A44.92,44.92,0,0,1,92.87,160H419.13A44.92,44.92,0,0,1,464,204.87V403.13A44.92,44.92,0,0,1,419.13,448Z" transform="translate(-48 -160)"/>
+                </StyledSvg>
+              }
+            />
+            <TickMarksCard 
+              heading="Service Heading"
+              subheading="From 500$ to 1200$"
+              text="Service body text. Service body text. Service body text. Service body text. "
+              listItems={[
+                {
+                  available: true,
+                  text: 'Lorem ipsum description. Lorem ipsum description.'
+                },
+                {
+                  available: true,
+                  text: 'Lorem ipsum description. Lorem ipsum description.'
+                },
+                {
+                  available: true,
+                  text: 'Lorem ipsum description. Lorem ipsum description.'
+                },
+                {
+                  available: false,
+                  text: 'Lorem ipsum description. Lorem ipsum description.'
+                },
+                {
+                  available: false,
+                  text: 'Lorem ipsum description. Lorem ipsum description.'
+                },
+                {
+                  available: false,
+                  text: 'Lorem ipsum description. Lorem ipsum description.'
+                },
+              ]}
+              icon={ (cardHovered) =>
+                <StyledSvg cardHovered={cardHovered} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 416 336">
+                  <StyledPath fillColor={cardHovered ? 'accent' : 'textDark'} id="albums" d="M400,144H112a16,16,0,0,1,0-32H400a16,16,0,0,1,0,32Zm19.13,304H92.87A44.92,44.92,0,0,1,48,403.13V204.87A44.92,44.92,0,0,1,92.87,160H419.13A44.92,44.92,0,0,1,464,204.87V403.13A44.92,44.92,0,0,1,419.13,448Z" transform="translate(-48 -112)"/>
+                </StyledSvg>
+              }
+              />
+            <TickMarksCard 
+              heading="Service Heading"
+              subheading="From 1200$"
+              text="Service body text. Service body text. Service body text. Service body text. "
+              listItems={[
+                {
+                  available: true,
+                  text: 'Lorem ipsum description. Lorem ipsum description.'
+                },
+                {
+                  available: true,
+                  text: 'Lorem ipsum description. Lorem ipsum description.'
+                },
+                {
+                  available: true,
+                  text: 'Lorem ipsum description. Lorem ipsum description.'
+                },
+                {
+                  available: false,
+                  text: 'Lorem ipsum description. Lorem ipsum description.'
+                },
+                {
+                  available: false,
+                  text: 'Lorem ipsum description. Lorem ipsum description.'
+                },
+                {
+                  available: false,
+                  text: 'Lorem ipsum description. Lorem ipsum description.'
+                },
+              ]}
+              icon={ (cardHovered) =>
+                <StyledSvg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="ionicon"
+                  viewBox="0 0 512 512"
+                  cardHovered={cardHovered}
+                >
+                  <StyledPath fillColor={cardHovered ? 'accent' : 'textDark'} d="M368 96H144a16 16 0 010-32h224a16 16 0 010 32zm32 48H112a16 16 0 010-32h288a16 16 0 010 32zm19.13 304H92.87A44.92 44.92 0 0148 403.13V204.87A44.92 44.92 0 0192.87 160h326.26A44.92 44.92 0 01464 204.87v198.26A44.92 44.92 0 01419.13 448z"/>
+                </StyledSvg>
+              }
+            />
+          </ServicesCardsContainer>
+          <VerticalMarginSeparator marginSize={2}/>
+        </section>
+      </ConstraintContainer>
+    </RelativeFullWidthContainer>
     <VerticalMarginSeparator marginSize={4}/>
     <RelativeFullWidthContainer>
       <Detail size={3} backwards horizontalPosition={'left'} verticalPosition={'top'}/>

@@ -7,6 +7,8 @@ export const theme = {
     light: "#fefefe",
     textLight: '#ffffff',
     textDark: '#121212',
+    error: '#61010C',
+    success: '#1D6100',
   },
   font:{
     display: "'Fredoka One', Arial, Helvetica, sans-serif",
