@@ -142,10 +142,10 @@ const Layout = ({ children }) => {
             </CloseIcon>
           </HeaderMainContent>
           <StyledMobileNav menuClicked={menuClicked}>
-            <Button display as={Link} to='/#about' link>About Us</Button>
-            <Button display as={Link} to='/#projects' link>Projects</Button>
-            <Button display as={Link} to='/#references' link>References</Button>
-            <Button display as={Link} to='/#contact' clipped>Contact</Button>
+            <Button display as={Link} to='/#about' link onClick={() => setMenuClicked(prevState => !prevState)}>About Us</Button>
+            <Button display as={Link} to='/#projects' link onClick={() => setMenuClicked(prevState => !prevState)}>Projects</Button>
+            <Button display as={Link} to='/#references' link onClick={() => setMenuClicked(prevState => !prevState)}>References</Button>
+            <Button display as={Link} to='/#contact' clipped onClick={() => setMenuClicked(prevState => !prevState)}>Contact</Button>
           </StyledMobileNav>
         </Header>
         <div>
