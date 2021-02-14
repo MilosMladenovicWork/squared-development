@@ -21,7 +21,7 @@ SwiperCore.use([Autoplay])
 
 const ReferencesSlider = ({data, setImageToParent}) => {
   
-  const [activeSlide, setActiveSlide] = useState(1)
+  const [activeSlide, setActiveSlide] = useState()
   const [background, setBackground] = useState()
   const [swiperReference, setSwiperReference] = useState()
 
