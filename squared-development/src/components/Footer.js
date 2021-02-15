@@ -48,7 +48,7 @@ const Footer = ({children, activeSection: activeSectionStore}) => {
   }
 
   return(
-    <VisibilitySensor partialVisibility offset={{top: typeof window !== undefined && window.innerHeight/2}} onChange={(isVisible) => handleSectionVisibility(isVisible, '/#contact')}>
+    <VisibilitySensor partialVisibility offset={{top: typeof window !== 'undefined' && window.innerHeight/2}} onChange={(isVisible) => handleSectionVisibility(isVisible, '/#contact')}>
       <footer id="contact">
         <VerticalMarginSeparator marginSize={5}/>
         <Heading alignment="center" accent textColor="textLight">
