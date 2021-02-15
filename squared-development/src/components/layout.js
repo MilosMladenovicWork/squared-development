@@ -7,6 +7,7 @@
 
 import React, { useState } from "react"
 import PropTypes from "prop-types"
+import {inject, observer} from 'mobx-react'
 import { useStaticQuery, graphql, Link } from "gatsby"
 
 import styled, {ThemeProvider, keyframes} from 'styled-components'
@@ -89,7 +90,10 @@ const StyledPath = styled.path`
   stroke: ${props => props.theme.colors.light};
 `
 
-const Layout = ({ children }) => {
+const Layout = ({ children, activeSection}) => {
+
+  const {activeSectionId} = activeSection
+
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -113,10 +117,10 @@ const Layout = ({ children }) => {
               <Logo/>
             </Link>
             <StyledNav>
-              <Button as={Link} to='/#about' link>About Us</Button>
-              <Button as={Link} to='/#projects' link>Projects</Button>
-              <Button as={Link} to='/#references' link>References</Button>
-              <Button as={Link} to='/#contact' clipped>Contact</Button>
+              <Button as={Link} to='/#about' link active={activeSectionId === '/#about'}>About Us</Button>
+              <Button as={Link} to='/#projects' link active={activeSectionId === '/#projects'}>Projects</Button>
+              <Button as={Link} to='/#references' link active={activeSectionId === '/#references'}>References</Button>
+              <Button as={Link} to='/#contact' clipped active={activeSectionId === '/#contact'}>Contact</Button>
             </StyledNav>
             <HamburgerIconContainer menuOpened={menuClicked}>
               <svg
@@ -142,10 +146,10 @@ const Layout = ({ children }) => {
             </CloseIcon>
           </HeaderMainContent>
           <StyledMobileNav menuClicked={menuClicked}>
-            <Button display as={Link} to='/#about' link onClick={() => setMenuClicked(prevState => !prevState)}>About Us</Button>
-            <Button display as={Link} to='/#projects' link onClick={() => setMenuClicked(prevState => !prevState)}>Projects</Button>
-            <Button display as={Link} to='/#references' link onClick={() => setMenuClicked(prevState => !prevState)}>References</Button>
-            <Button display as={Link} to='/#contact' clipped onClick={() => setMenuClicked(prevState => !prevState)}>Contact</Button>
+            <Button display as={Link} to='/#about' link active={activeSectionId === '/#about'} onClick={() => setMenuClicked(prevState => !prevState)}>About Us</Button>
+            <Button display as={Link} to='/#projects' link active={activeSectionId === '/#projects'} onClick={() => setMenuClicked(prevState => !prevState)}>Projects</Button>
+            <Button display as={Link} to='/#references' link active={activeSectionId === '/#references'} onClick={() => setMenuClicked(prevState => !prevState)}>References</Button>
+            <Button display as={Link} to='/#contact' clipped active={activeSectionId === '/#contact'} onClick={() => setMenuClicked(prevState => !prevState)}>Contact</Button>
           </StyledMobileNav>
         </Header>
         <div>
@@ -165,4 +169,4 @@ Layout.propTypes = {
   children: PropTypes.node.isRequired,
 }
 
-export default Layout
+export default inject('activeSection')(observer(Layout))

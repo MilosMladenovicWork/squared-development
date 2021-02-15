@@ -217,6 +217,8 @@ const IndexPage = ({activeSection: activeSectionStore}) => {
 
   
   const handleSectionVisibility = (isVisible, id) => {
+    console.log(isVisible, id)
+    console.log(activeSectionId, lastActiveSectionId)
     if(isVisible){
       if(activeSectionId !== id){
         activeSectionStore.setActiveSectionId(id)
@@ -228,12 +230,13 @@ const IndexPage = ({activeSection: activeSectionStore}) => {
     }
   }
 
+
   return(
   <Layout>
     <SEO title="Home" />
     <ConstraintContainer>
       <FullHeightContainer>
-        <ReactVisibilitySensor partialVisibility onChange={(isVisible) => handleSectionVisibility(isVisible, '#home')}>
+        <ReactVisibilitySensor partialVisibility offset={{top:window && window.innerHeight/2}} onChange={(isVisible) => handleSectionVisibility(isVisible, '/#home')}>
           <section>
             <HeroBannerContainer>
               <PercentageWidthContainer widthPercentage={45}>
@@ -269,7 +272,7 @@ const IndexPage = ({activeSection: activeSectionStore}) => {
       <Detail size={10} backwards horizontalPosition={'left'} verticalPosition={'top'}/>
       <Detail size={5} horizontalPosition={'right'} verticalPosition={'bottom'}/>
       <ConstraintContainer>
-      <ReactVisibilitySensor partialVisibility onChange={(isVisible) => handleSectionVisibility(isVisible, '#services')}>
+      <ReactVisibilitySensor partialVisibility offset={{top:window && window.innerHeight/2}} onChange={(isVisible) => handleSectionVisibility(isVisible, '/#services')}>
           <section>
             <Heading alignment={'center'} accent>
               OUR SERVICES
@@ -329,7 +332,7 @@ const IndexPage = ({activeSection: activeSectionStore}) => {
     <AboutContentContainer>
       <CurvedBackground />
       <ConstraintContainer>
-      <ReactVisibilitySensor partialVisibility onChange={(isVisible) => handleSectionVisibility(isVisible, '#about')}>
+      <ReactVisibilitySensor partialVisibility offset={{top:window && window.innerHeight/2}} onChange={(isVisible) => handleSectionVisibility(isVisible, '/#about')}>
           <section id="about">
             <AboutContentContainer>
               <PercentageWidthContainer widthPercentage={50}>
@@ -353,7 +356,7 @@ const IndexPage = ({activeSection: activeSectionStore}) => {
       <ScalingSquares size={7} backwards horizontalPosition={'left'} verticalPosition={'top'}/>
       <ScalingSquares size={5} horizontalPosition={'right'} verticalPosition={'bottom'}/>
       <ConstraintContainer>
-        <ReactVisibilitySensor partialVisibility onChange={(isVisible) => handleSectionVisibility(isVisible, '#pricing')}>
+        <ReactVisibilitySensor partialVisibility offset={{top:window && window.innerHeight/2}} onChange={(isVisible) => handleSectionVisibility(isVisible, '/#pricing')}>
           <section>
             <Heading alignment={'center'} accent>
               Pricing
@@ -486,7 +489,7 @@ const IndexPage = ({activeSection: activeSectionStore}) => {
       <Detail size={3} backwards horizontalPosition={'left'} verticalPosition={'top'}/>
       <Detail size={4} horizontalPosition={'right'} verticalPosition={'bottom'}/>
       <ConstraintContainer>
-      <ReactVisibilitySensor partialVisibility onChange={(isVisible) => handleSectionVisibility(isVisible, '#projects')}>
+      <ReactVisibilitySensor partialVisibility offset={{top:window && window.innerHeight/2}} onChange={(isVisible) => handleSectionVisibility(isVisible, '/#projects')}>
         <section id="projects">
           <Heading alignment="left" accent>
             Our Latest Work
@@ -507,7 +510,7 @@ const IndexPage = ({activeSection: activeSectionStore}) => {
       </ConstraintContainer>
     </RelativeFullWidthContainer>
     <RelativeFullWidthContainer>
-      <ReactVisibilitySensor partialVisibility onChange={(isVisible) => handleSectionVisibility(isVisible, '#references')}>
+      <ReactVisibilitySensor partialVisibility offset={{top:window && window.innerHeight/2}} onChange={(isVisible) => handleSectionVisibility(isVisible, '/#references')}>
         <section id="references">
           <ReferencesBackgroundContainer toggle={toggleReferencesBackground}>
             <img src={referenceSectionImage} alt=''/>

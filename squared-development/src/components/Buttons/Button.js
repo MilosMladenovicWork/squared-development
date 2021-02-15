@@ -53,6 +53,12 @@ const StyledButton = styled.button`
       height:calc(100% + 6px);
     }
   }
+  ${props => props.active && css`
+    > ${Overlay}{
+      width:calc(100% + 6px);
+      height:calc(100% + 6px);
+    }
+  `}
   ${props => props.display && css`
     font-family:${props => props.theme.font.display};
   `};
@@ -84,6 +90,15 @@ const StyledButton = styled.button`
         height:3px;
       }
     }
+    ${props.active && css`
+      background-color:${props => props.theme.colors.primary};
+      border:3px solid ${props => props.theme.colors.primary};
+      color: ${props => props.theme.colors.accent};
+      > ${Overlay}{
+        width:100%;
+        height:3px;
+      }
+    `}
   `
   }
   ${props => props.link && css`
@@ -102,6 +117,13 @@ const StyledButton = styled.button`
         height:3px;
       }
     }
+    ${props => props.active && css`
+      color:${props => props.theme.colors.accent};
+      > ${Overlay}{
+        width:100%;
+        height:3px;
+      }
+    `}
   `}
 `
 
