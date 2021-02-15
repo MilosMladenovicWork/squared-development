@@ -10,7 +10,7 @@ import PropTypes from "prop-types"
 import {inject, observer} from 'mobx-react'
 import { useStaticQuery, graphql, Link } from "gatsby"
 
-import styled, {ThemeProvider, keyframes} from 'styled-components'
+import styled, {ThemeProvider, keyframes, css} from 'styled-components'
 
 import {theme, GlobalStyle} from '../styles/styles'
 
@@ -44,14 +44,45 @@ const StyledNav = styled.nav`
     display:none;
   }
 `
+
+const heightChange = keyframes`
+  0%{
+    max-height:0vh;
+  }
+  100%{
+    max-height:100vh;
+  }
+`
+const heightChangeReverse = keyframes`
+  0%{
+    max-height:100vh;
+  }
+  100%{
+    max-height:0vh;
+  }
+`
+
 const StyledMobileNav = styled.nav`
   display:none;
   @media (max-width: 768px){
-    display:${props => props.menuClicked ? 'flex' : 'none'};
+    display:flex;
     align-items:center;
     justify-content:space-evenly;
     flex-direction:column;
     height:80vh;
+    max-height:0;
+    overflow:hidden;
+    ${props => props.menuClicked ? css`
+      animation:${heightChange} 0.2s forwards;
+    `
+    :
+    (
+      props.menuClicked !== undefined &&
+      css`
+        animation:${heightChangeReverse} 0.1s forwards;
+      `
+    )
+  }
   }
 `
 
@@ -104,7 +135,7 @@ const Layout = ({ children, activeSection}) => {
     }
   `)
 
-  const [menuClicked, setMenuClicked] = useState(false)
+  const [menuClicked, setMenuClicked] = useState(undefined)
 
 
   return (
