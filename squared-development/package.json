@@ -20,6 +20,8 @@
     "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-source-filesystem": "^2.5.0",
     "gatsby-transformer-sharp": "^2.6.0",
+    "mobx": "^6.1.6",
+    "mobx-react": "^7.1.0",
     "node-sass": "^5.0.0",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
