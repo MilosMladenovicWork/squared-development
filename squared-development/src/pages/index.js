@@ -245,13 +245,13 @@ const IndexPage = ({activeSection: activeSectionStore}) => {
                 </HeroHeadingContainer>
                 <HeroDescriptionContainer>
                   <Paragraph display>
-                    We develop professionally designed, fast and attention grabbing experiences.
+                    We develop professionally designed, fast and attention grabbing websites and web applications.
                   </Paragraph>
                 </HeroDescriptionContainer>
                 <VerticalMarginSeparator marginSize={2}>
                   <HeroButtons>
-                    <Button as={Link} to='#'>Contact Us</Button>
-                    <Button as={Link} to='#' secondary>See our work</Button>
+                    <Button as={Link} to='/#contact'>Contact Us</Button>
+                    <Button as={Link} to='/#projects' secondary>See our work</Button>
                   </HeroButtons>
                 </VerticalMarginSeparator>
               </PercentageWidthContainer>
@@ -278,26 +278,12 @@ const IndexPage = ({activeSection: activeSectionStore}) => {
               OUR SERVICES
             </Heading>
             <Paragraph halfWidth display alignment={'center'}>
-              Lorem ipsum description. Lorem ipsum description. Lorem ipsum description. Lorem ipsum description. Lorem ipsum description. Lorem ipsum description. Lorem ipsum description. 
+              We provide everything you need for your company website so you can focus on what matters the most, your product. Also, you are going to get exactly what you need in time interval that you set. Our services include:    
             </Paragraph>
             <ServicesCardsContainer>
               <IconTextCard 
-                heading="Service Heading"
-                text="Service body text. Service body text. Service body text. Service body text. "
-                icon={ (cardHovered) =>
-                  <StyledSvg
-                  cardHovered={cardHovered}
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="ionicon"
-                  viewBox="0 0 512 512"
-                  >
-                    <StyledPath fillColor={cardHovered ? 'accent' : 'textLight'} d='M156 432h-40a36 36 0 01-36-36V244a36 36 0 0136-36h40a36 36 0 0136 36v152a36 36 0 01-36 36zM300 432h-40a36 36 0 01-36-36V196a36 36 0 0136-36h40a36 36 0 0136 36v200a36 36 0 01-36 36zM443.64 432h-40a36 36 0 01-36-36V132a36 36 0 0136-36h40a36 36 0 0136 36v264a36 36 0 01-36 36z'/>
-                  </StyledSvg>
-                }
-              />
-              <IconTextCard 
-                heading="Service Heading"
-                text="Service body text. Service body text. Service body text. Service body text. "
+                heading="Custom Website Design"
+                text="We are going to create original and user friendly design so your clients can feel quality of your product by just looking at your website."
                 icon={ (cardHovered) =>
                   <StyledSvg
                   cardHovered={cardHovered}
@@ -310,8 +296,8 @@ const IndexPage = ({activeSection: activeSectionStore}) => {
                 }
               />
               <IconTextCard 
-                heading="Service Heading"
-                text="Service body text. Service body text. Service body text. Service body text. "
+                heading="Free Hosting"
+                text="We offer free hosting for websites that we build so you don't need to think about additional costs associated with your website."
                 icon={ (cardHovered) =>
                   <StyledSvg
                   cardHovered={cardHovered}
@@ -320,6 +306,20 @@ const IndexPage = ({activeSection: activeSectionStore}) => {
                   viewBox="0 0 512 512"
                   >
                     <StyledPath fillColor={cardHovered ? 'accent' : 'textLight'} d='M432 32H80a64.07 64.07 0 00-64 64v320a64.07 64.07 0 0064 64h352a64.07 64.07 0 0064-64V96a64.07 64.07 0 00-64-64zM96 256a16 16 0 01-10-28.49L150.39 176 86 124.49a16 16 0 1120-25l80 64a16 16 0 010 25l-80 64A16 16 0 0196 256zm160 0h-64a16 16 0 010-32h64a16 16 0 010 32z'/>
+                  </StyledSvg>
+                }
+              />
+              <IconTextCard 
+                heading="Maintenance and Scaling"
+                text="Whenever you want you can expand on your website and add exciting stuff, like live chat. When you are too busy with your clients you can ask us to maintain your website for you."
+                icon={ (cardHovered) =>
+                  <StyledSvg
+                  cardHovered={cardHovered}
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="ionicon"
+                  viewBox="0 0 512 512"
+                  >
+                    <StyledPath fillColor={cardHovered ? 'accent' : 'textLight'} d='M156 432h-40a36 36 0 01-36-36V244a36 36 0 0136-36h40a36 36 0 0136 36v152a36 36 0 01-36 36zM300 432h-40a36 36 0 01-36-36V196a36 36 0 0136-36h40a36 36 0 0136 36v200a36 36 0 01-36 36zM443.64 432h-40a36 36 0 01-36-36V132a36 36 0 0136-36h40a36 36 0 0136 36v264a36 36 0 01-36 36z'/>
                   </StyledSvg>
                 }
               />
@@ -333,22 +333,23 @@ const IndexPage = ({activeSection: activeSectionStore}) => {
       <CurvedBackground />
       <ConstraintContainer>
       <ReactVisibilitySensor partialVisibility offset={{top: typeof window !== 'undefined' && window.innerHeight/2}} onChange={(isVisible) => handleSectionVisibility(isVisible, '/#about')}>
-          <section id="about">
-            <AboutContentContainer>
-              <PercentageWidthContainer widthPercentage={50}>
-                <PeopleOutside fillColor="accent"/>
-              </PercentageWidthContainer>
-              <PercentageWidthContainer widthPercentage={40}>
-                <Heading alignment={'right'} accent textColor="textLight">About us</Heading>
-                <Paragraph alignment={'right'} textColor="textLight">
-                  Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum.
-                </Paragraph>
-                <Paragraph alignment={'right'} textColor="textLight">
-                  Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. Lorem ipsum. 
-                </Paragraph>
-              </PercentageWidthContainer>
-            </AboutContentContainer>
-          </section>
+        <section id="about">
+          <AboutContentContainer>
+            <PercentageWidthContainer widthPercentage={50}>
+              <PeopleOutside fillColor="accent"/>
+            </PercentageWidthContainer>
+            <PercentageWidthContainer widthPercentage={40}>
+              <Heading alignment={'right'} accent textColor="textLight">About us</Heading>
+              <Paragraph alignment={'right'} textColor="textLight">
+                We are team of developers and designers with a mission of creating engaging and user friendly websites and web applications.
+              </Paragraph>
+              <VerticalMarginSeparator marginSize={0.25}/>
+              <Paragraph alignment={'right'} textColor="textLight">
+                With use of latest technologies we are creating websites that can stand test of time with good design and appear on 1st page of Google results.
+              </Paragraph>
+            </PercentageWidthContainer>
+          </AboutContentContainer>
+        </section>
       </ReactVisibilitySensor>
       </ConstraintContainer>
     </AboutContentContainer>
@@ -362,37 +363,41 @@ const IndexPage = ({activeSection: activeSectionStore}) => {
               Pricing
             </Heading>
             <Paragraph halfWidth display alignment={'center'}>
-              Lorem ipsum description. Lorem ipsum description. Lorem ipsum description. Lorem ipsum description. Lorem ipsum description. Lorem ipsum description. Lorem ipsum description. 
+              We divided price ranges in three packages with different included services, but feel free to contact us so we can negotiate the price.  
             </Paragraph>
             <ServicesCardsContainer>
               <TickMarksCard 
-                heading="Service Heading"
+                heading="Basic"
                 subheading="From 200$"
-                text="Service body text. Service body text. Service body text. Service body text. "
+                text="Small website for starting out your business."
                 listItems={[
                   {
                     available: true,
-                    text: 'Lorem ipsum description. Lorem ipsum description.'
+                    text: 'Custom Design'
                   },
                   {
                     available: true,
-                    text: 'Lorem ipsum description. Lorem ipsum description.'
+                    text: 'Free Hosting'
                   },
                   {
                     available: true,
-                    text: 'Lorem ipsum description. Lorem ipsum description.'
+                    text: 'Analytics'
+                  },
+                  {
+                    available: true,
+                    text: 'Up to 3 pages'
+                  },
+                  {
+                    available: true,
+                    text: 'SEO'
                   },
                   {
                     available: false,
-                    text: 'Lorem ipsum description. Lorem ipsum description.'
+                    text: 'Custom CMS'
                   },
                   {
                     available: false,
-                    text: 'Lorem ipsum description. Lorem ipsum description.'
-                  },
-                  {
-                    available: false,
-                    text: 'Lorem ipsum description. Lorem ipsum description.'
+                    text: 'Advanced Custom Features'
                   },
                 ]}
                 icon={ (cardHovered) =>
@@ -402,33 +407,37 @@ const IndexPage = ({activeSection: activeSectionStore}) => {
                 }
               />
               <TickMarksCard 
-                heading="Service Heading"
+                heading="Advanced"
                 subheading="From 500$ to 1200$"
-                text="Service body text. Service body text. Service body text. Service body text. "
+                text="Medium websites where you can change page data using Custom CMS."
                 listItems={[
                   {
                     available: true,
-                    text: 'Lorem ipsum description. Lorem ipsum description.'
+                    text: 'Custom Design'
                   },
                   {
                     available: true,
-                    text: 'Lorem ipsum description. Lorem ipsum description.'
+                    text: 'Free Hosting'
                   },
                   {
                     available: true,
-                    text: 'Lorem ipsum description. Lorem ipsum description.'
+                    text: 'Analytics'
                   },
                   {
-                    available: false,
-                    text: 'Lorem ipsum description. Lorem ipsum description.'
+                    available: true,
+                    text: 'Up to 10 pages'
                   },
                   {
-                    available: false,
-                    text: 'Lorem ipsum description. Lorem ipsum description.'
+                    available: true,
+                    text: 'SEO'
                   },
                   {
-                    available: false,
-                    text: 'Lorem ipsum description. Lorem ipsum description.'
+                    available: true,
+                    text: 'Custom CMS'
+                  },
+                  {
+                    available: true,
+                    text: 'Advanced Custom Features'
                   },
                 ]}
                 icon={ (cardHovered) =>
@@ -438,33 +447,37 @@ const IndexPage = ({activeSection: activeSectionStore}) => {
                 }
                 />
               <TickMarksCard 
-                heading="Service Heading"
+                heading="Professional"
                 subheading="From 1200$"
-                text="Service body text. Service body text. Service body text. Service body text. "
+                text="Large websites with lots of pages and visitors."
                 listItems={[
                   {
                     available: true,
-                    text: 'Lorem ipsum description. Lorem ipsum description.'
+                    text: 'Custom Design'
                   },
                   {
                     available: true,
-                    text: 'Lorem ipsum description. Lorem ipsum description.'
+                    text: 'Free Hosting'
                   },
                   {
                     available: true,
-                    text: 'Lorem ipsum description. Lorem ipsum description.'
+                    text: 'Analytics'
                   },
                   {
-                    available: false,
-                    text: 'Lorem ipsum description. Lorem ipsum description.'
+                    available: true,
+                    text: 'More than 10 pages'
                   },
                   {
-                    available: false,
-                    text: 'Lorem ipsum description. Lorem ipsum description.'
+                    available: true,
+                    text: 'SEO'
                   },
                   {
-                    available: false,
-                    text: 'Lorem ipsum description. Lorem ipsum description.'
+                    available: true,
+                    text: 'Custom CMS'
+                  },
+                  {
+                    available: true,
+                    text: 'Advanced Custom Features'
                   },
                 ]}
                 icon={ (cardHovered) =>
@@ -496,7 +509,7 @@ const IndexPage = ({activeSection: activeSectionStore}) => {
           </Heading>
           <VerticalMarginSeparator marginSize={1}/>
           <Paragraph alignment="left" display halfWidth>
-            Lorem ipsum description. Lorem ipsum description. Lorem ipsum description. Lorem ipsum description. Lorem ipsum description. Lorem ipsum description. Lorem ipsum description. 
+            We are proud to showcase our most recent work. 
           </Paragraph>
           <VerticalMarginSeparator marginSize={3}/>
           <ProjectsContainer>
