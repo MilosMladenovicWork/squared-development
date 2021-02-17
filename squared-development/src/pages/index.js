@@ -23,6 +23,7 @@ import PeopleOutside from '../components/Illustrations/PeopleOutside'
 import Detail from "../components/Illustrations/Detail"
 import IconTextCard from "../components/Cards/IconTextCard"
 import ImageCoverCard from "../components/Cards/ImageCoverCard"
+import perunProject from '../images/Perun.png'
 import projectImg from '../images/Perun.png'
 import projectImgMobile from '../images/Minus1.png'
 import projectImgMobile2 from '../images/mobile-project.png'
@@ -537,25 +538,11 @@ const IndexPage = ({activeSection: activeSectionStore}) => {
             <ReferencesSlider
               data={[
                 {
-                  icon: projectImg,
-                  title: 'Client Name',
-                  text: 'Some short refrence description text here. Some short refrence description text here. Some short refrence description text here.',
-                  button: 'Project name',
-                  projectImg: projectImg
-                },
-                {
-                  icon: projectImg,
-                  title: 'Client Name',
-                  text: 'Some short refrence description text here. Some short refrence description text here. Some short refrence description text here.',
-                  button: 'Project name',
-                  projectImg: projectImg
-                },
-                {
-                  icon: projectImg,
-                  title: 'Client Name',
-                  text: 'Some short refrence description text here. Some short refrence description text here. Some short refrence description text here.',
-                  button: 'Project name',
-                  projectImg: referenceImg
+                  title: 'Mahamud Hassan',
+                  text: 'Definetely top notch! Looking forward to the next project!',
+                  button: 'Perun',
+                  buttonLink: 'https://perun.network',
+                  projectImg: perunProject
                 },
               ]}
               setImageToParent={(image) => setReferenceSectionImage(image)}

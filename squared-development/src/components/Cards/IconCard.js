@@ -1,10 +1,12 @@
 import React from 'react'
+import {Link} from 'gatsby'
 
 import styled from 'styled-components'
 import Button from '../Buttons/Button'
 import Heading from '../Heading'
 import VerticalMarginSeparator from '../LayoutComponents/VerticalMarginSeparator'
 import Paragraph from '../Paragraph'
+import defaultIcon from '../../images/person-circle.svg'
 
 const StyledIconCard = styled.div`
   width:27.5vw;
@@ -18,7 +20,7 @@ const StyledIconCard = styled.div`
 `
 
 const IconContainer = styled.div`
-  width:50%;
+  width:40%;
   overflow:hidden;
   img {
     width:100%;
@@ -28,15 +30,17 @@ const IconContainer = styled.div`
   }
 `
 
-const IconCard = ({icon, text, title, button}) => {
+const IconCard = ({icon, text, title, button, buttonLink}) => {
   return (
     <StyledIconCard data-testid="card">
-      {
-        icon &&
         <IconContainer>
+        {
+          icon ?
           <img src={icon} alt=''/>
+          :
+          <img src={defaultIcon} alt=''/>
+        }
         </IconContainer>
-      }
       <VerticalMarginSeparator marginSize={1}/>
       <Paragraph display={true} alignment="center">
         "{text}"
@@ -46,7 +50,7 @@ const IconCard = ({icon, text, title, button}) => {
         {title}
       </Paragraph>
       <VerticalMarginSeparator marginSize={1}/>
-      <Button primary>
+      <Button primary as={Link} to={buttonLink}>
         {button}
       </Button>
     </StyledIconCard>

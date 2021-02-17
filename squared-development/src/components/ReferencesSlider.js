@@ -48,7 +48,7 @@ const ReferencesSlider = ({data, setImageToParent}) => {
         breakpoints= {
           {
             768: {
-              slidesPerView: 3,
+              slidesPerView: (data && data.length > 1) ? 3 : 1,
               spaceBetween: 20
             },
           }
@@ -73,6 +73,7 @@ const ReferencesSlider = ({data, setImageToParent}) => {
                       title={reference.title}
                       text={reference.text}
                       button={reference.button}
+                      buttonLink={reference.buttonLink}
                     />
                   </CardContainer>
                 </SwiperSlide>

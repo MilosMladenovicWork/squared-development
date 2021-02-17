@@ -133,7 +133,8 @@ const Button = ({children, secondary, clipped, link, ...rest}) => {
     <VisibilitySensor>
       {({isVisible}) => {
         return <StyledButton
-          data-testid="button" {...rest}
+          data-testid="button" 
+          {...rest}
           secondary={secondary}
           clipped={clipped}
           link={link}
