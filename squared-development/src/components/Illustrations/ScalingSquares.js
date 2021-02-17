@@ -28,6 +28,7 @@ const DetailContainer = styled.div`
   `};
   @media (max-width:768px){
     width:${props => (props.size ? props.size : 1) * 4 + 'vw'};
+    height:${props => (props.size ? props.size : 1) * 4 + 'vw'};
   }
 `
 const RelativeContainer = styled.div`
