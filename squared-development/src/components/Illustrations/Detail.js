@@ -1,5 +1,5 @@
 import React from 'react'
-import VisibilitySensor from 'react-visibility-sensor'
+import ReactVisibilitySensor from 'react-visibility-sensor'
 
 import styled, {css, keyframes} from 'styled-components'
 
@@ -40,7 +40,7 @@ const StyledRect = styled.rect`
 
 const Detail = ({size, verticalPosition, horizontalPosition, backwards, ...rest}) => {
   return(
-    <VisibilitySensor partialVisibility>
+    <ReactVisibilitySensor partialVisibility>
     {({isVisible}) => {
       return <DetailContainer 
         isVisible={isVisible}
@@ -61,7 +61,7 @@ const Detail = ({size, verticalPosition, horizontalPosition, backwards, ...rest}
         </svg>
       </DetailContainer>
     }}
-  </VisibilitySensor>
+  </ReactVisibilitySensor>
   )
 }
 

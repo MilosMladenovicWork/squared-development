@@ -1,3 +1,5 @@
+const path = require("path");
+
 module.exports = {
   "stories": [
     "../src/**/*.stories.mdx",
@@ -8,6 +10,11 @@ module.exports = {
     "@storybook/addon-essentials"
   ],
   webpackFinal: async config => {
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      React: path.resolve(__dirname, '../node_modules/react/'),
+      ReactDOM: path.resolve(__dirname, '../node_modules/react-dom/')
+    }
     // Transpile Gatsby module because Gatsby includes un-transpiled ES6 code.
     config.module.rules[0].exclude = [/node_modules\/(?!(gatsby)\/)/]
     // use installed babel-loader which is v8.0-beta (which is meant to work with @babel/core@7)

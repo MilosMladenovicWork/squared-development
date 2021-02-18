@@ -1,7 +1,7 @@
 import { action } from "@storybook/addon-actions"
 import React from 'react'
 import { ThemeProvider } from "styled-components"
-import {theme, GlobalStyle} from '../gatsby-browser'
+import {theme, GlobalStyle} from '../src/styles/styles'
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
