@@ -3,7 +3,7 @@ import React from 'react'
 import CurvedBackground from '../../components/Illustrations/CurvedBackground.js'
 
 export default {
-  title: 'Components/CurvedBackground',
+  title: 'Illustrations/CurvedBackground',
   component: CurvedBackground,
   argTypes:{
     fillColor: {control: {
@@ -12,13 +12,24 @@ export default {
         'primary',
         'accent'
       ]
-    }}
+    }},
+    hideBottom:'boolean',
+    hideTop:'boolean',
+    topVariant:{
+      control:{
+        type:'select',
+        options:[
+          0,
+          1
+        ]
+      }
+    }
   }
 }
 
 const Template = (args) => <CurvedBackground {...args}/>
 
-export const FilledCurvedBackground = Template.bind({})
-FilledCurvedBackground.args = {
+export const Primary = Template.bind({})
+Primary.args = {
   fillColor: 'primary' 
 }

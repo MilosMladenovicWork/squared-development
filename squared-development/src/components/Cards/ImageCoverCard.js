@@ -3,6 +3,8 @@ import React, {useState} from 'react'
 import styled, {css, keyframes} from 'styled-components'
 import Detail from '../Illustrations/Detail'
 import Paragraph from '../Paragraph'
+import projectImgDesktop from '../../images/Perun.png'
+import projectImgMobile from '../../images/mobile-project.png'
 
 const imageHideAndShowNormal = keyframes`
   0%{
@@ -141,7 +143,9 @@ const ProjectCard = ({projectImg, mobile, description, title, ...rest}) => {
   return(
     <>
       <MobileCoverContainer>
-        <ImageCover src={projectImg} alt=''/>
+        <ImageCover src={projectImg ? projectImg : (
+          mobile ? projectImgMobile : projectImgDesktop
+        )} alt=''/>
       </MobileCoverContainer>
       <StyledProjectCard 
       {...rest} 

@@ -1,9 +1,9 @@
 import React from 'react'
 
-import Heading from '../../components/Heading'
+import Heading from '../components/Heading'
 
 export default {
-  title: 'Components/Headings',
+  title: 'Components/Heading',
   component:Heading,
   argTypes: {
     as:{
@@ -29,14 +29,27 @@ export default {
         ]
       }
     },
-    children:{control:'text'}
+    children:{control:'text'},
+    alignment:{
+      control:{
+        type:'select',
+        options:[
+          'left',
+          'right',
+          'center'
+        ]
+      }
+    },
+    accent:{
+      control:'boolean'
+    }
   }
 }
 
 const Template = (args) => <Heading {...args}/>
 
-export const TextHeading = Template.bind({})
-TextHeading.args = {
+export const Primary = Template.bind({})
+Primary.args = {
   as:'h1',
   children: 'Heading'
 }

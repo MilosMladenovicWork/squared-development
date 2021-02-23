@@ -3,7 +3,7 @@ import React from 'react'
 import Detail from '../../components/Illustrations/Detail.js'
 
 export default {
-  title: 'Components/Illustrations',
+  title: 'Illustrations/Detail',
   component: Detail,
   argTypes:{
     size: {control: 'number'},
@@ -27,8 +27,8 @@ export default {
 
 const Template = (args) => <Detail {...args}/>
 
-export const SectionDetail = Template.bind({})
-SectionDetail.args = {
+export const Primary = Template.bind({})
+Primary.args = {
   verticalPosition:'top',
   horizontalPosition: 'left',
   size:10

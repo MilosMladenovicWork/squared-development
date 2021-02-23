@@ -4,14 +4,14 @@ import VisibilitySensor from 'react-visibility-sensor'
 import styled from 'styled-components'
 
 const AccentColorPathFill = styled.path`
-  fill: ${props => props.theme.colors.accent};
+  fill: ${props => props.fillColor ? (props.theme.colors[props.fillColor] ? props.theme.colors[props.fillColor] : props.theme.colors.primary) : props.theme.colors.primary};
 `
 
 const AccentColorPathStroke = styled.path`
-  stroke: ${props => props.theme.colors.accent};
+  stroke: ${props => props.fillColor ? (props.theme.colors[props.fillColor] ? props.theme.colors[props.fillColor] : props.theme.colors.primary) : props.theme.colors.primary};
 `
 
-const DeveloperMakingSite = () => {
+const DeveloperMakingSite = ({fillColor}) => {
 
   const svg = useRef(null)
 
@@ -66,7 +66,7 @@ const DeveloperMakingSite = () => {
               opacity="0.6"
               transform="translate(914.889 104.466)"
             ></path>
-            <AccentColorPathStroke
+            <AccentColorPathStroke fillColor={fillColor}
               fill="none"
               data-testid="path-stroke"
               stroke="#f64e3e"
@@ -76,7 +76,7 @@ const DeveloperMakingSite = () => {
               data-name="Path 23"
               opacity="0.6"
             ></AccentColorPathStroke>
-            <AccentColorPathStroke
+            <AccentColorPathStroke fillColor={fillColor}
               fill="none"
               stroke="#f64e3e"
               strokeMiterlimit="10"
@@ -85,7 +85,7 @@ const DeveloperMakingSite = () => {
               data-name="Path 24"
               opacity="0.6"
             ></AccentColorPathStroke>
-            <AccentColorPathStroke
+            <AccentColorPathStroke fillColor={fillColor}
               fill="none"
               stroke="#f64e3e"
               strokeMiterlimit="10"
@@ -94,7 +94,7 @@ const DeveloperMakingSite = () => {
               data-name="Path 25"
               opacity="0.6"
             ></AccentColorPathStroke>
-            <AccentColorPathStroke
+            <AccentColorPathStroke fillColor={fillColor}
               fill="none"
               stroke="#f64e3e"
               strokeMiterlimit="10"
@@ -103,7 +103,7 @@ const DeveloperMakingSite = () => {
               data-name="Path 26"
               opacity="0.6"
             ></AccentColorPathStroke>
-            <AccentColorPathStroke
+            <AccentColorPathStroke fillColor={fillColor}
               fill="none"
               stroke="#f64e3e"
               strokeMiterlimit="10"
@@ -119,7 +119,7 @@ const DeveloperMakingSite = () => {
               opacity="0.51"
               transform="translate(790.902 124.668)"
             ></path>
-            <AccentColorPathStroke
+            <AccentColorPathStroke fillColor={fillColor}
               fill="none"
               stroke="#f64e3e"
               strokeMiterlimit="10"
@@ -128,7 +128,7 @@ const DeveloperMakingSite = () => {
               data-name="Path 29"
               opacity="0.6"
             ></AccentColorPathStroke>
-            <AccentColorPathStroke
+            <AccentColorPathStroke fillColor={fillColor}
               fill="none"
               stroke="#f64e3e"
               strokeMiterlimit="10"
@@ -136,7 +136,7 @@ const DeveloperMakingSite = () => {
               d="M1669.755 425.546s38.993 5.357 77.953 45.406"
               data-name="Path 30"
             ></AccentColorPathStroke>
-            <AccentColorPathStroke
+            <AccentColorPathStroke fillColor={fillColor}
               fill="none"
               stroke="#f64e3e"
               strokeMiterlimit="10"
@@ -145,7 +145,7 @@ const DeveloperMakingSite = () => {
               data-name="Path 31"
               opacity="0.6"
             ></AccentColorPathStroke>
-            <AccentColorPathStroke
+            <AccentColorPathStroke fillColor={fillColor}
               fill="none"
               stroke="#f64e3e"
               strokeMiterlimit="10"
@@ -153,7 +153,7 @@ const DeveloperMakingSite = () => {
               d="M1652.629 507.192s54.764 4.65 75.042 25.685"
               data-name="Path 32"
             ></AccentColorPathStroke>
-            <AccentColorPathStroke
+            <AccentColorPathStroke fillColor={fillColor}
               fill="none"
               stroke="#f64e3e"
               strokeMiterlimit="10"
@@ -204,7 +204,7 @@ const DeveloperMakingSite = () => {
               data-name="Ellipse 39"
               transform="translate(1163.624 293.22)"
             ></circle>
-            <AccentColorPathFill
+            <AccentColorPathFill fillColor={fillColor}
               data-testid="path-fill"
               fill="#f64e3e"
               d="M0 0H219.587V9.149H0z"
@@ -230,6 +230,7 @@ const DeveloperMakingSite = () => {
               ></animate>
             </AccentColorPathFill>
             <AccentColorPathFill
+              fillColor={fillColor}
               fill="#f64e3e"
               d="M0 0H219.587V9.149H0z"
               data-name="Rectangle 49"
@@ -253,7 +254,7 @@ const DeveloperMakingSite = () => {
                 to=""
               ></animate>
             </AccentColorPathFill>
-            <AccentColorPathFill
+            <AccentColorPathFill fillColor={fillColor}
               fill="#f64e3e"
               d="M0 0H219.587V9.149H0z"
               data-name="Rectangle 50"
@@ -277,7 +278,7 @@ const DeveloperMakingSite = () => {
                 to=""
               ></animate>
             </AccentColorPathFill>
-            <AccentColorPathFill
+            <AccentColorPathFill fillColor={fillColor}
               fill="#f64e3e"
               d="M0 0H143.896V9.149H0z"
               data-name="Rectangle 51"
@@ -301,7 +302,7 @@ const DeveloperMakingSite = () => {
                 to=""
               ></animate>
             </AccentColorPathFill>
-            <AccentColorPathFill
+            <AccentColorPathFill fillColor={fillColor}
               fill="#f64e3e"
               d="M0 0H115.616V9.149H0z"
               data-name="Rectangle 52"
@@ -325,7 +326,7 @@ const DeveloperMakingSite = () => {
                 to=""
               ></animate>
             </AccentColorPathFill>
-            <AccentColorPathFill
+            <AccentColorPathFill fillColor={fillColor}
               fill="#f64e3e"
               d="M0 0H88.999V9.149H0z"
               data-name="Rectangle 53"
@@ -600,13 +601,13 @@ const DeveloperMakingSite = () => {
                 transform="translate(-925.046 -311.822)"
               ></path>
             </g>
-            <AccentColorPathFill
+            <AccentColorPathFill fillColor={fillColor}
               fill="#f64e3e"
               d="M944.389 344.115c1.938.433 4.1 1.04 5.057 2.778.69 1.264.566 2.853 1.239 4.159 1.73 3.261 6.8 2.138 9.981 4.051 5.822 3.51 2.021 14.456 7.819 17.983 1.09.665 2.379.932 3.5 1.539 4.9 2.678 4.209 9.765 3.327 15.28s.166 13.059 5.7 13.841c3.044.424 6.463-1.589 9.025.1 1.339.882 1.946 2.5 3.069 3.668a5.589 5.589 0 006.005 1.239c1.88-.782 3.236-2.57 5.19-3.144 3.144-.923 6.654 1.622 9.682.449s3.718-5.548 2.936-8.85-2.379-6.654-1.547-9.981c.69-2.745 2.936-4.841 3.918-7.486 2.878-7.81-6.047-15.878-4.4-24.038.715-3.535 3.377-6.654 3.327-10.222-.083-4.159-3.768-7.311-7.6-8.842s-8.043-1.963-11.794-3.668c-8.226-3.743-12.726-12.793-20.245-17.816a27.864 27.864 0 00-10.064-4.076 36.539 36.539 0 00-30.16 7.719 33.79 33.79 0 01-2.238 1.664c-3.211 2.321-6.654 4.608-8.609 8.052-7.139 12.457 9.263 13.886 16.882 15.601z"
               data-name="Path 64"
               transform="translate(780.029 113.237)"
             ></AccentColorPathFill>
-            <AccentColorPathFill
+            <AccentColorPathFill fillColor={fillColor}
               fill="#f64e3e"
               d="M0 0H258.68V148.886H0z"
               data-name="Rectangle 54"
@@ -639,7 +640,7 @@ const DeveloperMakingSite = () => {
                 transform="translate(1412.289 438.363)"
               >
               </path>
-              <AccentColorPathFill
+              <AccentColorPathFill fillColor={fillColor}
                 fill="#f64e3e"
                 d="M717.628 498.971H572.9V471.7c35.358-16.53 89.764-25.813 144.728 27.271z"
                 data-name="Path 65"
@@ -656,13 +657,13 @@ const DeveloperMakingSite = () => {
                   transform="translate(-664.9 -458.778)"
                 ></path>
               </g>
-              <AccentColorPathFill
+              <AccentColorPathFill fillColor={fillColor}
                 fill="#f64e3e"
                 d="M847.394 495.07v3.9H666.9v-.832s88.816-86.478 180.494-3.068z"
                 data-name="Path 67"
                 transform="translate(823.575 88.279)"
               ></AccentColorPathFill>
-              <AccentColorPathFill
+              <AccentColorPathFill fillColor={fillColor}
                 as='circle'
                 cx="13.308"
                 cy="13.308"
@@ -689,37 +690,37 @@ const DeveloperMakingSite = () => {
                 data-name="Path 70"
                 transform="translate(817.929 98.961)"
               ></path>
-              <AccentColorPathFill
+              <AccentColorPathFill fillColor={fillColor}
                 fill="#f64e3e"
                 d="M665.1 480.125h-6.255s-1.955-68.4 6.255-89.515h1.564s-5.47 77.396-1.564 89.515z"
                 data-name="Path 71"
                 transform="translate(824.964 99.747)"
               ></AccentColorPathFill>
-              <AccentColorPathFill
+              <AccentColorPathFill fillColor={fillColor}
                 fill="#f64e3e"
                 d="M657.123 379.427s-5.082 14.074-2.737 20.328c0 0 3.518-12.9 7.619-14.855s8.4 14.855 8.4 14.855 2.346-10.555-1.955-19.131c0 0 8.6 4.691 12.9 13.683 0 0 .782-5.822-9.382-17.983 0 0 8.991 2.346 14.855 7.819 0 0 1.955-4.3-10.164-11.337 0 0 1.564-5.082 10.946-2.737 0 0 0-6.654-14.855-5.473 0 0 0-4.3 9.773-3.518 0 0 0-5.473-11.337-3.518 0 0 2.346-3.518 3.909-4.3a7.861 7.861 0 00-5.473 1.564s.391-7.037-5.473-9.773l-.782 9.773s-6.571-7.744-5.082-6.255a17.145 17.145 0 011.176 7.431s-6.654-5.473-14.855.391c0 0 10.164.782 11.728 4.3 0 0-8.6-1.564-10.555-.391 0 0 6.654 2.346 6.255 3.909 0 0-11.728 0-13.308 4.3 0 0 12.119 1.564 12.9 2.737 0 0-14.073 10.164-14.855 12.9 0 0 14.464-8.6 16.81-8.6s-10.555 12.477-9.773 15.637c.032-.028 10.62-12.538 13.315-11.756z"
                 data-name="Path 72"
                 transform="translate(828.644 107.412)"
               ></AccentColorPathFill>
-              <AccentColorPathFill
+              <AccentColorPathFill fillColor={fillColor}
                 fill="#f64e3e"
                 d="M758.918 481.318h4.774s1.5-52.26-4.774-68.388h-1.2s4.194 59.114 1.2 68.388z"
                 data-name="Path 73"
                 transform="translate(808.296 95.992)"
               ></AccentColorPathFill>
-              <AccentColorPathFill
+              <AccentColorPathFill fillColor={fillColor}
                 fill="#f64e3e"
                 d="M758.4 404.387s3.884 10.755 2.088 15.529c0 0-2.687-9.856-5.822-11.345s-6.421 11.345-6.421 11.345-1.788-8.06 1.5-14.631a25.959 25.959 0 00-9.856 10.455s-.6-4.483 7.17-13.741c0 0-6.87 1.788-11.345 5.972 0 0-1.5-3.285 7.769-8.659 0 0-1.2-3.884-8.359-2.088 0 0 0-5.074 11.345-4.159 0 0 0-3.285-7.486-2.687 0 0 0-4.159 8.659-2.687 0 0-1.788-2.687-2.986-3.285a6.005 6.005 0 014.159 1.2s-.3-5.373 4.159-7.486l.6 7.486s4.991-5.914 3.884-4.774a13.1 13.1 0 00-.9 5.673s5.074-4.159 11.345.3c0 0-7.769.6-8.958 3.285 0 0 6.571-1.2 8.06-.3 0 0-5.074 1.788-4.774 2.986 0 0 8.958 0 10.156 3.286 0 0-9.258 1.2-9.856 2.088 0 0 10.755 7.769 11.345 9.856 0 0-11.046-6.571-12.843-6.571s8.06 9.557 7.486 11.944c.038-.034-8.019-9.579-10.119-8.992z"
                 data-name="Path 74"
                 transform="translate(812.099 101.848)"
               ></AccentColorPathFill>
-              <AccentColorPathFill
+              <AccentColorPathFill fillColor={fillColor}
                 fill="#f64e3e"
                 d="M827.74 474.3h2.96s.923-32.364-2.961-42.354H827s2.587 36.643.74 42.354z"
                 data-name="Path 75"
                 transform="translate(796.641 92.792)"
               ></AccentColorPathFill>
-              <AccentColorPathFill
+              <AccentColorPathFill fillColor={fillColor}
                 fill="#f64e3e"
                 d="M827.421 426.656s2.4 6.654 1.3 9.615c0 0-1.664-6.105-3.61-7.029s-3.976 7.029-3.976 7.029-1.106-4.991.923-9.066a16.078 16.078 0 00-6.105 6.471s-.366-2.778 4.442-8.509a18.765 18.765 0 00-7.028 3.7s-.923-2.038 4.808-5.365c0 0-.74-2.4-5.182-1.3 0 0 0-3.144 7.028-2.587 0 0 0-2.038-4.625-1.664 0 0 0-2.587 5.365-1.664a8.124 8.124 0 00-1.846-2.038 3.718 3.718 0 012.587.74s-.183-3.327 2.587-4.625l.366 4.625s3.111-3.66 2.4-2.961a8.109 8.109 0 00-.557 3.51 5.764 5.764 0 017.029.183s-4.808.366-5.548 2.038c0 0 4.067-.74 4.991-.183 0 0-3.144 1.106-2.961 1.846 0 0 5.548 0 6.288 2.038 0 0-5.731.74-6.105 1.3 0 0 6.654 4.808 7.028 6.105 0 0-6.845-4.067-7.952-4.067s4.991 5.922 4.625 7.394c.016.008-4.983-5.91-6.272-5.536z"
                 data-name="Path 76"

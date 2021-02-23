@@ -41,6 +41,13 @@ const IllustrationContainer = styled.div`
   transition:.25s;
   transform:${props => props.cardHovered ? 'scale(7)' : 'scale(1)'};
 `
+const StyledPath = styled.path`
+  fill:${props => props.fillColor ? (props.theme.colors[props.fillColor] ? props.theme.colors[props.fillColor] : props.theme.colors.primary) : props.theme.colors.primary};
+`
+const StyledSvg = styled.svg`
+  transition:.25s;
+  transform: ${props => props.cardHovered ? 'translateY(20px)' : 'translateY(-20px)'}; 
+`
 
 const IconTextCard = ({heading, text, icon}) => {
   const [cardHovered, setCardHovered] = useState(false)
@@ -51,7 +58,17 @@ const IconTextCard = ({heading, text, icon}) => {
       onMouseOut={() => setCardHovered(false)}
     >
       <PresentationalContent>
-        {icon && icon(cardHovered)}
+        {icon ? icon(cardHovered) 
+        : 
+        <StyledSvg
+          cardHovered={cardHovered}
+          xmlns="http://www.w3.org/2000/svg"
+          className="ionicon"
+          viewBox="0 0 512 512"
+          >
+            <StyledPath fillColor={cardHovered ? 'accent' : 'textLight'} d='M156 432h-40a36 36 0 01-36-36V244a36 36 0 0136-36h40a36 36 0 0136 36v152a36 36 0 01-36 36zM300 432h-40a36 36 0 01-36-36V196a36 36 0 0136-36h40a36 36 0 0136 36v200a36 36 0 01-36 36zM443.64 432h-40a36 36 0 01-36-36V132a36 36 0 0136-36h40a36 36 0 0136 36v264a36 36 0 01-36 36z'/>
+        </StyledSvg>
+        }
         <IllustrationContainer cardHovered={cardHovered}>
           <WavyBottomBackground/>
         </IllustrationContainer>

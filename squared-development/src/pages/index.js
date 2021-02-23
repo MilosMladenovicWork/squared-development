@@ -24,8 +24,8 @@ import Detail from "../components/Illustrations/Detail"
 import IconTextCard from "../components/Cards/IconTextCard"
 import ImageCoverCard from "../components/Cards/ImageCoverCard"
 import perunProject from '../images/Perun.png'
-import projectImg from '../images/Perun.png'
 import projectImgMobile from '../images/Minus1.png'
+import projectImg from '../images/Perun.png'
 import projectImgMobile2 from '../images/mobile-project.png'
 import referenceImg from '../images/reference.png'
 import ReferencesSlider from "../components/ReferencesSlider";
@@ -258,7 +258,7 @@ const IndexPage = ({activeSection: activeSectionStore}) => {
               </PercentageWidthContainer>
               <PercentageWidthContainer widthPercentage={55}>
                 <HeroIllustrationContainer>
-                  <DeveloperMakingSite/>
+                  <DeveloperMakingSite fillColor={'accent'}/>
                 </HeroIllustrationContainer>
               </PercentageWidthContainer>
               <FluidBackgroundContainer>

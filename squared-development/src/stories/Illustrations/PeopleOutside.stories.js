@@ -3,7 +3,7 @@ import React from 'react'
 import PeopleOutside from '../../components/Illustrations/PeopleOutside'
 
 export default {
-  title: 'Components/Illustrations',
+  title: 'Illustrations/PeopleOutside',
   component: PeopleOutside,
   argTypes:{
     fillColor: {control: {
@@ -18,7 +18,7 @@ export default {
 
 const Template = (args) => <PeopleOutside {...args}/>
 
-export const PeopleOutsideIllustration = Template.bind({})
-PeopleOutsideIllustration.args = {
+export const Primary = Template.bind({})
+Primary.args = {
   fillColor:'accent'
 }
