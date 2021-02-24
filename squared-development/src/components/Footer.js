@@ -8,6 +8,7 @@ import VerticalMarginSeparator from '../components/LayoutComponents/VerticalMarg
 import ContactForm from './ContactForm'
 import WavyLinesBackground from './Illustrations/WavyLinesBackground'
 import Paragraph from './Paragraph'
+import CurvedBackground from './Illustrations/CurvedBackground'
 
 const borderCurving = keyframes`
   0%{
@@ -30,6 +31,11 @@ const CurvyBackgroundContainer = styled.div`
   animation-iteration-count: infinite;
 `
 
+const RelativeFullWidthContainer = styled.div`
+  position:relative;
+  width:100%;
+`
+
 
 const Footer = ({children, activeSection: activeSectionStore}) => {
 
@@ -48,36 +54,40 @@ const Footer = ({children, activeSection: activeSectionStore}) => {
   }
 
   return(
-    <VisibilitySensor partialVisibility offset={{top: typeof window !== 'undefined' && window.innerHeight/2}} onChange={(isVisible) => handleSectionVisibility(isVisible, '/#contact')}>
-      <footer id="contact">
-        <VerticalMarginSeparator marginSize={5}/>
-        <Heading alignment="center" accent textColor="textLight">
-          Contact Us
-        </Heading>
-        <VerticalMarginSeparator marginSize={2}/>
-        <ContactForm/>
-        <VerticalMarginSeparator marginSize={2}/>
-        {children}
-        <WavyLinesBackground fillColor="light"/>
-        <VisibilitySensor partialVisibility>
-        {({isVisible}) => {
-          return <CurvyBackgroundContainer isVisible={isVisible}>
-            <VerticalMarginSeparator marginSize={1}/>
-            <Paragraph textColor="textDark" alignment="center">
-            © {new Date().getFullYear()}
-                {` `}
-                <a href="https://www.squareddevelopment.com">
-                  <b>
-                    Squared Development
-                  </b>
-                </a>
-            </Paragraph>
-            <VerticalMarginSeparator marginSize={1}/>
-          </CurvyBackgroundContainer>
-        }}
-        </VisibilitySensor>
-      </footer>
-    </VisibilitySensor>
+    
+    <RelativeFullWidthContainer>
+      <CurvedBackground hideBottom topVariant={1}/>
+      <VisibilitySensor partialVisibility offset={{top: typeof window !== 'undefined' && window.innerHeight/2}} onChange={(isVisible) => handleSectionVisibility(isVisible, '/#contact')}>
+        <footer id="contact">
+          <VerticalMarginSeparator marginSize={5}/>
+          <Heading alignment="center" accent textColor="textLight">
+            Contact Us
+          </Heading>
+          <VerticalMarginSeparator marginSize={2}/>
+          <ContactForm/>
+          <VerticalMarginSeparator marginSize={2}/>
+          {children}
+          <WavyLinesBackground fillColor="light"/>
+          <VisibilitySensor partialVisibility>
+          {({isVisible}) => {
+            return <CurvyBackgroundContainer isVisible={isVisible}>
+              <VerticalMarginSeparator marginSize={1}/>
+              <Paragraph textColor="textDark" alignment="center">
+              © {new Date().getFullYear()}
+                  {` `}
+                  <a href="https://www.squareddevelopment.com">
+                    <b>
+                      Squared Development
+                    </b>
+                  </a>
+              </Paragraph>
+              <VerticalMarginSeparator marginSize={1}/>
+            </CurvyBackgroundContainer>
+          }}
+          </VisibilitySensor>
+        </footer>
+      </VisibilitySensor>
+    </RelativeFullWidthContainer>
   )
 }
 

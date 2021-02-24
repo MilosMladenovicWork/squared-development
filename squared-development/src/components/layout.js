@@ -18,13 +18,7 @@ import Button from './Buttons/Button.js'
 import RowSpaceBetween from './LayoutComponents/RowSpaceBetween'
 import Header from "./Header.js"
 import Logo from './Logo.js'
-import CurvedBackground from './Illustrations/CurvedBackground'
 import Footer from './Footer'
-
-const RelativeFullWidthContainer = styled.div`
-  position:relative;
-  width:100%;
-`
 
 const StyledLayout = styled.div`
   position:relative;
@@ -125,16 +119,6 @@ const Layout = ({ children, activeSection}) => {
 
   const {activeSectionId} = activeSection
 
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
   const [menuClicked, setMenuClicked] = useState(undefined)
 
 
@@ -185,11 +169,7 @@ const Layout = ({ children, activeSection}) => {
         </Header>
         <div>
           <StyledMain>{children}</StyledMain>
-          <RelativeFullWidthContainer>
-            <CurvedBackground hideBottom topVariant={1}/>
-            <Footer>
-            </Footer>
-          </RelativeFullWidthContainer>
+          <Footer/>
         </div>
       </StyledLayout>
     </ThemeProvider>
