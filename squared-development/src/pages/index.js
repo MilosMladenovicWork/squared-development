@@ -6,7 +6,6 @@ import 'swiper/swiper.scss';
 import ReactVisibilitySensor from 'react-visibility-sensor'
 
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
 import Button from '../components/Buttons/Button.js'
 import Heading from '../components/Heading.js'
@@ -31,6 +30,7 @@ import referenceImg from '../images/reference.png'
 import ReferencesSlider from "../components/ReferencesSlider";
 import TickMarksCard from '../components/Cards/TickMarksCard'
 import ScalingSquares from "../components/Illustrations/ScalingSquares";
+import TransformedImageCard from "../components/Cards/TransformedImageCard";
 
 
 const HeroBannerContainer = styled.div`
@@ -514,10 +514,10 @@ const IndexPage = ({activeSection: activeSectionStore}) => {
           </Paragraph>
           <VerticalMarginSeparator marginSize={3}/>
           <ProjectsContainer>
-            <ImageCoverCard projectImg={projectImg} title="Project Title" description="Project Description"/>
-            <ImageCoverCard projectImg={projectImgMobile2} mobile title="Project Title" description="Project Description"/>
-            <ImageCoverCard projectImg={projectImgMobile2} mobile title="Project Title" description="Project Description"/>
-            <ImageCoverCard projectImg={projectImg} title="Project Title" description="Project Description"/>
+            <TransformedImageCard image={projectImg} title="Project Title" description="Project Description" buttonText="Project"/>
+            <TransformedImageCard image={projectImg} reverse title="Project Title" description="Project Description" buttonText="Project"/>
+            <TransformedImageCard image={projectImg} title="Project Title" description="Project Description" buttonText="Project"/>
+            <TransformedImageCard image={projectImg} reverse title="Project Title" description="Project Description" buttonText="Project"/>
           </ProjectsContainer>  
         </section>
       </ReactVisibilitySensor>

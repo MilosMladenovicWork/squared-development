@@ -45,10 +45,12 @@ export const GlobalStyle = createGlobalStyle`
   }
   h3{
     font-size:3rem;
+    margin-top:2rem;
+    margin-bottom:2rem;
     @media (max-width:768px){
       font-size:2rem;
-      margin-top:3rem;
-      margin-bottom:3rem;
+      margin-top:2rem;
+      margin-bottom:2rem;
     }
   }
   h4{
