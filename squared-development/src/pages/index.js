@@ -31,7 +31,12 @@ import ReferencesSlider from "../components/ReferencesSlider";
 import TickMarksCard from '../components/Cards/TickMarksCard'
 import ScalingSquares from "../components/Illustrations/ScalingSquares";
 import TransformedImageCard from "../components/Cards/TransformedImageCard";
-
+import minus1Img from '../images/minus1.png'
+import perunImg from '../images/perun.png'
+import mathGameImg from '../images/math-game.png'
+import cubicalImg from '../images/cubical.png'
+import helloCleanImg from '../images/hello-clean.png'
+import runbgdImg from '../images/runbgd.png'
 
 const HeroBannerContainer = styled.div`
   display:flex;
@@ -514,10 +519,51 @@ const IndexPage = ({activeSection: activeSectionStore}) => {
           </Paragraph>
           <VerticalMarginSeparator marginSize={3}/>
           <ProjectsContainer>
-            <TransformedImageCard image={projectImg} title="Project Title" description="Project Description" buttonText="Project"/>
-            <TransformedImageCard image={projectImg} reverse title="Project Title" description="Project Description" buttonText="Project"/>
-            <TransformedImageCard image={projectImg} title="Project Title" description="Project Description" buttonText="Project"/>
-            <TransformedImageCard image={projectImg} reverse title="Project Title" description="Project Description" buttonText="Project"/>
+            <TransformedImageCard 
+              image={minus1Img} 
+              title="Minus1 Store" 
+              description="Hype wear web store built with elegant and smooth page transitions and users experience in mind." 
+              buttonText="Visit"
+              buttonLink="https://minus1store.rs"
+            />
+            <TransformedImageCard
+              image={perunImg} 
+              reverse 
+              title="Perun network" 
+              description="One page modern and clean look website for blockchain framework." 
+              buttonText="Visit"
+              buttonLink="https://perun.network"
+            />
+            <TransformedImageCard 
+              image={cubicalImg} 
+              title="Cubical.ag properties" 
+              description="Website built with support for CMS with fresh and eye grabbing design." 
+              buttonText="Visit"
+              buttonLink="https://cubical-ag.netlify.app"
+            />
+            <TransformedImageCard
+              image={runbgdImg} 
+              reverse 
+              title="RUN BGD news blog" 
+              description="Mobile first website with CMS support, web store, newsletter, and find location app for visitors to easily find their next location to visit in Belgrade." 
+              buttonText="Visit"
+              buttonLink="https://runbgd.com"
+            />
+            <TransformedImageCard 
+              image={mathGameImg} 
+              title="Kids Math Game" 
+              description="Web application with user authentication. Built for kids that are practicing simple mathematical operations where numbers result needs to be above 0." 
+              buttonText="Visit"
+              buttonLink="https://kids-math-game.netlify.app"
+            />
+            <TransformedImageCard
+              image={helloCleanImg} 
+              reverse 
+              title="Hello clean website" 
+              description="Website featuring simple and clean design that doesn't tire visitor's eyes." 
+              buttonText="Visit"
+              buttonLink="https://helloclean.pl"
+            />
           </ProjectsContainer>  
         </section>
       </ReactVisibilitySensor>
