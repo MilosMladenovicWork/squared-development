@@ -2,13 +2,14 @@ import React from 'react'
 
 import styled, {css} from 'styled-components'
 import {Link} from 'gatsby'
+import Image from 'gatsby-image'
 
 import Heading from '../Heading'
 import Paragraph from '../Paragraph'
 import Button from '../Buttons/Button'
 import VerticalMarginSeparator from '../LayoutComponents/VerticalMarginSeparator'
 
-const StyledImg = styled.img`
+const StyledImg = styled(Image)`
   max-width:100%;
   max-height:60vh;
   transition:0.6s;
@@ -43,6 +44,7 @@ const StyledCardTextContent = styled.div`
 `
 
 const StyledImageContainer = styled.div`
+  width:100%;
   max-width:50%;
   perspective:2000px;
   max-height:60vh;
@@ -50,6 +52,9 @@ const StyledImageContainer = styled.div`
   display:flex;
   align-items:center;
   justify-content: center;
+  > div{
+    width:100%;
+  }
   &:hover{
     @media (min-width:767px){
       ~ div{
@@ -103,10 +108,14 @@ const StyledTransformedImageCard = styled.div`
 
 
 const TransformedImageCard = ({image, title, description, buttonText, buttonLink, reverse}) => {
+  
   return (
     <StyledTransformedImageCard reverse={reverse}>
       <StyledImageContainer>
-        <StyledImg reverse={reverse} src={image} alt=""/>
+        {
+          image && image.childImageSharp && image.childImageSharp.fluid &&
+          <StyledImg reverse={reverse} fluid={image.childImageSharp.fluid} alt=""/>
+        }
       </StyledImageContainer>
       <StyledCardTextContent>
         <Heading as={'h3'} display>

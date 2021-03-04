@@ -1,10 +1,11 @@
 import React, {useEffect, useState} from "react"
-import { Link } from "gatsby"
+import { Link, useStaticQuery, graphql } from "gatsby"
 import {inject, observer} from 'mobx-react'
 import styled, {keyframes, css} from 'styled-components'
 import 'swiper/swiper.scss';
 import ReactVisibilitySensor from 'react-visibility-sensor'
 import TimedElementsAppear from '../components/TimedElementsAppear'
+import Image from 'gatsby-image'
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -26,12 +27,6 @@ import ReferencesSlider from "../components/ReferencesSlider";
 import TickMarksCard from '../components/Cards/TickMarksCard'
 import ScalingSquares from "../components/Illustrations/ScalingSquares";
 import TransformedImageCard from "../components/Cards/TransformedImageCard";
-import minus1Img from '../images/minus1Project.png'
-import perunImg from '../images/perunProject.png'
-import mathGameImg from '../images/math-game.png'
-import cubicalImg from '../images/cubical.png'
-import helloCleanImg from '../images/hello-clean.png'
-import runbgdImg from '../images/runbgd.png'
 
 const HeroBannerContainer = styled.div`
   display:flex;
@@ -186,7 +181,7 @@ const ReferencesBackgroundContainer = styled.div`
       : css`
           ${secondAppear} 0.7s linear forwards;
         `};
-  img {
+  div {
     min-width:100%;
     min-height:100%;
     transform:translate(-50%, -50%);
@@ -257,6 +252,62 @@ const IndexPage = ({activeSection: activeSectionStore}) => {
       }
     }
   }
+
+  let imagesData = useStaticQuery(graphql`
+    query HomePage {
+      perun: file(name: {eq: "perunProject"}) {
+        childImageSharp {
+          fluid(maxWidth: 1920){
+            ...GatsbyImageSharpFluid_withWebp   
+          }
+        }
+      }
+      minus1: file(name: {eq: "minus1Project"}) {
+        childImageSharp {
+          fluid(maxWidth: 1920){
+            ...GatsbyImageSharpFluid_withWebp   
+          }
+        }
+      }
+      cubical: file(name: {eq: "cubical"}) {
+        childImageSharp {
+          fluid(maxWidth: 1920){
+            ...GatsbyImageSharpFluid_withWebp   
+          }
+        }
+      }
+      helloClean: file(name: {eq: "hello-clean"}) {
+        childImageSharp {
+          fluid(maxWidth: 1920){
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+      mathGame: file(name: {eq: "math-game"}) {
+        childImageSharp {
+          fluid(maxWidth: 1920){
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+      runbgd: file(name: {eq: "runbgd"}) {
+        childImageSharp {
+          fluid(maxWidth: 1920){
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+    }
+  `)
+
+  const {
+    perun,
+    minus1,
+    runbgd,
+    cubical,
+    helloClean,
+    mathGame
+  } = imagesData
 
 
   return(
@@ -553,14 +604,14 @@ const IndexPage = ({activeSection: activeSectionStore}) => {
           <VerticalMarginSeparator marginSize={3}/>
           <ProjectsContainer>
             <TransformedImageCard 
-              image={minus1Img} 
+              image={minus1} 
               title="Minus1 Store" 
               description="Hype wear web store built with elegant and smooth page transitions and users experience in mind." 
               buttonText="Visit"
               buttonLink="https://minus1store.rs"
             />
             <TransformedImageCard
-              image={perunImg} 
+              image={perun} 
               reverse 
               title="Perun network" 
               description="One page modern and clean look website for blockchain framework." 
@@ -568,14 +619,14 @@ const IndexPage = ({activeSection: activeSectionStore}) => {
               buttonLink="https://perun.network"
             />
             <TransformedImageCard 
-              image={cubicalImg} 
+              image={cubical} 
               title="Cubical.ag properties" 
               description="Website built with support for CMS with fresh and eye grabbing design." 
               buttonText="Visit"
               buttonLink="https://cubical-ag.netlify.app"
             />
             <TransformedImageCard
-              image={runbgdImg} 
+              image={runbgd} 
               reverse 
               title="RUN BGD news blog" 
               description="Mobile first website with CMS support, web store, newsletter, and find location app for visitors to easily find their next location to visit in Belgrade." 
@@ -583,14 +634,14 @@ const IndexPage = ({activeSection: activeSectionStore}) => {
               buttonLink="https://runbgd.com"
             />
             <TransformedImageCard 
-              image={mathGameImg} 
+              image={mathGame} 
               title="Kids Math Game" 
               description="Web application with user authentication. Built for kids that are practicing simple mathematical operations where numbers result needs to be above 0." 
               buttonText="Visit"
               buttonLink="https://kids-math-game.netlify.app"
             />
             <TransformedImageCard
-              image={helloCleanImg} 
+              image={helloClean} 
               reverse 
               title="Hello clean website" 
               description="Website featuring simple and clean design that doesn't tire visitor's eyes." 
@@ -606,7 +657,10 @@ const IndexPage = ({activeSection: activeSectionStore}) => {
       <ReactVisibilitySensor partialVisibility offset={{top: typeof window !== 'undefined' && window.innerHeight/2}} onChange={(isVisible) => handleSectionVisibility(isVisible, '/#references')}>
         <section id="references">
           <ReferencesBackgroundContainer toggle={toggleReferencesBackground}>
-            <img src={referenceSectionImage} alt=''/>
+            {
+              referenceSectionImage && referenceSectionImage.childImageSharp && referenceSectionImage.childImageSharp.fluid &&
+              <Image fluid={referenceSectionImage.childImageSharp.fluid} alt=''/>
+            }
           </ReferencesBackgroundContainer>
           <ConstraintContainer>
             <Heading alignment="right" accent>
@@ -621,7 +675,7 @@ const IndexPage = ({activeSection: activeSectionStore}) => {
                   text: 'Definetely top notch! Looking forward to the next project!',
                   button: 'Perun',
                   buttonLink: 'https://perun.network',
-                  projectImg: perunImg
+                  projectImg: perun
                 },
               ]}
               setImageToParent={(image) => setReferenceSectionImage(image)}
