@@ -206,6 +206,10 @@ const HeroHeadingContainer = styled.div`
 const HeroDescriptionContainer = styled.div`
   opacity:0;
   animation: ${heroAppear} 1s 0.75s forwards;
+  padding-top:1rem;
+  @media (max-width:768px){
+    padding-top:0.5rem;
+  }
 `
 
 const HeroIllustrationContainer = styled.div`
@@ -255,7 +259,6 @@ const IndexPage = ({activeSection: activeSectionStore}) => {
                     }
                     <TimedElementsAppear elements={['Websites', 'Applications', 'Graphics']}/> 
                   </Heading>
-                  <VerticalMarginSeparator marginSize={0.5}/>
                 </HeroHeadingContainer>
                 <HeroDescriptionContainer>
                   <Paragraph display>
