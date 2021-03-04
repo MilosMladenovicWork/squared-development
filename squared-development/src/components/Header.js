@@ -18,7 +18,7 @@ const HeaderStyled = styled.header`
   z-index:10;
   padding:20px 100px 0px 100px;
   transform:translateY(-150px);
-  animation: ${dropDown} 0.5s 2s forwards;
+  animation: ${dropDown} 1s 2s forwards;
   @media (max-width: 768px){
     padding:15px 20px;
   }

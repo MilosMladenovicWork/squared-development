@@ -61,7 +61,7 @@ const HeroButtons = styled.div`
   display:flex;
   align-items:flex-start;
   opacity:0;
-  animation: ${heroAppear} 0.5s 2.25s forwards; 
+  animation: ${heroAppear} 1s 2.25s forwards; 
   & > *:first-of-type{
     margin-right:10px;
     @media (max-width:768px){
@@ -82,6 +82,7 @@ const FluidBackgroundContainer = styled.div`
   width:125vw;
   transform:translate(40%, -50%);
   z-index:-1;
+  animation: ${heroAppear} 1s;
   @media (max-width: 768px){
     width:130vw;
   }
@@ -198,17 +199,17 @@ const StyledSvg = styled.svg`
 
 const HeroHeadingContainer = styled.div`
   opacity:0;
-  animation: ${heroAppear} 0.5s forwards;
+  animation: ${heroAppear} 1s forwards;
 `
 
 const HeroDescriptionContainer = styled.div`
   opacity:0;
-  animation: ${heroAppear} 0.5s 0.75s forwards;
+  animation: ${heroAppear} 1s 0.75s forwards;
 `
 
 const HeroIllustrationContainer = styled.div`
   opacity:0;
-  animation: ${heroAppear} 0.5s 1.5s forwards;
+  animation: ${heroAppear} 1s 1.5s forwards;
 `
 
 const IndexPage = ({activeSection: activeSectionStore}) => {
