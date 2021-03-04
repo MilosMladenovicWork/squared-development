@@ -1,20 +1,20 @@
-import React from 'react'
+import React from "react"
 
-import Header from '../components/Header'
+import Header from "../components/Header"
 
 export default {
-  title: 'Components/Header',
+  title: "Components/Header",
   component: Header,
-  argTypes:{
-    menuClicked:'boolean'
-  }
+  argTypes: {
+    menuClicked: "boolean",
+  },
 }
 
-const Template = (args) => <Header {...args}/>
+const Template = args => <Header {...args} />
 
 export const Primary = Template.bind({})
 
 Primary.args = {
   menuClicked: false,
-  children: ''
+  children: "",
 }

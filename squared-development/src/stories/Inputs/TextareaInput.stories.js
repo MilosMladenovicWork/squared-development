@@ -1,40 +1,37 @@
-import React from 'react'
+import React from "react"
 
-import TextareaInput from '../../components/Inputs/TextareaInput'
+import TextareaInput from "../../components/Inputs/TextareaInput"
 
 export default {
-  title: 'Inputs/TextareaInput',
+  title: "Inputs/TextareaInput",
   component: TextareaInput,
-  argTypes:{
-    name:{
-      control:'text'
+  argTypes: {
+    name: {
+      control: "text",
     },
-    value:{
-      control:'text'
+    value: {
+      control: "text",
     },
-    onChange:{
-      action:'changed'
+    onChange: {
+      action: "changed",
     },
-    placeholder:{
-      control: 'text'
+    placeholder: {
+      control: "text",
     },
-    textColor:{
+    textColor: {
       control: {
-        type:'select',
-        options:[
-          'textLight',
-          'textDark'
-        ]
-      }
-    }
-  }
+        type: "select",
+        options: ["textLight", "textDark"],
+      },
+    },
+  },
 }
 
-const Template = (args) => <TextareaInput {...args}/>
+const Template = args => <TextareaInput {...args} />
 
 export const Primary = Template.bind({})
 
 Primary.args = {
-  name:'inputName',
-  placeholder: 'Placeholder'
+  name: "inputName",
+  placeholder: "Placeholder",
 }

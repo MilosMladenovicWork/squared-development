@@ -1,21 +1,21 @@
-import React from 'react'
+import React from "react"
 
-import IconTextCard from '../../components/Cards/IconTextCard'
+import IconTextCard from "../../components/Cards/IconTextCard"
 
-export default{
-  title: 'Cards/IconTextCard',
+export default {
+  title: "Cards/IconTextCard",
   component: IconTextCard,
-  argTypes:{
-    heading:{control:'text'},
-    text:{control:'text'}
-  }
+  argTypes: {
+    heading: { control: "text" },
+    text: { control: "text" },
+  },
 }
 
-const Template = (args) => <IconTextCard {...args}/>
+const Template = args => <IconTextCard {...args} />
 
 export const Primary = Template.bind({})
 
 Primary.args = {
-  heading: 'Heading',
-  text: 'Text'
+  heading: "Heading",
+  text: "Text",
 }

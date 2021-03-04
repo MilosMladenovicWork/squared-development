@@ -1,18 +1,18 @@
-import React from 'react'
+import React from "react"
 
-import Footer from '../components/Footer'
+import Footer from "../components/Footer"
 
 export default {
-  title: 'Components/Footer',
-  component: Footer
+  title: "Components/Footer",
+  component: Footer,
 }
 
-const Template = (args) => <Footer {...args}/>
+const Template = args => <Footer {...args} />
 
-export const Primary = Template.bind({}) 
+export const Primary = Template.bind({})
 Primary.args = {
   activeSection: {
-    activeSectionId: '/#contact',
-    lastActiveSectionId: '/#contact'
-  }
+    activeSectionId: "/#contact",
+    lastActiveSectionId: "/#contact",
+  },
 }

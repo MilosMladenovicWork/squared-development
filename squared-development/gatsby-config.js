@@ -12,12 +12,12 @@ module.exports = {
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-sass`,
     {
-      resolve: 'gatsby-plugin-web-font-loader',
+      resolve: "gatsby-plugin-web-font-loader",
       options: {
         google: {
-          families: ['Fredoka One']
-        }
-      }
+          families: ["Fredoka One"],
+        },
+      },
     },
     {
       resolve: `gatsby-plugin-tawk.to`,

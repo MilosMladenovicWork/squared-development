@@ -1,19 +1,19 @@
-import {createGlobalStyle} from 'styled-components'
+import { createGlobalStyle } from "styled-components"
 
 export const theme = {
-  colors:{
-    accent:'#F64E3E',
-    primary: '#121212',
+  colors: {
+    accent: "#F64E3E",
+    primary: "#121212",
     light: "#fefefe",
-    textLight: '#ffffff',
-    textDark: '#121212',
-    error: '#61010C',
-    success: '#1D6100',
+    textLight: "#ffffff",
+    textDark: "#121212",
+    error: "#61010C",
+    success: "#1D6100",
   },
-  font:{
+  font: {
     display: "'Fredoka One', Arial, Helvetica, sans-serif",
     regular: "Arial, Helvetica, sans-serif",
-  }
+  },
 }
 
 export const GlobalStyle = createGlobalStyle`

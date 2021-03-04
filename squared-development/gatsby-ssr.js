@@ -5,6 +5,6 @@
  */
 
 // You can delete this file if you're not using it
-import provideStores from './src/state/provideStores'
+import provideStores from "./src/state/provideStores"
 
 export const wrapRootElement = provideStores

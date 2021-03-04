@@ -1,13 +1,12 @@
-import React from 'react'
+import React from "react"
 
-import Logo from '../components/Logo'
+import Logo from "../components/Logo"
 
 export default {
-  title: 'Components/Logo',
-  component: Logo
+  title: "Components/Logo",
+  component: Logo,
 }
 
-const Template = (args) => <Logo {...args}/>
+const Template = args => <Logo {...args} />
 
 export const Primary = Template.bind({})
-

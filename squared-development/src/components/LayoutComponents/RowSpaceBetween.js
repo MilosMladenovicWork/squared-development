@@ -1,16 +1,14 @@
-import React from 'react'
+import React from "react"
 
-import styled from 'styled-components'
+import styled from "styled-components"
 
 const RowSpaceBetweenStyled = styled.div`
-  display:flex;
-  justify-content:space-between;
+  display: flex;
+  justify-content: space-between;
 `
 
-const RowSpaceBetween = ({children, ...rest}) => {
-  return <RowSpaceBetweenStyled {...rest}>
-    {children}
-  </RowSpaceBetweenStyled>
+const RowSpaceBetween = ({ children, ...rest }) => {
+  return <RowSpaceBetweenStyled {...rest}>{children}</RowSpaceBetweenStyled>
 }
 
 export default RowSpaceBetween

@@ -1,40 +1,37 @@
-import React from 'react'
+import React from "react"
 
-import EmailInput from '../../components/Inputs/EmailInput'
+import EmailInput from "../../components/Inputs/EmailInput"
 
 export default {
-  title:'Inputs/Email Input',
-  component:EmailInput,
-  argTypes:{
-    name:{
-      control:'text'
+  title: "Inputs/Email Input",
+  component: EmailInput,
+  argTypes: {
+    name: {
+      control: "text",
     },
-    value:{
-      control:'text'
+    value: {
+      control: "text",
     },
-    onChange:{
-      action:'changed'
+    onChange: {
+      action: "changed",
     },
-    placeholder:{
-      control:'text'
+    placeholder: {
+      control: "text",
     },
-    textColor:{
-      control:{
-        type:'select',
-        options:[
-          'textLight',
-          'textDark'
-        ]
-      }
-    }
-  }
+    textColor: {
+      control: {
+        type: "select",
+        options: ["textLight", "textDark"],
+      },
+    },
+  },
 }
 
-const Template = (args) => <EmailInput {...args}/>
+const Template = args => <EmailInput {...args} />
 
 export const Primary = Template.bind({})
 
 Primary.args = {
-  placeholder: 'Placeholder',
-  name:'inputName'
+  placeholder: "Placeholder",
+  name: "inputName",
 }

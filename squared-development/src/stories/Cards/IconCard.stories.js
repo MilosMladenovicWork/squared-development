@@ -1,33 +1,33 @@
-import React from 'react'
+import React from "react"
 
-import IconCard from '../../components/Cards/IconCard'
+import IconCard from "../../components/Cards/IconCard"
 
 export default {
-  title: 'Cards/IconCard',
+  title: "Cards/IconCard",
   component: IconCard,
-  argTypes:{
-    text:{
-      control:'text'
+  argTypes: {
+    text: {
+      control: "text",
     },
-    title:{
-      control:'text'
+    title: {
+      control: "text",
     },
-    button:{
-      control:'text'
+    button: {
+      control: "text",
     },
-    buttonLink:{
-      control:'text'
-    }
-  }
+    buttonLink: {
+      control: "text",
+    },
+  },
 }
 
-const Template = (args) => <IconCard {...args}/>
+const Template = args => <IconCard {...args} />
 
 export const Primary = Template.bind({})
 
 Primary.args = {
-  text:'Card text',
-  title:'Card title',
-  button: 'button',
-  buttonLink: 'https://example.com'
+  text: "Card text",
+  title: "Card title",
+  button: "button",
+  buttonLink: "https://example.com",
 }

@@ -1,103 +1,117 @@
-import React, {useState, useRef} from 'react'
-import VisibilitySensor from 'react-visibility-sensor'
+import React, { useState, useRef } from "react"
+import VisibilitySensor from "react-visibility-sensor"
 
-import styled from 'styled-components'
+import styled from "styled-components"
 
 const StyledPath = styled.path`
-  fill:${props => props.fillColor ? (props.theme.colors[props.fillColor] ? props.theme.colors[props.fillColor] : props.theme.colors.primary) : props.theme.colors.primary};
+  fill: ${props =>
+    props.fillColor
+      ? props.theme.colors[props.fillColor]
+        ? props.theme.colors[props.fillColor]
+        : props.theme.colors.primary
+      : props.theme.colors.primary};
 `
 
-const IllustrationContainer =  styled.div`
-  position:absolute;
-  top:0;
-  left:0;
-  z-index:-1;
-  min-width:100%;
-  min-height:100%;
-  max-height:100%;
-  display:flex;
-  flex-direction:column;
-  && > svg:last-of-type{
-    transform:translateY(-2px);
+const IllustrationContainer = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  min-width: 100%;
+  min-height: 100%;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  && > svg:last-of-type {
+    transform: translateY(-2px);
   }
-  && > svg:first-of-type{
-    transform:translateY(2px);
+  && > svg:first-of-type {
+    transform: translateY(2px);
   }
 `
 
 const IllustrationBody = styled.div`
-  background-color:${props => props.fillColor ? (props.theme.colors[props.fillColor] ? props.theme.colors[props.fillColor] : props.theme.colors.primary) : props.theme.colors.primary};
-  width:100%;
-  flex-grow:1;
+  background-color: ${props =>
+    props.fillColor
+      ? props.theme.colors[props.fillColor]
+        ? props.theme.colors[props.fillColor]
+        : props.theme.colors.primary
+      : props.theme.colors.primary};
+  width: 100%;
+  flex-grow: 1;
 `
 
-
-const CurvedBackground = ({fillColor, hideBottom, hideTop, topVariant}, ...rest) => {
-  
+const CurvedBackground = (
+  { fillColor, hideBottom, hideTop, topVariant },
+  ...rest
+) => {
   const svgVariant0 = useRef(null)
   const svgVariant1 = useRef(null)
   const svgBottom = useRef(null)
 
   const [topVariants, setTopVariants] = useState([
     <VisibilitySensor partialVisibility>
-      {({isVisible}) => {
-        if(isVisible){
+      {({ isVisible }) => {
+        if (isVisible) {
           svgVariant0.current && svgVariant0.current.unpauseAnimations()
-        }else{
+        } else {
           svgVariant0.current && svgVariant0.current.pauseAnimations()
         }
-          return <svg
-          ref={svgVariant0}
-          xmlns="http://www.w3.org/2000/svg"
-          height="100%"
-          viewBox="0 0 1914.2 105.822"
+        return (
+          <svg
+            ref={svgVariant0}
+            xmlns="http://www.w3.org/2000/svg"
+            height="100%"
+            viewBox="0 0 1914.2 105.822"
           >
-          <StyledPath
-            data-testid="styled-path"
-            {...rest}
-            fillColor={fillColor}
-            d="M4321 2158h1914.2v-104.4s-832 128-940.8 38.4-973.4 0-973.4 0z"
-            data-name="Path 382"
-            transform="translate(-4321 -2052.178)"
-          >
-            <animate
-              fill="freeze"
-              attributeName="d"
-              attributeType="XML"
-              dur={`10s`}
-              repeatCount="indefinite"
-              calcMode="spline"
-              keySplines="0.4 0 0.2 1; 0.4 0 0.2 1; 0.4 0 0.2 1"
-              values="
+            <StyledPath
+              data-testid="styled-path"
+              {...rest}
+              fillColor={fillColor}
+              d="M4321 2158h1914.2v-104.4s-832 128-940.8 38.4-973.4 0-973.4 0z"
+              data-name="Path 382"
+              transform="translate(-4321 -2052.178)"
+            >
+              <animate
+                fill="freeze"
+                attributeName="d"
+                attributeType="XML"
+                dur={`10s`}
+                repeatCount="indefinite"
+                calcMode="spline"
+                keySplines="0.4 0 0.2 1; 0.4 0 0.2 1; 0.4 0 0.2 1"
+                values="
                 M4321 2158h1914.2v-104.4s-832 128-940.8 38.4-973.4 0-973.4 0z;
                 M4321,2158H6235.2V2053.6S4917.6,2232,4780,2116.8s-459-24.8-459-24.8Z;
                 M4321,2158H6235.2V2053.6s-196.8,128-305.6,38.4-1608.6,0-1608.6,0Z;
                 M4321 2158h1914.2v-104.4s-832 128-940.8 38.4-973.4 0-973.4 0z;  
               "
-              from=""
-              to=""
-            ></animate>
-          </StyledPath>
-        </svg>
+                from=""
+                to=""
+              ></animate>
+            </StyledPath>
+          </svg>
+        )
       }}
     </VisibilitySensor>,
-        <VisibilitySensor partialVisibility>
-        {({isVisible}) => {
-          if(isVisible){
-            svgVariant1.current && svgVariant1.current.unpauseAnimations()
-          }else{
-            svgVariant1.current && svgVariant1.current.pauseAnimations()
-          }
-          return <svg 
+    <VisibilitySensor partialVisibility>
+      {({ isVisible }) => {
+        if (isVisible) {
+          svgVariant1.current && svgVariant1.current.unpauseAnimations()
+        } else {
+          svgVariant1.current && svgVariant1.current.pauseAnimations()
+        }
+        return (
+          <svg
             ref={svgVariant1}
-            xmlns="http://www.w3.org/2000/svg" 
-            height="100%" 
+            xmlns="http://www.w3.org/2000/svg"
+            height="100%"
             viewBox="0 0 1920 161.997"
           >
             <StyledPath
-              id="three-waves" 
-              d="M0-9.683s121.31-120.435,344.727,0c57.195,30.831,162.448,126.171,230.191,83.147C707.017-3.979,863.039-102.165,1082.99-41.267,1299.981,21.171,1340.413,133.7,1455.576,73.464,1696.064-107.237,1920-9.683,1920-9.683V98.788H0Z" 
-              transform="translate(0 63.209)" 
+              id="three-waves"
+              d="M0-9.683s121.31-120.435,344.727,0c57.195,30.831,162.448,126.171,230.191,83.147C707.017-3.979,863.039-102.165,1082.99-41.267,1299.981,21.171,1340.413,133.7,1455.576,73.464,1696.064-107.237,1920-9.683,1920-9.683V98.788H0Z"
+              transform="translate(0 63.209)"
               {...rest}
               fillColor={fillColor}
             >
@@ -120,72 +134,61 @@ const CurvedBackground = ({fillColor, hideBottom, hideTop, topVariant}, ...rest)
               ></animate>
             </StyledPath>
           </svg>
-        }}
-        </VisibilitySensor>
-  ])
-  
-  return (
-    <IllustrationContainer
-      data-testid="illustration-container"
-    >
-      {
-        !hideTop &&
-        (
-          topVariant ?
-          topVariants[topVariant]
-          :
-          topVariants[0]
         )
-      }
-      <IllustrationBody 
-        fillColor={fillColor}
-        data-testid="illustration-body"
-      />
-      {
-        !hideBottom &&
+      }}
+    </VisibilitySensor>,
+  ])
+
+  return (
+    <IllustrationContainer data-testid="illustration-container">
+      {!hideTop && (topVariant ? topVariants[topVariant] : topVariants[0])}
+      <IllustrationBody fillColor={fillColor} data-testid="illustration-body" />
+      {!hideBottom && (
         <VisibilitySensor partialVisibility>
-        {({isVisible}) => {
-          if(isVisible){
-            svgBottom.current && svgBottom.current.unpauseAnimations()
-          }else{
-            svgBottom.current && svgBottom.current.pauseAnimations()
-          }
-          return <svg
-            ref={svgBottom}
-            xmlns="http://www.w3.org/2000/svg"
-            height="100%"
-            viewBox="0 0 1914.2 82"
-          >
-            <StyledPath
-              data-testid="styled-path"
-              {...rest}
-              fillColor={fillColor}
-              d="M4321 2158v-82h1914.2v82s-651.556-56.4-985.6-56.4S4321 2158 4321 2158z"
-              data-name="Path 383"
-              transform="translate(-4321 -2076)"
-            >
-              <animate
-                fill="freeze"
-                attributeName="d"
-                attributeType="XML"
-                dur={`10s`}
-                repeatCount="indefinite"
-                calcMode="spline"
-                keySplines="0.4 0 0.2 1; 0.4 0 0.2 1; 0.4 0 0.2 1"
-                values="
+          {({ isVisible }) => {
+            if (isVisible) {
+              svgBottom.current && svgBottom.current.unpauseAnimations()
+            } else {
+              svgBottom.current && svgBottom.current.pauseAnimations()
+            }
+            return (
+              <svg
+                ref={svgBottom}
+                xmlns="http://www.w3.org/2000/svg"
+                height="100%"
+                viewBox="0 0 1914.2 82"
+              >
+                <StyledPath
+                  data-testid="styled-path"
+                  {...rest}
+                  fillColor={fillColor}
+                  d="M4321 2158v-82h1914.2v82s-651.556-56.4-985.6-56.4S4321 2158 4321 2158z"
+                  data-name="Path 383"
+                  transform="translate(-4321 -2076)"
+                >
+                  <animate
+                    fill="freeze"
+                    attributeName="d"
+                    attributeType="XML"
+                    dur={`10s`}
+                    repeatCount="indefinite"
+                    calcMode="spline"
+                    keySplines="0.4 0 0.2 1; 0.4 0 0.2 1; 0.4 0 0.2 1"
+                    values="
                   M4321 2158v-82h1914.2v82s-651.556-56.4-985.6-56.4S4321 2158 4321 2158z;
                   M4321,2158v-82H6235.2v82s-149.6-130.8-985.6-56.4S4321,2158,4321,2158Z;
                   M4321,2158v-82H6235.2v82s-144.8,14.8-985.6-56.4S4321,2158,4321,2158Z;
                   M4321 2158v-82h1914.2v82s-651.556-56.4-985.6-56.4S4321 2158 4321 2158z;  
                 "
-                from=""
-                to=""
-              ></animate>
-            </StyledPath>
-          </svg>
-        }}
+                    from=""
+                    to=""
+                  ></animate>
+                </StyledPath>
+              </svg>
+            )
+          }}
         </VisibilitySensor>
-      }
+      )}
     </IllustrationContainer>
   )
 }

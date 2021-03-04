@@ -1,9 +1,9 @@
 import { action } from "@storybook/addon-actions"
-import React from 'react'
+import React from "react"
 import { ThemeProvider } from "styled-components"
-import {theme, GlobalStyle} from '../src/styles/styles'
-import {Provider} from 'mobx-react'
-import ActiveSectionStore from '../src/state/stores/activeSectionStore'
+import { theme, GlobalStyle } from "../src/styles/styles"
+import { Provider } from "mobx-react"
+import ActiveSectionStore from "../src/state/stores/activeSectionStore"
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -13,11 +13,11 @@ export const decorators = [
   Story => (
     <Provider activeSection={ActiveSectionStore}>
       <ThemeProvider theme={theme}>
-        <GlobalStyle/>
-        <Story/>
+        <GlobalStyle />
+        <Story />
       </ThemeProvider>
     </Provider>
-  )
+  ),
 ]
 
 // Gatsby's Link overrides:

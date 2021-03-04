@@ -1,25 +1,30 @@
-import React, {useRef} from 'react'
-import VisibilitySensor from 'react-visibility-sensor'
+import React, { useRef } from "react"
+import VisibilitySensor from "react-visibility-sensor"
 
-import styled from 'styled-components'
+import styled from "styled-components"
 
 const StyledPath = styled.path`
-  fill:${props => props.fillColor ? (props.theme.colors[props.fillColor] ? props.theme.colors[props.fillColor] : props.theme.colors.primary) : props.theme.colors.primary};
+  fill: ${props =>
+    props.fillColor
+      ? props.theme.colors[props.fillColor]
+        ? props.theme.colors[props.fillColor]
+        : props.theme.colors.primary
+      : props.theme.colors.primary};
 `
 
-const PeopleOutside = ({fillColor, ...rest}) => {
-
+const PeopleOutside = ({ fillColor, ...rest }) => {
   const svg = useRef(null)
 
-  return(
+  return (
     <VisibilitySensor partialVisibility>
-      {({isVisible}) => {
-        if(isVisible){
+      {({ isVisible }) => {
+        if (isVisible) {
           svg.current && svg.current.unpauseAnimations()
-        }else{
+        } else {
           svg.current && svg.current.pauseAnimations()
         }
-        return <svg
+        return (
+          <svg
             ref={svg}
             {...rest}
             xmlns="http://www.w3.org/2000/svg"
@@ -77,22 +82,22 @@ const PeopleOutside = ({fillColor, ...rest}) => {
               transform="translate(-46.681 -275.055)"
               data-testid="path"
             >
-                <animate
-                  fill="freeze"
-                  attributeName="opacity"
-                  attributeType="XML"
-                  dur={`12s`}
-                  repeatCount="indefinite"
-                  calcMode="spline"
-                  keySplines="0.4 0 0.2 1; 0.4 0 0.2 1"
-                  values="
+              <animate
+                fill="freeze"
+                attributeName="opacity"
+                attributeType="XML"
+                dur={`12s`}
+                repeatCount="indefinite"
+                calcMode="spline"
+                keySplines="0.4 0 0.2 1; 0.4 0 0.2 1"
+                values="
                     0.75;
                     0;
                     0.75;
                   "
-                  from=""
-                  to=""
-                ></animate>
+                from=""
+                to=""
+              ></animate>
             </StyledPath>
             <StyledPath
               fillColor={fillColor}
@@ -195,7 +200,7 @@ const PeopleOutside = ({fillColor, ...rest}) => {
               ></animate>
             </StyledPath>
             <StyledPath
-              as='ellipse'
+              as="ellipse"
               cx="87.113"
               cy="7.15"
               fillColor={fillColor}
@@ -1980,8 +1985,9 @@ const PeopleOutside = ({fillColor, ...rest}) => {
               transform="translate(-660.737 -475.62)"
             ></path>
           </svg>
-        }}
-      </VisibilitySensor>
+        )
+      }}
+    </VisibilitySensor>
   )
 }
 

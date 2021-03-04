@@ -1,17 +1,19 @@
-import React from 'react'
-import {render, fireEvent} from '@testing-library/react'
-import Fluid from './Fluid'
-import {theme} from '../../styles/styles' 
+import React from "react"
+import { render, fireEvent } from "@testing-library/react"
+import Fluid from "./Fluid"
+import { theme } from "../../styles/styles"
 
-import {ThemeProvider} from 'styled-components'
+import { ThemeProvider } from "styled-components"
 
-describe('Fluid', () => {
-  const FluidWithTheme = ({...props}) => <ThemeProvider theme={theme}>
-    <Fluid {...props}/>
-  </ThemeProvider>
+describe("Fluid", () => {
+  const FluidWithTheme = ({ ...props }) => (
+    <ThemeProvider theme={theme}>
+      <Fluid {...props} />
+    </ThemeProvider>
+  )
 
-  it('renders', () => {
-    const {getByTestId} = render(<FluidWithTheme/>)
-    expect(getByTestId('fluid')).not.toBe(null)
+  it("renders", () => {
+    const { getByTestId } = render(<FluidWithTheme />)
+    expect(getByTestId("fluid")).not.toBe(null)
   })
 })

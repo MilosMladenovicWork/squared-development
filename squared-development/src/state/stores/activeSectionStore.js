@@ -1,14 +1,14 @@
-import {makeAutoObservable} from 'mobx'
+import { makeAutoObservable } from "mobx"
 
-class ActiveSection{
+class ActiveSection {
   activeSectionId = undefined
   lastActiveSectionId = undefined
 
-  constructor(){
+  constructor() {
     makeAutoObservable(this)
   }
 
-  setActiveSectionId(id){
+  setActiveSectionId(id) {
     this.lastActiveSectionId = this.activeSectionId
     this.activeSectionId = id
   }
