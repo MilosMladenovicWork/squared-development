@@ -4,6 +4,7 @@ import {inject, observer} from 'mobx-react'
 import styled, {keyframes, css} from 'styled-components'
 import 'swiper/swiper.scss';
 import ReactVisibilitySensor from 'react-visibility-sensor'
+import TimedElementsAppear from '../components/TimedElementsAppear'
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -248,7 +249,13 @@ const IndexPage = ({activeSection: activeSectionStore}) => {
             <HeroBannerContainer>
               <PercentageWidthContainer widthPercentage={45}>
                 <HeroHeadingContainer>
-                  <Heading alignment={'left'}>Squared Development Agency</Heading>
+                  <Heading alignment={'left'}>
+                    {
+                    `We create `  
+                    }
+                    <TimedElementsAppear elements={['Websites', 'Applications', 'Graphics']}/> 
+                  </Heading>
+                  <VerticalMarginSeparator marginSize={0.5}/>
                 </HeroHeadingContainer>
                 <HeroDescriptionContainer>
                   <Paragraph display>

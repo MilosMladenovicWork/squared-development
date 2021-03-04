@@ -5,6 +5,9 @@ import SquaredSquare from './Details/SquaredSquare'
 
 const StyledHeading = styled.h1`
   font-family: ${props => props.theme.font.display};
+  *{
+    font-family: ${props => props.theme.font.display};
+  }
   color:${props => props.light ? props.theme.colors.textLight : props.theme.colors.textDark};
   position:relative;
   text-align:${props => props.alignment ? props.alignment : 'left'};
