@@ -22,15 +22,12 @@ import CurvedBackground from "../components/Illustrations/CurvedBackground.js"
 import PeopleOutside from '../components/Illustrations/PeopleOutside'
 import Detail from "../components/Illustrations/Detail"
 import IconTextCard from "../components/Cards/IconTextCard"
-import ImageCoverCard from "../components/Cards/ImageCoverCard"
-import projectImgMobile2 from '../images/mobile-project.png'
-import referenceImg from '../images/reference.png'
 import ReferencesSlider from "../components/ReferencesSlider";
 import TickMarksCard from '../components/Cards/TickMarksCard'
 import ScalingSquares from "../components/Illustrations/ScalingSquares";
 import TransformedImageCard from "../components/Cards/TransformedImageCard";
-import minus1Img from '../images/minus1.png'
-import perunImg from '../images/perun.png'
+import minus1Img from '../images/minus1Project.png'
+import perunImg from '../images/perunProject.png'
 import mathGameImg from '../images/math-game.png'
 import cubicalImg from '../images/cubical.png'
 import helloCleanImg from '../images/hello-clean.png'
