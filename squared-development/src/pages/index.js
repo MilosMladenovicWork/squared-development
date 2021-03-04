@@ -621,7 +621,7 @@ const IndexPage = ({activeSection: activeSectionStore}) => {
                   text: 'Definetely top notch! Looking forward to the next project!',
                   button: 'Perun',
                   buttonLink: 'https://perun.network',
-                  projectImg: perunProject
+                  projectImg: perunImg
                 },
               ]}
               setImageToParent={(image) => setReferenceSectionImage(image)}
