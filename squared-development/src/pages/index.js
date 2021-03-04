@@ -154,6 +154,7 @@ const appear = keyframes`
     opacity:0.08;
   }
 `
+
 const secondAppear = keyframes`
   0%{
     opacity:0;
@@ -170,7 +171,7 @@ const ReferencesBackgroundContainer = styled.div`
   width:100%;
   height:100%;
   overflow:visible;
-  > img {
+  > div {
     height:140%;
   }
   animation: ${({ toggle }) =>
