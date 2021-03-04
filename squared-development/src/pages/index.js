@@ -295,7 +295,7 @@ const IndexPage = ({activeSection: activeSectionStore}) => {
               OUR SERVICES
             </Heading>
             <Paragraph halfWidth display alignment={'center'}>
-              We provide everything you need for your company website so you can focus on what matters the most, your product. Also, you are going to get exactly what you need in time interval that you set. Our services include:    
+              We provide everything you need for your company website so you can focus on what matters the most, your product. Also, you are going to get exactly what you need in time interval that you set. We are web development company which focuses on using ReactJS for creating highly interactive websites. Our web development services include:    
             </Paragraph>
             <ServicesCardsContainer>
               <IconTextCard 
@@ -358,7 +358,11 @@ const IndexPage = ({activeSection: activeSectionStore}) => {
             <PercentageWidthContainer widthPercentage={40}>
               <Heading alignment={'right'} accent textColor="textLight">About us</Heading>
               <Paragraph alignment={'right'} textColor="textLight">
-                We are team of developers and designers with a mission of creating engaging and user friendly websites and web applications.
+                We are team of developers and designers with a mission of creating engaging and user friendly websites and web applications. 
+              </Paragraph>
+              <VerticalMarginSeparator marginSize={0.25}/>
+              <Paragraph alignment={'right'} textColor="textLight">
+                We are web development, web design and web application development company that is also working outside of web platforms, making designs for bussiness cards, illustrations and more. We strive to become best web development agency in a region and beyond.
               </Paragraph>
               <VerticalMarginSeparator marginSize={0.25}/>
               <Paragraph alignment={'right'} textColor="textLight">
@@ -380,7 +384,7 @@ const IndexPage = ({activeSection: activeSectionStore}) => {
               Pricing
             </Heading>
             <Paragraph halfWidth display alignment={'center'}>
-              We divided price ranges in three packages with different included services, but feel free to contact us so we can negotiate the price.  
+              We divided price ranges in three web development packages with different included services, but feel free to contact us so we can negotiate the price. We strive to make web development services affordable for our clients. 
             </Paragraph>
             <ServicesCardsContainer>
               <TickMarksCard 
