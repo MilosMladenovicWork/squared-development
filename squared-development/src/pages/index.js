@@ -267,7 +267,9 @@ const IndexPage = ({activeSection: activeSectionStore}) => {
 
   return(
   <Layout>
-    <SEO title="Home" />
+    <SEO 
+      title="Home"   
+    />
     <ConstraintContainer>
       <FullHeightContainer>
         <ReactVisibilitySensor partialVisibility offset={{top: typeof window !== 'undefined' && window.innerHeight/2}} onChange={(isVisible) => handleSectionVisibility(isVisible, '/#home')}>
