@@ -50,7 +50,7 @@ const ImageCover = styled.img`
   left:0;
   box-shadow: 0 0px 4px rgba(0, 0, 0, 0.12);
   border:none;
-  @media (max-width:768px){
+  @media (max-width:767px){
     width:unset;
     max-width:100%;
     position:relative;
@@ -65,7 +65,7 @@ const ProjectDescription = styled.div`
   display:flex;
   align-items:center;
   justify-content:center;
-  @media (max-width:768px){ 
+  @media (max-width:767px){ 
     background-color: unset;
     padding:15px 15px 70px;
   }
@@ -84,14 +84,14 @@ const StyledProjectCard = styled.div`
   width: 57.5vw;
   height: 28.5vw;
   transform:translateY(-2px);
-  @media (max-width:768px){
+  @media (max-width:767px){
     background-color: ${props => props.theme.colors.primary};
     width:90%;
     height:auto;
   }
   ${ProjectTitle}{
     width:18.5vw;
-    @media (max-width:768px){
+    @media (max-width:767px){
       width:80%;
     }
   }
@@ -100,11 +100,11 @@ const StyledProjectCard = styled.div`
     width: 13vw; 
     ${ProjectTitle}{
       width:10vw;
-      @media (max-width:768px){
+      @media (max-width:767px){
         width:80%;
       }
     }
-    @media (max-width:768px){
+    @media (max-width:767px){
       width:90%;
       height:auto;
     }
@@ -112,7 +112,7 @@ const StyledProjectCard = styled.div`
   z-index:5;
   ${ImageCover}{
     animation: ${props => props.hovered ? imageHideAndShowNormal : imageHideAndShowReverse} 1s forwards;
-    @media (max-width:768px){
+    @media (max-width:767px){
       animation:unset;
     }
   }
@@ -120,7 +120,7 @@ const StyledProjectCard = styled.div`
 
 const MobileCoverContainer = styled.div`
   display:none;
-  @media (max-width:768px){
+  @media (max-width:767px){
     position:relative;
     width:90%;
     display:block;
@@ -130,7 +130,7 @@ const MobileCoverContainer = styled.div`
 
 const DesktopCoverContainer = styled.div`
   display:block;
-  @media (max-width:768px){
+  @media (max-width:767px){
     display:none;
   }
 `

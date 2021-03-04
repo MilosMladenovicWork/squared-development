@@ -29,7 +29,7 @@ export const GlobalStyle = createGlobalStyle`
   }
   h1{
     font-size:4rem;
-    @media (max-width:768px){
+    @media (max-width:767px){
       font-size:2.5rem;
       margin-top:4rem;
       margin-bottom:4rem;
@@ -37,7 +37,7 @@ export const GlobalStyle = createGlobalStyle`
   }
   h2{
     font-size:3.5rem;
-    @media (max-width:768px){
+    @media (max-width:767px){
       font-size:2.25rem;
       margin-top:3.5rem;
       margin-bottom:3.5rem;
@@ -47,7 +47,7 @@ export const GlobalStyle = createGlobalStyle`
     font-size:3rem;
     margin-top:2rem;
     margin-bottom:2rem;
-    @media (max-width:768px){
+    @media (max-width:767px){
       font-size:2rem;
       margin-top:2rem;
       margin-bottom:2rem;
@@ -55,7 +55,7 @@ export const GlobalStyle = createGlobalStyle`
   }
   h4{
     font-size:2.5rem;
-    @media (max-width:768px){
+    @media (max-width:767px){
       font-size:1.75rem;
       margin-top:2.5rem;
       margin-bottom:2.5rem;
@@ -63,7 +63,7 @@ export const GlobalStyle = createGlobalStyle`
   }
   h5{
     font-size:2rem;
-    @media (max-width:768px){
+    @media (max-width:767px){
       font-size:1.5rem;
       margin-top:2rem;
       margin-bottom:2rem;
@@ -71,7 +71,7 @@ export const GlobalStyle = createGlobalStyle`
   }
   h6{
     font-size:1.75rem;
-    @media (max-width:768px){
+    @media (max-width:767px){
       font-size:1.25rem;
       margin-top:1.5rem;
       margin-bottom:1.5rem;

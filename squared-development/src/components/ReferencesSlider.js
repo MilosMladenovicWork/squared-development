@@ -47,7 +47,7 @@ const ReferencesSlider = ({data, setImageToParent}) => {
         initialSlide={1}
         breakpoints= {
           {
-            768: {
+            767: {
               slidesPerView: (data && data.length > 1) ? 3 : 1,
               spaceBetween: 20
             },

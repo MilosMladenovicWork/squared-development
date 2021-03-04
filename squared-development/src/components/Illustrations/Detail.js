@@ -25,7 +25,7 @@ const DetailContainer = styled.div`
   }
   animation-duration: ${props => props.size / 0.5}s;
   animation-direction: ${props => props.backwards ? 'reverse' : 'normal'};
-  @media (max-width:768px){
+  @media (max-width:767px){
     width:${props => (props.size ? props.size : 1) * 4 + 'vw'};
   }
 `

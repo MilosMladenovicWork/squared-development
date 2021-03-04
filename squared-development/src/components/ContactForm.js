@@ -17,7 +17,7 @@ const StyledContactForm = styled.form`
   & > *{
     margin-top:20px;
   }
-  @media (max-width:768px){
+  @media (max-width:767px){
     min-width:90%;
     & > *{
       margin-top:20px;

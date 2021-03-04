@@ -18,7 +18,7 @@ const StyledParagraph = styled.p`
   color:${props => props.textColor ? (props.theme.colors[props.textColor] ? props.theme.colors[props.textColor] : props.theme.colors.textDark) : props.theme.colors.textDark};
   width:${props => props.halfWidth ? '50%' : '100%'};
   transition:.25s;
-  @media (max-width:768px){
+  @media (max-width:767px){
     width:100%;
   }
 `

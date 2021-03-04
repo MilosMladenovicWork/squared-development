@@ -19,9 +19,9 @@ const StyledImg = styled.img`
   ${props => props.reverse && css`
     transform: rotate3d(0, 1, 0, 45deg);
   `}
-  @media (max-width:768px){
+  @media (max-width:767px){
     transform:none;
-  }  
+  }
 `
 
 const StyledCardTextContent = styled.div`
@@ -31,8 +31,12 @@ const StyledCardTextContent = styled.div`
   max-height:50vh;
   h3{
     margin-top:0;
+    margin-bottom:1rem;
   }
-  @media (max-width:768px){
+  p{
+    margin-bottom:1rem;
+  }
+  @media (max-width:767px){
     max-width:100%;
     max-height:unset;
   }
@@ -47,7 +51,7 @@ const StyledImageContainer = styled.div`
   align-items:center;
   justify-content: center;
   &:hover{
-    @media (min-width:768px){
+    @media (min-width:767px){
       ~ div{
         max-width:0%;
       }
@@ -61,7 +65,7 @@ const StyledImageContainer = styled.div`
       }
     }
   }
-  @media (max-width:768px){
+  @media (max-width:767px){
     max-width:100%;
   }
 `
@@ -73,8 +77,9 @@ const StyledTransformedImageCard = styled.div`
   flex-direction:row-reverse;
   align-items: center;
   text-align:left;
+  margin:50px 0px;
   *{
-    @media (max-width:768px){
+    @media (max-width:767px){
       text-align:center;
     }  
   }
@@ -82,14 +87,18 @@ const StyledTransformedImageCard = styled.div`
     flex-direction:row;
     *{
       text-align:right;
-      @media (max-width:768px){
+      @media (max-width:767px){
         text-align:center;
       }  
     }
   `}
-  @media (max-width:768px){
+  @media (max-width:1200px){
+    margin:100px 0;
+  } 
+  @media (max-width:767px){
+    margin:50px 0px;
     flex-direction:column;
-  }
+  } 
 `
 
 
@@ -106,7 +115,6 @@ const TransformedImageCard = ({image, title, description, buttonText, buttonLink
           <Paragraph>
             {description} 
           </Paragraph>
-        <VerticalMarginSeparator marginSize={2}/>
         <Button as={Link} to={buttonLink}>
           {buttonText} 
         </Button>

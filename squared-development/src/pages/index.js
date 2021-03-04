@@ -43,9 +43,17 @@ const HeroBannerContainer = styled.div`
   display:flex;
   align-items:center;
   min-height:70vh;
-  @media (max-width:768px){
+  @media (max-width:1200px){
+    > div:first-of-type{
+      width:82%;
+    }
     flex-direction:column;
-    align-items:unset;
+    align-items:center;
+  }
+  @media (max-width:767px){
+    > div:first-of-type{
+      width:unset;
+    }
   }
 `
 
@@ -65,12 +73,12 @@ const HeroButtons = styled.div`
   animation: ${heroAppear} 1s 2.25s forwards; 
   & > *:first-of-type{
     margin-right:10px;
-    @media (max-width:768px){
+    @media (max-width:767px){
       margin-right:unset;
       margin-bottom:10px;
     }
   }
-  @media (max-width: 768px){
+  @media (max-width: 767px){
     flex-direction:column;
     margin-bottom:40px; 
   }
@@ -84,7 +92,7 @@ const FluidBackgroundContainer = styled.div`
   transform:translate(40%, -50%);
   z-index:-1;
   animation: ${heroAppear} 1s;
-  @media (max-width: 768px){
+  @media (max-width: 767px){
     width:130vw;
   }
 `
@@ -97,7 +105,7 @@ const AboutContentContainer = styled.div`
   flex-direction:row;
   justify-content:space-between;
   align-items:center;
-  @media (max-width: 768px){
+  @media (max-width: 767px){
     flex-direction:column;
   }
 `
@@ -111,11 +119,15 @@ const ServicesCardsContainer = styled.div`
   display:flex;
   flex-direction:row;
   flex-wrap:wrap;
-  justify-content:space-between;
+  justify-content:space-evenly;
   margin:auto;
   margin-top:50px; 
   max-width:1200px;
-  @media (max-width: 768px){
+  justify-items:center;
+  > *{
+    margin-bottom:70px;
+  }
+  @media (max-width: 767px){
     flex-direction: column;
     align-items:center;
     > *{
@@ -129,7 +141,7 @@ const ProjectsContainer = styled.div`
   flex-direction:row;
   flex-wrap:wrap;
   justify-content:space-between;
-  @media (max-width:768px){
+  @media (max-width:767px){
     margin-top:30px;
     flex-direction:column;
   }
@@ -207,7 +219,11 @@ const HeroDescriptionContainer = styled.div`
   opacity:0;
   animation: ${heroAppear} 1s 0.75s forwards;
   padding-top:1rem;
-  @media (max-width:768px){
+  @media (max-width:1200px){
+    width:60%;
+  }
+  @media (max-width:767px){
+    width:unset;
     padding-top:0.5rem;
   }
 `
@@ -215,6 +231,12 @@ const HeroDescriptionContainer = styled.div`
 const HeroIllustrationContainer = styled.div`
   opacity:0;
   animation: ${heroAppear} 1s 1.5s forwards;
+  @media (max-width:1200px){
+    margin-top:5rem;
+  }
+  @media (max-width:767px){
+    margin-top:unset;
+  }
 `
 
 const IndexPage = ({activeSection: activeSectionStore}) => {

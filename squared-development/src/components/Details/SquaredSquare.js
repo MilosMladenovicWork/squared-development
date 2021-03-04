@@ -23,7 +23,7 @@ const SquaredContainer = styled.div`
       return 'unset'
     }
   }};
-  @media (max-width: 768px){
+  @media (max-width: 767px){
     width:110px;
     height:110px;
   }

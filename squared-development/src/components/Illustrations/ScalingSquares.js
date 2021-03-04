@@ -26,7 +26,7 @@ const DetailContainer = styled.div`
     ${props.verticalPosition === 'top' ? props.verticalPosition : (props.verticalPosition === 'bottom' ? props.verticalPosition : 'top')}: 0%;
     ${props.horizontalPosition === 'left' ? props.horizontalPosition : (props.horizontalPosition === 'right' ? props.horizontalPosition : 'left')}: 0%;
   `};
-  @media (max-width:768px){
+  @media (max-width:767px){
     width:${props => (props.size ? props.size : 1) * 4 + 'vw'};
     height:${props => (props.size ? props.size : 1) * 4 + 'vw'};
   }

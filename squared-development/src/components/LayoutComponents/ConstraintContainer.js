@@ -3,8 +3,11 @@ import React from 'react'
 import styled from 'styled-components'
 
 const ConstraintContainerStyled = styled.div`
-  padding:0 10%;
-  @media (max-width: 768px){
+  padding:0 7.5%;
+  @media (max-width:1200px){
+    padding:0 40px;
+  }
+  @media (max-width: 767px){
     padding:0 20px;
   }
 `

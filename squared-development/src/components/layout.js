@@ -28,13 +28,13 @@ const StyledLayout = styled.div`
 const StyledMain = styled.main`
   position:relative;
   margin-top:170px;
-  @media (max-width: 768px){
+  @media (max-width: 960px){
     margin-top:100px;
   }
 `
 
 const StyledNav = styled.nav`
-  @media (max-width: 768px){
+  @media (max-width: 960px){
     display:none;
   }
 `
@@ -58,7 +58,7 @@ const heightChangeReverse = keyframes`
 
 const StyledMobileNav = styled.nav`
   display:none;
-  @media (max-width: 768px){
+  @media (max-width: 960px){
     display:flex;
     align-items:center;
     justify-content:space-evenly;
@@ -103,7 +103,7 @@ const HamburgerIconContainer = styled.div`
   svg{
     width:100%;
   }
-  @media (max-width:768px){
+  @media (max-width:960px){
     transform: ${props => props.menuOpened ? 'translateY(-100px)' : 'translateY(0px)'};
     opacity: ${props => props.menuOpened ? 0 : 1};
     display:block;

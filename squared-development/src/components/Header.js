@@ -16,10 +16,13 @@ const HeaderStyled = styled.header`
   position:fixed;
   top:0;
   z-index:10;
-  padding:20px 100px 0px 100px;
+  padding:20px 100px 0px 50px;
   transform:translateY(-150px);
   animation: ${dropDown} 1s 2s forwards;
-  @media (max-width: 768px){
+  @media (max-width: 1200px){
+    padding:20px 20px 0px 20px;
+  }
+  @media (max-width: 767px){
     padding:15px 20px;
   }
 `
@@ -41,7 +44,7 @@ const HeaderBackground = styled.div`
   svg {
     transform:translateY(-2px);
     min-width:100%;
-    @media (max-width:768px){
+    @media (max-width:767px){
       min-width:unset;
       transform:translateY(-7px);
     }
