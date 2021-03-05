@@ -15,7 +15,7 @@ const StyledImg = styled(Image)`
   transition: 0.6s;
   transform: rotate3d(0, 1, 0, -45deg);
   transform-style: preserve-3d;
-  box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.12);
+  box-shadow: 5px 9px 25px 0px rgb(225,225,225);
   margin: 50px 0px;
   ${props =>
     props.reverse &&
@@ -28,10 +28,20 @@ const StyledImg = styled(Image)`
 `
 
 const StyledCardTextContent = styled.div`
+  width:50%;
   max-width: 50%;
   transition: max-width 0.6s;
   overflow: hidden;
   max-height: 50vh;
+  > div {
+    width:70%;
+    ${props => props.reverse && css`
+      margin-left:auto;
+    `}
+    @media (max-width:1200px){
+      width:100%;
+    }
+  }
   h3 {
     margin-top: 0;
     margin-bottom: 1rem;
@@ -41,6 +51,7 @@ const StyledCardTextContent = styled.div`
   }
   @media (max-width: 767px) {
     max-width: 100%;
+    width:100%;
     max-height: unset;
   }
 `
@@ -80,7 +91,7 @@ const StyledImageContainer = styled.div`
 const StyledTransformedImageCard = styled.div`
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-direction: row-reverse;
   align-items: center;
   text-align: left;
@@ -95,7 +106,7 @@ const StyledTransformedImageCard = styled.div`
     css`
       flex-direction: row;
       * {
-        text-align: right;
+        text-align: left;
         @media (max-width: 767px) {
           text-align: center;
         }
@@ -129,14 +140,16 @@ const TransformedImageCard = ({
           />
         )}
       </StyledImageContainer>
-      <StyledCardTextContent>
-        <Heading as={"h3"} display>
-          {title}
-        </Heading>
-        <Paragraph>{description}</Paragraph>
-        <Button as={Link} to={buttonLink}>
-          {buttonText}
-        </Button>
+      <StyledCardTextContent reverse={reverse}>
+        <div>
+          <Heading as={"h3"} display>
+            {title}
+          </Heading>
+          <Paragraph>{description}</Paragraph>
+          <Button as={Link} to={buttonLink}>
+            {buttonText}
+          </Button>
+        </div>
       </StyledCardTextContent>
     </StyledTransformedImageCard>
   )

@@ -7,9 +7,12 @@ import WavyBottomBackground from "../Illustrations/WavyBottomBackground"
 
 const StyledCard = styled.div`
   width: 320px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 5px 9px 25px 0px rgb(225,225,225);
   overflow: hidden;
   transition:0.3s;
+  &:hover{
+    transform:scale(0.95);
+  }
   h3 {
     font-size: 2rem;
     text-transform: unset;
