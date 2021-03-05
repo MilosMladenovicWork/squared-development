@@ -716,7 +716,6 @@ const IndexPage = ({ activeSection: activeSectionStore }) => {
               <Paragraph alignment="left" display halfWidth>
                 We are proud to showcase our most recent work.
               </Paragraph>
-              <VerticalMarginSeparator marginSize={3} />
               <ProjectsContainer>
                 <TransformedImageCard
                   image={minus1}
