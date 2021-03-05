@@ -7,8 +7,9 @@ import WavyBottomBackground from "../Illustrations/WavyBottomBackground"
 
 const StyledCard = styled.div`
   width: 320px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
   overflow: hidden;
+  transition:0.3s;
   h3 {
     font-size: 2rem;
     text-transform: unset;
@@ -43,7 +44,7 @@ const IllustrationContainer = styled.div`
 const StyledPath = styled.path`
   fill: ${props =>
     props.fillColor
-      ? props.theme.colors[props.fillColor]
+    ? props.theme.colors[props.fillColor]
         ? props.theme.colors[props.fillColor]
         : props.theme.colors.primary
       : props.theme.colors.primary};

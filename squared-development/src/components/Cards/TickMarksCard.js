@@ -8,7 +8,7 @@ import VerticalMarginSeparator from "../LayoutComponents/VerticalMarginSeparator
 
 const StyledCard = styled.div`
   width: 320px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
   overflow: hidden;
   h3 {
     font-size: 2rem;
