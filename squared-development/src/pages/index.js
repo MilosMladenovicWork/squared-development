@@ -27,7 +27,7 @@ import ReferencesSlider from "../components/ReferencesSlider"
 import TickMarksCard from "../components/Cards/TickMarksCard"
 import ScalingSquares from "../components/Illustrations/ScalingSquares"
 import TransformedImageCard from "../components/Cards/TransformedImageCard"
-import Logo from "../components/Logo"
+import Logo, { MemoizedLogo } from "../components/Logo"
 
 const HeroBannerContainer = styled.div`
   display: flex;
@@ -737,16 +737,16 @@ const IndexPage = ({ activeSection: activeSectionStore }) => {
               </Paragraph>
               <ProjectsContainer>
                 <ProjectsLogoContainer>
-                  <Logo fillColor='#000' style={{transform:`rotate(${Math.floor((Math.random() * 91)) - 45}deg)`}}/>
-                  <Logo fillColor='#000' style={{transform:`rotate(${Math.floor((Math.random() * 91)) - 45}deg)`}}/>
-                  <Logo fillColor='#000' style={{transform:`rotate(${Math.floor((Math.random() * 91)) - 45}deg)`}}/>
-                  <Logo fillColor='#000' style={{transform:`rotate(${Math.floor((Math.random() * 91)) - 45}deg)`}}/>
-                  <Logo fillColor='#000' style={{transform:`rotate(${Math.floor((Math.random() * 91)) - 45}deg)`}}/>
-                  <Logo fillColor='#000' style={{transform:`rotate(${Math.floor((Math.random() * 91)) - 45}deg)`}}/>
-                  <Logo fillColor='#000' style={{transform:`rotate(${Math.floor((Math.random() * 91)) - 45}deg)`}}/>
-                  <Logo fillColor='#000' style={{transform:`rotate(${Math.floor((Math.random() * 91)) - 45}deg)`}}/>
-                  <Logo fillColor='#000' style={{transform:`rotate(${Math.floor((Math.random() * 91)) - 45}deg)`}}/>
-                  <Logo fillColor='#000' style={{transform:`rotate(${Math.floor((Math.random() * 91)) - 45}deg)`}}/>
+                  <MemoizedLogo fillColor='#000' randomRotation/>
+                  <MemoizedLogo fillColor='#000' randomRotation/>
+                  <MemoizedLogo fillColor='#000' randomRotation/>
+                  <MemoizedLogo fillColor='#000' randomRotation/>
+                  <MemoizedLogo fillColor='#000' randomRotation/>
+                  <MemoizedLogo fillColor='#000' randomRotation/>
+                  <MemoizedLogo fillColor='#000' randomRotation/>
+                  <MemoizedLogo fillColor='#000' randomRotation/>
+                  <MemoizedLogo fillColor='#000' randomRotation/>
+                  <MemoizedLogo fillColor='#000' randomRotation/>
                 </ProjectsLogoContainer>
                 <TransformedImageCard
                   image={minus1}

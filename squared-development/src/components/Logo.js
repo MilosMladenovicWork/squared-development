@@ -1,6 +1,6 @@
 import React from "react"
 
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 
 const StyledText = styled.text`
   fill: ${props => props.theme.colors.textLight};
@@ -13,14 +13,19 @@ const StyledPath = styled.path`
 const StyledSvg = styled.svg`
   width: 100px;
   transition:0.3s;
+  ${props => props.randomRotation && css`
+    transform:rotate(${Math.floor((Math.random() * 91)) - 45}deg);
+  `
+  }
   @media (max-width: 767px) {
     width: 65px;
   }
 `
 
-const Logo = ({ children, fillColor, ...rest }) => {
+const Logo = ({ children, fillColor, randomRotation, ...rest }) => {
   return (
     <StyledSvg
+      randomRotation={randomRotation}
       xmlns="http://www.w3.org/2000/svg"
       x="0"
       y="0"
@@ -74,3 +79,5 @@ const Logo = ({ children, fillColor, ...rest }) => {
 }
 
 export default Logo
+
+export const MemoizedLogo = React.memo(Logo)
