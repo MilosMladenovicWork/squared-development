@@ -134,7 +134,7 @@ const ProjectsLogoContainer = styled.div`
   transform:translate(-50%,0);
   left:50%;
   top:0;
-  opacity:0.05;
+  opacity:0.025;
   > svg{
     width:100%;
     > path{
