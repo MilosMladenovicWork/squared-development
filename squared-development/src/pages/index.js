@@ -27,6 +27,7 @@ import ReferencesSlider from "../components/ReferencesSlider"
 import TickMarksCard from "../components/Cards/TickMarksCard"
 import ScalingSquares from "../components/Illustrations/ScalingSquares"
 import TransformedImageCard from "../components/Cards/TransformedImageCard"
+import Logo from "../components/Logo"
 
 const HeroBannerContainer = styled.div`
   display: flex;
@@ -125,11 +126,29 @@ const ServicesCardsContainer = styled.div`
   }
 `
 
+const ProjectsLogoContainer = styled.div`
+  width:120vw;
+  position:absolute;
+  height:100%;
+  overflow:hidden;
+  transform:translate(-50%,0);
+  left:50%;
+  top:0;
+  opacity:0.05;
+  > svg{
+    width:100%;
+    > path{
+      width:100%;
+    }
+  }
+`
+
 const ProjectsContainer = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
+  position:relative;
   @media (max-width: 767px) {
     margin-top: 30px;
     flex-direction: column;
@@ -717,6 +736,18 @@ const IndexPage = ({ activeSection: activeSectionStore }) => {
                 We are proud to showcase our most recent work.
               </Paragraph>
               <ProjectsContainer>
+                <ProjectsLogoContainer>
+                  <Logo fillColor='#000' style={{transform:`rotate(${Math.floor((Math.random() * 91)) - 45}deg)`}}/>
+                  <Logo fillColor='#000' style={{transform:`rotate(${Math.floor((Math.random() * 91)) - 45}deg)`}}/>
+                  <Logo fillColor='#000' style={{transform:`rotate(${Math.floor((Math.random() * 91)) - 45}deg)`}}/>
+                  <Logo fillColor='#000' style={{transform:`rotate(${Math.floor((Math.random() * 91)) - 45}deg)`}}/>
+                  <Logo fillColor='#000' style={{transform:`rotate(${Math.floor((Math.random() * 91)) - 45}deg)`}}/>
+                  <Logo fillColor='#000' style={{transform:`rotate(${Math.floor((Math.random() * 91)) - 45}deg)`}}/>
+                  <Logo fillColor='#000' style={{transform:`rotate(${Math.floor((Math.random() * 91)) - 45}deg)`}}/>
+                  <Logo fillColor='#000' style={{transform:`rotate(${Math.floor((Math.random() * 91)) - 45}deg)`}}/>
+                  <Logo fillColor='#000' style={{transform:`rotate(${Math.floor((Math.random() * 91)) - 45}deg)`}}/>
+                  <Logo fillColor='#000' style={{transform:`rotate(${Math.floor((Math.random() * 91)) - 45}deg)`}}/>
+                </ProjectsLogoContainer>
                 <TransformedImageCard
                   image={minus1}
                   title="Minus1 Store"

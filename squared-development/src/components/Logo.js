@@ -12,12 +12,13 @@ const StyledPath = styled.path`
 
 const StyledSvg = styled.svg`
   width: 100px;
+  transition:0.3s;
   @media (max-width: 767px) {
     width: 65px;
   }
 `
 
-const Logo = ({ children, ...rest }) => {
+const Logo = ({ children, fillColor, ...rest }) => {
   return (
     <StyledSvg
       xmlns="http://www.w3.org/2000/svg"
@@ -27,9 +28,10 @@ const Logo = ({ children, ...rest }) => {
       version="1.1"
       viewBox="0 0 198.4 144"
       xmlSpace="preserve"
+      {...rest}
     >
       <path
-        fill="#fff"
+        fill={fillColor ? fillColor : '#fff'}
         d="M94.7 138.9l-2-135.3 42.3 14 4.4 8.9v75.8L135 111l-40.3 27.9zm33.4-105.6l-21-4.4.7 86.4 21-13.6-.7-68.4zM90.6 3.8v51.1l-6.2 13.3 6.2 13v57.4l-45.3-28.3-.2-89.7L90.6 3.8zM56.4 34.7v25.9l21.1-.9V28.9l-21.1 5.8zm0 41.9l.7 27.6 21.1 11.4-.7-39.2-21.1.2z"
       ></path>
       {/* <g fill="#fff" className="st0">
